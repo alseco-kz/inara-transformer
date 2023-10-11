@@ -136,7 +136,20 @@ theme: /BlockAccountNumInput
                 a: Это комплимент или оскорбление?
             script:
                 $analytics.setMessageLabel("Отрицательная")
-            go!: {{$session.contextPath}}jg
+            go!: {{$session.contextPath}}
+               
+        state: AccountInputNotNumbersWay
+            intent: /ЛС_ИнойТипВвода
+            a: Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?
+            state: AccountInputNotNumbersWayYes
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                script:  
+                    $session.Account.RetryAccount--;
+                go!: ../..
+            
+            state: AccountInputNotNumbersWayDecline 
                 q: $no
                 q: $disagree
                 intent: /Несогласие
