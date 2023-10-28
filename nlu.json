@@ -2732,6 +2732,25 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/PhoneBadNumber",
+    "description" : "Фразы - этот номер не отвечает / не могу дозвониться / номер недоступен\n",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "номер с утра не отвечает"
+    }, {
+      "text" : "есть другие контактные номера"
+    }, {
+      "text" : "@Телефон @НеАктивен есть другие @Телефон @duckling.duration"
+    }, {
+      "text" : "до них не дозвониться"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -3478,6 +3497,48 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "бот", "робот", "автомат", "автоответчик" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Телефон",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "телефон", "номер" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "НеАктивен",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "[звони*] не (отвеча*/заблокиро*/доступ*)" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "не отвечать", "заблокировать", "не доступный" ],
       "value" : ""
     } ]
   } ],

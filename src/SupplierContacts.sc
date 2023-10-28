@@ -214,16 +214,19 @@ theme: /SupplierContacts
             q: * @duckling.number * || toState = "."
             q: * @Услуга * || toState = ".."
             q: * @УслугаСл * || toState = ".."
-            q: * [этот] [номер/телефон] не отвечает * || toState = "../MakeRequest"
+            q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
+            intent: /PhoneBadNumber || toState = "../MakeRequest"
             
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
             script:
                 $session.MakeRequest = {};
                 $session.MakeRequest.text = $request.query;
-                $session.MakeRequest.userPhoneNumber = $dialer.getCaller();
-            a: Давайте я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
-                Давайте проверим ваш контактный номер телефона. {{$dialer.getCaller()}}, это ваш номер? 
+                $session.MakeRequest.userPhoneNumber = getUserPhone();
+                $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
+
+            a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
+                Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
             
             state: MakeRequestPhoneCorrect
                 q: $yes
@@ -242,6 +245,44 @@ theme: /SupplierContacts
                     a: Мне не удалось сохранить заявку. Для решения Вашего вопроса перевожу Вас на оператора
                     go!: /CallTheOperator 
             
+            state: MakeRequestDecline
+                q: ($no/$disagree) заявк*
+                if: countRepeats() == 1 
+                    a: Заявка позволит быстрее решить Ваш вопрос. Давайте проверим Ваш номер телефона?  
+                else:
+                    a: Для решения Вашего вопроса перевожу Вас на оператора
+                    go!: /CallTheOperator 
+                    
+                state: MakeRequestAccept
+                    q: $yes
+                    q: $agree
+                    intent: /Согласие
+                    intent: /Согласие_помочь
+                    script:
+                        $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
+                    a: {{$temp.phone}}, это ваш номер? 
+                    go: ../../.
+                
+                state:  MakeRequestDecline
+                    q: $no
+                    q: $disagree
+                    intent: /Несогласие
+                    intent: /Несогласие_помочь
+                    intent: /Несогласие_перечислить
+                    event: noMatch
+                    a: В таком случае для решения Вашего вопроса перевожу Вас на оператора
+                    go!: /CallTheOperator 
+                    
+                
+            state: MakeRequestDeclinePhone
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                intent: /Несогласие_перечислить
+                a: Можете назвать свой номер телефона? Говорите весь номер сразу
+
+            
 
         
         state: CanIHelpYou ||noContext = false
@@ -251,6 +292,10 @@ theme: /SupplierContacts
             a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
             # a: Нужна ли моя помощь дальше?
             
+            state: PhoneBadNumber
+                intent: /PhoneBadNumber 
+                go!: ../../MakeRequest
+                
             state: Repeat
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить

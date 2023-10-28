@@ -1,3 +1,32 @@
+function getUserPhone(){
+    var tel = ''
+    if ($.session.MakeRequest && $.session.MakeRequest.userPhoneNumber)
+        tel = $.session.MakeRequest.userPhoneNumber
+    else if (testMode()){
+        tel = '7051848013'
+        // return '1111'
+    }else if ($.request.channelType == 'chatwidget'){
+        tel = '7051848013'
+        // return '1111'
+    }else if ($dialer.getCaller()){
+        tel = $dialer.getCaller()
+    }
+    if (tel.length == 10){
+        tel = '8'+ tel
+    }
+       
+    return tel
+}
+
+function formatPhoneNumber(phoneNumber) {
+  return phoneNumber.replace(/([78]?)(\d{3})(\d{3})(\d{2})(\d{2})/, '8-$2-$3-$4-$5');
+}
+
+function setUserPhone(value){
+    $.session.MakeRequest = $.session.MakeRequest || {};
+    $.session.MakeRequest.userPhoneNumber = value
+}
+
 function AddRequestComplaint(){
     {
         // функция для поиска поставщиков
