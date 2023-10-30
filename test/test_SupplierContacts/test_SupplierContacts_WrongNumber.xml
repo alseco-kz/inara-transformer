@@ -4,7 +4,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -19,7 +19,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -34,7 +34,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -49,7 +49,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -64,7 +64,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -79,7 +79,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -94,7 +94,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -109,7 +109,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -124,7 +124,7 @@
     <!--    <q>/start</q><a></a><a></a>-->
     <!--    <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>-->
     <!--    <mockData>-->
-    <!--        <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
+    <!--        <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
     <!--        <parameters><filterValue>5888492</filterValue>-->
     <!--        <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      -->
     <!--        </parameters>-->
@@ -140,7 +140,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -155,7 +155,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>
@@ -172,7 +172,7 @@
         <q>/start</q><a></a><a></a>
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
             </parameters>

@@ -81,7 +81,7 @@
         <!--</mockData>-->
 
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": null,"registrationDate": "1982-07-01"}</response>
         </mockData> 
@@ -99,7 +99,7 @@
         <!--  <response>{"count":1,"data":[{"account_number":5888301,"date_last_pay":"2022-10-31T18:15:00.000Z","sum_last_pay":"150.12","registration_date":"2021-12-31T18:15:00.000Z","Row":2}],"filterHead":"account_number","filterValue":"5888301","needFilter":true,"msg":"Success"}</response>-->
         <!--</mockData>-->
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-10-31","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -111,7 +111,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_01">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-01-01","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -123,7 +123,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_02">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-02-02","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -135,7 +135,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_03">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-03-03","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -147,7 +147,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_04">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-04-04","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -159,7 +159,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_05">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-05-05","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -171,7 +171,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_06">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-06-06","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -183,7 +183,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_07">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-07-07","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -195,7 +195,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_08">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-08-08","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -207,7 +207,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_09">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-09-09","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -219,7 +219,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_10">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-10-10","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -231,7 +231,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_11">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-11-11","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -243,7 +243,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -260,7 +260,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_1">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -274,7 +274,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_2">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -291,7 +291,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -308,7 +308,7 @@
     <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         

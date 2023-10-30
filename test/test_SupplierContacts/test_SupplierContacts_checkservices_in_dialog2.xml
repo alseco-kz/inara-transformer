@@ -2,7 +2,7 @@
     <test-case id="SupplCont_need_Elictric_onServName_1">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=1</serv> 
             </parameters>
@@ -33,7 +33,7 @@
     <test-case id="SupplCont_need_Santeh_onServName_1">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=1</serv> 
             </parameters>

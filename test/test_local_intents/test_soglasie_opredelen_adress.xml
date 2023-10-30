@@ -10,7 +10,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>     
@@ -36,7 +36,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>        
@@ -62,7 +62,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>         
@@ -88,7 +88,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>        
@@ -114,7 +114,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>         

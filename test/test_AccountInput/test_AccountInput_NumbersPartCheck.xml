@@ -2,7 +2,7 @@
     
     <test-case id="test_AccountInput_NumbersPartCheck_1">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -25,7 +25,7 @@
     </test-case>
     <test-case id="test_AccountInput_NumbersPartCheck_001">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -58,7 +58,7 @@
 
     <test-case id="test_AccountInput_NumbersPartCheck_1_01">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>10510</filterValue>
           </parameters>
@@ -79,7 +79,7 @@
     
     <test-case id="test_AccountInput_NumbersPartCheck_2">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -105,7 +105,7 @@
 
     <test-case id="test_AccountInput_NumbersPartCheck_2_01">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -132,7 +132,7 @@
     </test-case>      
     <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_01">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -155,7 +155,7 @@
     </test-case>     
     <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_02">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>54471</filterValue>
           </parameters>
@@ -194,7 +194,7 @@
 <!--проверяем фразы, которыми говорим цифры-->
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_1">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -213,7 +213,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_2">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -232,7 +232,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_3">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -251,7 +251,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_4">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -270,7 +270,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_5">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -289,7 +289,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_6">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -308,7 +308,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_7">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -327,7 +327,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_8">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -346,7 +346,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_9">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -365,7 +365,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_10">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -384,7 +384,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_11">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -403,7 +403,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_12">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -422,7 +422,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_13">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -441,7 +441,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_14">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -460,7 +460,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_15">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -479,7 +479,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_16">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -498,7 +498,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_17">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -517,7 +517,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_18">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -536,7 +536,7 @@
     </test-case>    
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_19">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>54471</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        

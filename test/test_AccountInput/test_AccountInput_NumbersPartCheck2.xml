@@ -2,7 +2,7 @@
     <!--Длина ЛС 9 или 10 символов - не ждем слово -подвтерждение о завершении-->
     <test-case id="test_AccountInput_NumbersPartCheck_len_acc_1">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>005447110</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -24,7 +24,7 @@
     </test-case>  
     <test-case id="test_AccountInput_NumbersPartCheck_len_acc_2">
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>0015447110</filterValue></parameters>
           <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        

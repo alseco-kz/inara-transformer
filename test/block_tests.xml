@@ -51,7 +51,7 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>
@@ -126,12 +126,12 @@
         <a>Это не похоже на номер лицевого счета.</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>       
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -152,7 +152,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -169,7 +169,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -183,7 +183,7 @@
         <a>Я Вас не расслышала. Повторите еще раз.</a>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -197,7 +197,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
@@ -216,7 +216,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
@@ -238,7 +238,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>      
@@ -257,7 +257,7 @@
         <timeoutReply interval="1"/>
         <q>да</q>
 		<mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/lastPay</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
         </mockData>         
@@ -271,7 +271,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888492</filterValue></parameters>
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
@@ -301,7 +301,7 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
             <filterValue>5888490</filterValue>
           </parameters>

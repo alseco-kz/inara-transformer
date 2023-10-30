@@ -6,7 +6,7 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters><filterValue>5888490</filterValue></parameters>
           <response/>
         </mockData>       
@@ -34,7 +34,7 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
             <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>       
@@ -57,12 +57,12 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
             <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>     
             </parameters>
@@ -91,12 +91,12 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
             <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>     
             </parameters>
@@ -129,12 +129,12 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
             <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>     
             </parameters>
@@ -163,12 +163,12 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
             <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>     
             </parameters>
@@ -195,7 +195,7 @@
     </test-case>
     <test-case integration="true">
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>4906764</filterValue></parameters>
             <response>{"accountId":4906764,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
@@ -204,7 +204,7 @@
         <a state="/SupplierContacts/SupplierContacts"/>
         <a state="/BlockAccountNumInput/AccountInput"/>
         <!--<mockData>-->
-        <!--    <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
+        <!--    <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
         <!--    <parameters><filterValue>4906764</filterValue>-->
         <!--    <serv>serviceCodes=36&amp;serviceCodes=37</serv>     -->
         <!--    </parameters>-->
@@ -213,7 +213,7 @@
         <!--    </response>-->
         <!--</mockData>         -->
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>4906764</filterValue>
             <serv>serviceCodes=36&amp;serviceCodes=37</serv>
             </parameters>
