@@ -36,13 +36,17 @@ function AddRequestComplaint(){
         var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'requests/complaint';
         var url = addr;
         var token = $secrets.get("InaraSeviceToken", "Токен не найден")
+        var audio_url = $dialer.getCallRecordingFullUrl()
+        if (!audio_url && testMode()){
+           audio_url = 'https:\\myurl_test' 
+        }
         var request_params = {
             "accountId": GetAccountNumber(),
             "supplierCodeName": $.session.SupplContracts.TalkContacts.supplierCodeName,
             "serviceCode": $.session.SupplContracts.TalkContacts.serviceCode,
             "taklContacts": $.session.SupplContracts.TalkContacts.talkContacts,
             "userText": $.session.MakeRequest.text,
-            "audioLink": $dialer.getCallRecordingFullUrl(),
+            "audioLink": audio_url,
             // "audioLink": $dialer.getCallRecordingPath(),
             "userPhoneNumber": $.session.MakeRequest.userPhoneNumber,
             "complaintType": "WRONG_PHONE_NUMBER"

@@ -219,6 +219,9 @@ theme: /SupplierContacts
             
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
+            if: !FindAccountIsAccountSet() 
+                a: Для решения Вашего вопроса перевожу Вас на оператора
+                go!: /CallTheOperator 
             script:
                 $session.MakeRequest = {};
                 $session.MakeRequest.text = $request.query;
@@ -275,12 +278,15 @@ theme: /SupplierContacts
                     
                 
             state: MakeRequestDeclinePhone
-                q: $no
-                q: $disagree
-                intent: /Несогласие
-                intent: /Несогласие_помочь
-                intent: /Несогласие_перечислить
-                a: Можете назвать свой номер телефона? Говорите весь номер сразу
+                # q: $no
+                # q: $disagree
+                # intent: /Несогласие
+                # intent: /Несогласие_помочь
+                # intent: /Несогласие_перечислить
+                # a: Можете назвать свой номер телефона? Говорите весь номер сразу
+                a: В таком случае для решения Вашего вопроса перевожу Вас на оператора
+                go!: /CallTheOperator 
+                
 
             
 
@@ -294,6 +300,7 @@ theme: /SupplierContacts
             
             state: PhoneBadNumber
                 intent: /PhoneBadNumber 
+                q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) *
                 go!: ../../MakeRequest
                 
             state: Repeat
