@@ -12,6 +12,8 @@ tests:
         # - test_AccountInput/*.xml
         # - test_Bills/*.xml
         # - test_ChangeAccountPerson/*.xml
+        # - *.*
+        # - *
     exclude: 
         # - *.*
         # - *

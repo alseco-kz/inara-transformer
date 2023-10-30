@@ -165,5 +165,25 @@
         <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
         <q>не могу до них дозвониться</q>
         <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
-    </test-case>    
+    </test-case>   
+    <!--проверка попадания в нужные интенты-->
+        <!--серия тестов на проверку фразы - попадаем ли в нужный интент-->
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+
 </test>
