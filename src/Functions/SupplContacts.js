@@ -48,6 +48,15 @@ function SupplContactsGetServicesArray(){
     return return_str;
     
 }
+//////// Надо сохранить данные по коду услуги, коду поставщика и его телефону
+function FixTalkSupplContacts(elem){
+    $.session.SupplContracts = $.session.SupplContracts || {};
+    $.session.SupplContracts.TalkContacts = {
+        "supplierCodeName": elem.supplierCodeName,
+        "serviceCode": elem.serviceCode,
+        "talkContacts": elem.supplierContacts
+        }
+}
 
 function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_suppl_name ){
     // есть ЛС, есть коды услуг
@@ -57,7 +66,7 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
     // есть ЛС и есть услуга
     if ((FindAccountIsAccountSet()) && (SupplContactsIsServSet())){
         // обращаемся к сервису для получения данных по услуге
-        var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+        var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
         var token = $secrets.get("InaraSeviceToken", "Токен не найден");
 
         var url = addr + $session.Account.Number + '/services/contacts?';
@@ -106,6 +115,9 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
                         ret_contacts.text = suppl_name + ' - ' + elem.supplierContacts
                     else 
                         ret_contacts.text = elem.supplierContacts
+                        
+                    //////// Надо сохранить данные по коду услуги, коду поставщика и его телефону
+                    FixTalkSupplContacts(elem)
                     
                 });
             }

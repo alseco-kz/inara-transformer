@@ -1,4 +1,4 @@
-name: InaraSTS 
+﻿name: InaraSTS 
 
 entryPoint: main.sc
 
@@ -7,37 +7,13 @@ language: ru
 
 tests:
     include:
-        #  - test_SupplierContacts/test_SupplierContacts_all_dialog.xml
-        # -   test_SupplierContacts/test_NoElectricService_check.xml
-        # # test_AlsecoCommon/*.xml
-        # # - test_SupplierContacts/test_SupplierContacts_checkservices_in_dialog2.xml
-        # #   - test_AlsecoCommon/test_AlsecoCommonPatnersSalePhonesErrors.xml
-        # # - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
-        # # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
-        # #  - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_offline.xml
-        # #  - test_global_intents_check.xml
-        # # - test_Payment/test_Payment_DateLastPay.xml
-        #  - test_SupplierContacts/test_NoElectricService_intentcheck.xml
-        # - test_SupplierContacts/test_NoElectricService_check.xml
-        # - test_main/test_main_no_service.xml
-        # - test_Taxes/test_Taxes_phrases.xml
-        # - test/test_main/test_main_repeat_errors.xml
-        #  - test_i/test_irina.xml
+        # - test_AlsecoCommon/*.xml
         # - test_SupplierContacts/*.xml
-        # - test_main/test_main_meters.xml
-        # - test_ChangeAccountPersonCount/*.xml
-        # - test_ChangeAccountPerson/test_ChangeAccountPerson_errors.xml
-        # - test_local_intents/*.xml
-        # - test_SupplierContacts/*.xml
+        # - test_AccountInput/*.xml
         # - test_Bills/*.xml
-        #   - test_AlsecoCommon/test_AlsecoCommonPartnersSaleContacts.xml 
-        #   - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml 
-        #   - test_SupplierContacts/test_SupplierContacts_checkservices_in_begginning.xml
-        #   - test_SupplierContacts/test_SupplierContacts_intent_check.xml
-        #   - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
-            - test_NoMatch/test_NoMatchPhrases.xml
-            - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
-        
+        # - test_ChangeAccountPerson/*.xml
+        # - *.*
+        # - *
     exclude: 
         # - *.*
         # - *
@@ -62,10 +38,10 @@ caila:
     noMatchThreshold: 0.2
 
 injector:
-  AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
-  AccountSheetName: 'ЛС'
-  AccountSheetSupplName: 'ЛСПост'
-  AccountSheetPayName: 'Оплаты'
+#   AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
+#   AccountSheetName: 'ЛС'
+#   AccountSheetSupplName: 'ЛСПост'
+#   AccountSheetPayName: 'Оплаты'
 #   MacrosUrl: 'https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?'
     #   sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}'
     # Ниже полная ссылка на файл в режиме макроса

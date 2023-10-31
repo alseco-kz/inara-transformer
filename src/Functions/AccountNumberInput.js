@@ -66,7 +66,7 @@ function TrySetNumber(acc_num)
 function FindAccountAddress(){
     var $injector = $jsapi.context().injector;
     var $session = $jsapi.context().session;
-    var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+    var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
     
     // log("addr value = "+ addr);
     // var url = $injector.InaraServiceUrl + $session.Account._number + '/address';
@@ -86,6 +86,11 @@ function FindAccountAddress(){
 function GetTempAccountNumber(){
     var $session = $jsapi.context().session;
     return $session.Account._number;
+}
+// возвращает сохраненный номер ЛС
+function GetAccountNumber(){
+    var $session = $jsapi.context().session;
+    return $session.Account.Number;
 }
 //---------------------------------------------------------------------------
 // Как говорить номер ЛС (разбиение по разрядам)

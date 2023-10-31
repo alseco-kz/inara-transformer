@@ -12,7 +12,7 @@ function GetAccountPayShortInfo(){
             // функция для поиска поставщиков
             // var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetPayName
             // url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
-            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
             var url = addr + $session.Account.Number + '/lastPay';
             var token = $secrets.get("InaraSeviceToken", "Токен не найден")
 

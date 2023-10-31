@@ -3,6 +3,8 @@ require: slotfilling/slotFilling.sc
   
 require: patterns.sc
   module = sys.zb-common
+require: common.js
+  module = sys.zb-common
 require: dateTime/dateTime.sc
   module = sys.zb-common  
 
@@ -32,6 +34,9 @@ require: AboutInara.sc
 require: Tax.sc
 
 require: KazLanguage.sc
+
+# Сохранение данных по клиенту 
+require: Functions/ClientData.js
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -71,6 +76,8 @@ theme: /
             $context.session.AnswerCnt = 0;
             $.session.repeatsInRow = 0;
             $.session.repeats = {};
+            # переключаем Инару на радостный голос "Алены" 
+            $dialer.setTtsConfig({emotion: "good"});
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
         a: Я Инара, ваш виртуальный помощник.
         # Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
@@ -300,7 +307,9 @@ theme: /
     state: HangUp
         event!: hangup
         event!: botHangup
-        script: FindAccountNumberClear()
+        script: 
+            SaveClientLastData();
+            FindAccountNumberClear()
 
     state: WhereAreYou || noContext = true
         q!: где ты [сейчас]

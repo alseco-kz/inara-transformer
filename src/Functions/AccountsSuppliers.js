@@ -38,7 +38,7 @@ function GetAccountMainSuppls(){
             // var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetSupplName
             // url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
 
-            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
             var url = addr + $session.Account.Number + '/mainSuppliers';
             var token = $secrets.get("InaraSeviceToken", "Токен не найден")
 
