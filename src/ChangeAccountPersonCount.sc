@@ -1,7 +1,7 @@
 theme: /ChangeAccountPersonCount
     
     state: ChangeAccountPersonCountToChange
-        q!: * прописано * @duckling.number * [~человек] *
+        q!: * (прописано|поменялось) [количество]* @duckling.number * [~человек] * 
         a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
         state: ChangeAccountPersonCountToChangeConfirm
             q: $yes

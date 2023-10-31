@@ -119,7 +119,7 @@ theme: /
         random:
             a: Здравствуйте!
             a: Алло, я Вас слушаю
-        
+        # go!:/Start
     
     state: WhatDoYouWant
         script:
@@ -150,7 +150,7 @@ theme: /
         intent!:/Начисления_общее
         intent!:/Платеж_возврат
         go!: /NoMatch
-
+    
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
@@ -158,13 +158,15 @@ theme: /
             $session.catchAll = $session.catchAll || {};
         
             //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
-            if ($session.lastState && !$session.lastState.startsWith("/CatchAll")) {
+            if ($session.lastState && !$session.lastState.startsWith("/CatchAll") ) {
                 $session.catchAll.repetition = 0;
             } else{
                 $session.catchAll.repetition = $session.catchAll.repetition || 0;
             }
             $session.catchAll.repetition += 1;
-        if: $context.session.AnswerCnt == 1
+
+
+        if: $context.session.AnswerCnt == 1 ||  $session.lastState.startsWith("/Hello")
             script:
                 $temp.index = $reactions.random(CommonAnswers.NoMatch.answers.length);
             a: {{CommonAnswers.NoMatch.answers[$temp.index]}}

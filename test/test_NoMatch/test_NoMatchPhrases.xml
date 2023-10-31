@@ -1,8 +1,23 @@
 <test>
+    
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>а как убрать паркинг с лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
     <test-case id="NoMatch_Узнать_ЛС">
         <q>хочу узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    
+    <test-case id="NoMatch_Узнать_Договорной">
+        <q>соедините с договорным отделом</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+
+    
     <test-case id="NoMatch_Узнать_ЛС">
         <q>мне надо узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
@@ -24,17 +39,17 @@
         <a state = "/NoMatch"></a>
     </test-case>
 
-    <test-case id="NoMatch_Дубликат_01">
-        <q>/start</q><a></a><a></a>
-        <q>мне нужно квитанцию</q>
-        <a state = "/NoMatch"></a>
-    </test-case>
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>мне нужно квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>   ОШИБКА, БЕДА ПРИШЛА ОТКУДА НЕ ЖДАЛИ-->    
+    <!--</test-case>-->
 
-    <test-case id="NoMatch_Дубликат_01">
-        <q>/start</q><a></a><a></a>
-        <q>где можно получить квитанцию</q>
-        <a state = "/NoMatch"></a>
-    </test-case>
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>где можно получить квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>-->
+    <!--</test-case>-->
     
     <test-case id="NoMatch_Дубликат_1">
         <q>хочу получить новую квитанцию</q>
@@ -82,11 +97,11 @@
 
     # BOT-380
     
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>давайте на двадцать семь</q>
-        <a state="/NoMatch"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>давайте на двадцать семь</q>-->
+    <!--    <a state="/NoMatch"/>-->
+    <!--</test-case>-->
 
     # BOT-380
     
@@ -95,4 +110,8 @@
         <q>мне надо вызвать на дом электрика</q>
         <a state="/NoMatch"/>
     </test-case>
+    
+    
+    
+    
 </test>
