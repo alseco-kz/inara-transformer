@@ -1,0 +1,118 @@
+<test>
+<!--**********************************-->
+    <test-case id="ChangeAccountPersonCount_prephases_1">
+        <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a>В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?</a>
+    </test-case>
+    
+    <test-case id="ChangeAccountPersonCount_prephases_1">
+        <q>/start</q><a></a><a></a>
+        <q>хочу узнать у нас поменялось количество людей было два стала один</q>
+        <a>В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?</a>
+    </test-case>
+
+    <test-case id="ChangeAccountPersonCount_prephases_1">
+        <q>/start</q><a></a><a></a>
+        <q>в квитанции прописано пять людей а мы платим за троих</q>
+        <a>В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?</a>
+    </test-case>
+<!--**********************************-->
+<!--тест верно сказали - -->
+    <test-case id="ChangeAccountPersonCount_prephases_confirm_1">
+        <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCountToChange"></a>
+        <q>да</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount"></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_2'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>да да это мой вопрос</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_3'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>как это можно сделать</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_4'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>верно</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_5'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>правильно</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_6'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>конечно</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_confirm_7'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>похоже да</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCount'></a>
+    </test-case>
+    
+    
+<!--**********************************-->
+     <!--тест - неверно определена тема -->
+    <test-case id='ChangeAccountPersonCount_prephases_decline_1'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>нет</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_decline_2'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>я же о другом говорю</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_decline_3'>
+          <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>не верно</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>
+    <test-case id='ChangeAccountPersonCount_prephases_decline_4'>
+        <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>не правильно</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>    
+    <test-case id='ChangeAccountPersonCount_prephases_decline_5'>
+        <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>у меня совсем другой вопрос</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>    
+    <test-case id='ChangeAccountPersonCount_prephases_decline_6'>
+        <q>/start</q><a></a><a></a>
+        <q>эльнарочка мне надо вот у нас прописано два человека а мы платим за троих мне надо в квитанции чтобы мы платили за двоих</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange'></a>
+        <q>нет я о другом говорил</q>
+        <a state = '/ChangeAccountPersonCount/ChangeAccountPersonCountToChange/ChangeAccountPersonCountToChangeDecline'></a>
+    </test-case>    
+    
+</test>

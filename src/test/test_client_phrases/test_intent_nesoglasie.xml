@@ -1,0 +1,27 @@
+<test>
+    
+    <test-case id="Phrase_нет времени на это_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>думаю не стоит</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+
+    <test-case id="Phrase_нет времени на это_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не желаю этого</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id="Phrase_нет времени на это_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>э нет. давайте без этого</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id="Phrase_нет времени на это_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не хочу</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+    
+</test>

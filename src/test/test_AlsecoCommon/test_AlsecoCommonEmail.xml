@@ -1,0 +1,109 @@
+ <test>
+    <test-case id="AlsecoEmail_1">
+        <q>/start</q><a></a><a></a>
+        <q>подскажите емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>да повторите я вас не понял совсем</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>да повторите я вас не понял совсем</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+        <q>да повторите я вас не понял совсем</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>да повторите я вас не понял совсем</q>
+        <a state="/repeat"/>
+    </test-case>
+ 
+    <test-case id="AlsecoEmail_8">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>конечно</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/> <!--NoMatch  снова он не рабочий -->
+        <a>Повторить?</a>
+        <q>конечно</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+    </test-case>
+
+    <test-case id="AlsecoEmail_2">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>да</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>да повторите я вас не понял совсем</q>
+        <a state="/repeat"/>
+    </test-case>
+    
+        <test-case id="AlsecoEmail_4">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>нет</q>
+        <a state="/AlsecoCommon/CanIHelpYou"/>
+    </test-case>
+    
+    
+    <test-case id="AlsecoEmail_3">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>да</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+        <q>не нужно</q>
+       <a state="/AlsecoCommon/CanIHelpYou"/>
+    </test-case>
+    
+
+    <test-case id="AlsecoEmail_5">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>нет</q>
+        <a state="/AlsecoCommon/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id="AlsecoEmail_6">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>можешь помедленее</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+    </test-case>
+    
+    
+     <test-case id="AlsecoEmail_7">
+        <q>/start</q><a></a><a></a>
+        <q>емейл</q>
+        <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
+        <q>да</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/>
+        <a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoEmail/AlsecoEmailRepeat"/><a>Повторить?</a>
+    </test-case>
+   
+   
+    
+
+    
+</test>   

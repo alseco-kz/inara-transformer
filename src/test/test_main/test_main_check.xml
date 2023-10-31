@@ -1,0 +1,147 @@
+<test>
+    # BOT-282
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>канализация горячей воды квитанции сильно подорожала то было двадцать пять восемь семь а сейчас двести девяносто восемь восемьдесят два может быть отпечаток</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-248
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>переплата за горячую воду а оплата выставили три пятьсот почему</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте вот не приходит счет все када вот</q>
+        <a state="/NoMatch"/>
+    </test-case> 
+
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>приходит счет за квитанцию в квартиру в которой</q>
+        <a state="/NoMatch"/>
+    </test-case> 
+    # BOT-236
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>где можно дубликат квитанции получить</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-236
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне надо мне надо получить дубликат квитанцию</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-272
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>нам надо в квитанцию добавить строчку</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-321
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>по вопросу вывоза тбо с квитанции надо убрать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-317
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>у меня произошла ошибка в квитанции</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-322
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно повторно отправить квитанцию</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-285
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу чтобы квитанция мне приходила на электронную почту</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-263
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>ошибка в счете асека</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-303
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно чтоб казахтелеком вошел в квитанцию алсеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать о начислении</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-246
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>все на оплату а то есть коммунальные курсу можете выслать на ватсап</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я данную квартиру недавно оформил на себя и хотелось бы чтобы мне на телефон приходили сообщения об оплате коммунальных услуг</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я вот квартиру оформил теперь мне как платить по лицевому счету нужно будет платить я хотел чтоб мне на телефон приходили сообщения по комунальным платежам</q>
+        <a state="/PaymentTotal/PaymentQuestion"/>
+        <a state = "/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>скажите пожалуйста почему канализация горячей воды так подорожало или отпечаток и не пойму</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>канализация горячей воды квитанции сильно подорожала то было двадцать пять восемь семь а сейчас двести девяносто восемь восемьдесят два может быть отпечаток</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+
+
+</test>

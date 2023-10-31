@@ -1,0 +1,42 @@
+<test>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888379</filterValue></parameters>
+          <response>{"accountId":5888379,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 8"}</response>
+        </mockData> 
+        <q>оплата</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три шестьдесят</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 83- - 60. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <q>нет нет нет нет нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три семьдесят девять</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 83- - 79. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a>Ваш адрес Микрорайон "Алмагуль"  Дом 15 Квартира 8. Верно?</a>
+        <q>нет не правильно</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a state="/PaymentTotal/PaymentQuestion/SendToOperator"/>
+    </test-case>
+    
+    
+    
+    <test-case id = "2">
+        <q>/start</q><a></a><a></a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888379</filterValue></parameters>
+          <response>{"accountId":5888379,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 8"}</response>
+        </mockData> 
+        <q>скажите пожалуйста прошла ли оплата электроэнергии</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+</test>

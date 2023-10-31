@@ -1,0 +1,68 @@
+{
+    "tagName": "AccountPayDateMessage",
+    "startState": "/Blocks/AccountPayDateMessage",
+    "scenarioFile": "Blocks/AccountPayDate/account_pay_date.sc",
+    "caption": {
+        "ru": "Получить и вывести дату последней оплаты по лицевому счету",
+        "eng": "Get Account last pay date and send a reply"
+    },
+    "description": {
+        "ru": "Используйте этот блок, чтобы выдать сумму последней оплаты по лицевому счету",
+        "eng": "Use this block to Get Account last pay date and send a reply"
+    },
+    "hint": {
+        "ru": "Узнать дату последней оплаты по ЛС и предоставить ее ",
+        "eng": "Calculate the sum of two numbers and send a reply with the result"
+    },
+    "parameters": [
+        {
+            "name": "needCleanEmptyAccount",
+            "type": "bool",
+            "required": true,
+            "localization": {
+                "ru": "Надо ли запрашивать номер ЛС повторно, если ранее в ходе диалога он был не определен",
+                "eng": "First number"
+            }
+        },
+        {
+            "name": "okState",
+            "type": "state",
+            "required": false,
+            "localization": {
+                "ru": "Следующий шаг в случае успеха",
+                "eng": "Next state on success"
+            },
+            "description": {
+                "ru": "Бот перейдет в этот шаг, если сумма будет успешно вычислена.",
+                "eng": "The bot will go to this state if it successfully calculates the sum."
+            }
+        },
+        {
+            "name": "errorState",
+            "type": "state",
+            "required": false,
+            "localization": {
+                "ru": "Следующий шаг в случае ошибки",
+                "eng": "Next state on error"
+            },
+            "description": {
+                "ru": "Бот перейдет в этот шаг, если не сможет вычислить сумму.",
+                "eng": "The bot will go to this state if it fails to calculate the sum."
+            }
+        },
+        {
+            "name": "noAccountState",
+            "type": "state",
+            "required": false,
+            "localization": {
+                "ru": "Следующий шаг если ЛС не определен",
+                "eng": "Next state on error"
+            },
+            "description": {
+                "ru": "Бот перейдет в этот шаг, если ЛС не будет определен (я не знаю  и т.п.)",
+                "eng": "The bot will go to this state if it fails to calculate the sum."
+            }
+        }
+    ]
+}
+

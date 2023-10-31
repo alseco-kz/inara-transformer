@@ -1,0 +1,92 @@
+<test>
+     
+     <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно на не телефона канализации</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>скажите пожалуйста поставщика услуг электроэнергии</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>скажите пожалуйста поставщика услуг электро</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>подскажите пожалуйста телефон по горячей воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>обслуживающая компания</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>контакты по воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>контакты то карасу по воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>холодная вода то карасу</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    <test-case id='errors_switch_check_4'>
+          <q>/start</q><a></a><a></a>
+        <q>мне надо телефон тот</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>    
+    <test-case id='errors_switch_check_5'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно газовая служба</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать номер телефона тепловых сетей я не успела записать первым разом и и ну горячей воды</q>
+        <a>Записывайте.</a><a>Алматинские тепловые сети - 341, 0, 777.</a>
+        <a>Повторить?</a>        
+    </test-case>
+    <!--BOT-501-->
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела бы узнать контакты поставщиков по уборке подъездов</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+ <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>узнать контакты тск</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>    
+    
+</test>
