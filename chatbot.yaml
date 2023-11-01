@@ -7,7 +7,9 @@ language: ru
 
 tests:
     include:
-        # - test_AlsecoCommon/*.xml
+        
+          - test_NoMatch/test_NoMatchPhrases.xml
+
         # - test_SupplierContacts/*.xml
         # - test_AccountInput/*.xml
         # - test_Bills/*.xml
@@ -15,6 +17,7 @@ tests:
         # - *.*
         # - *
     exclude: 
+      
         # - *.*
         # - *
         # - test_i/test_irina.xml

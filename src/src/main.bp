@@ -1,0 +1,44 @@
+{
+  "positions" : [ {
+    "id" : "/AccountDetails",
+    "x" : 620,
+    "y" : 1279
+  }, {
+    "id" : "/Start",
+    "x" : 240,
+    "y" : 1229
+  }, {
+    "id" : "/Hello",
+    "x" : 240,
+    "y" : 1888
+  }, {
+    "id" : "/Bye",
+    "x" : 240,
+    "y" : 2290
+  }, {
+    "id" : "/NoMatch",
+    "x" : 620,
+    "y" : 825
+  }, {
+    "id" : "/CallTheOperator",
+    "x" : 240,
+    "y" : 2673
+  }, {
+    "id" : "/Tenants",
+    "x" : 620,
+    "y" : 2338
+  }, {
+    "id" : "/Match",
+    "x" : 240,
+    "y" : 3057
+  }, {
+    "id" : "/repeat",
+    "x" : 240,
+    "y" : 3358
+  }, {
+    "id" : "/KnowledgeBase",
+    "name" : "KnowledgeBase",
+    "x" : 0,
+    "y" : 0
+  } ]
+}

@@ -1,10 +1,90 @@
 <test>
+    <test-case id="Bot- 548задача 0">
+        <q>задолженность от старого владельца</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 1">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 2">
+        <q>как поменять фамилию в лицевом счете и куда подойти с документами</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 3">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 4">
+        <q>как поменять выключатель</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 5">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 6">
+        <q>квитанции</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 7">
+        <q>поменять сумму</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 8">
+        <q>не устраивает выставленный счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 9">
+        <q>не правильно выставлена квитанция</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 10">
+        <q>платили за другую квартиру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 11">
+        <q>почему изменили лицевой счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>добрый день мне надо соединить счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
     
     <test-case id="NoMatch_Узнать_ЛС">
         <q>а как убрать паркинг с лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
-    
     
     <test-case id="NoMatch_Узнать_ЛС">
         <q>хочу узнать номер лицевого счета</q>

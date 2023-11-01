@@ -1,4 +1,4 @@
-﻿{
+{
   "project" : {
     "id" : "inara_tst-1000039011-xzD",
     "name" : "inara_tst-1000039011-xzD",
@@ -1277,10 +1277,6 @@
     }, {
       "text" : "@КСК"
     }, {
-      "text" : "обслуживающая компания"
-    }, {
-      "text" : "кто нас обслуживает"
-    }, {
       "text" : "связаться с @КСК"
     }, {
       "text" : "установить контакт с @КСК"
@@ -1322,6 +1318,8 @@
       "text" : "вы в счете это вы из @Услуга"
     }, {
       "text" : "@Казахтелеком квитанцию"
+    }, {
+      "text" : "кто нас обслуживает"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2756,7 +2754,10 @@
       "text" : "удобнее через приложение"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "Банк",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -2985,50 +2986,31 @@
     }, {
       "text" : "ошибка подключения к серверу"
     }, {
-      "text" : "приложение плохо работает"
+      "text" : "@Программа плохо работает"
     }, {
-      "text" : "приложение не функционирует должным образом."
+      "text" : "@Программа не функционирует должным образом"
     }, {
-      "text" : "приложение имеет неполадки."
+      "text" : "@Программа имеет неполадки"
     }, {
-      "text" : "приложение нестабильно."
+      "text" : "@Программа нестабильно"
     }, {
-      "text" : "приложение часто вылетает."
+      "text" : " @Программа часто вылетает"
     }, {
-      "text" : "приложение дает сбои."
+      "text" : "@Программа дает сбои"
     }, {
-      "text" : "приложение тормозит."
+      "text" : "@Программа тормозит"
     }, {
-      "text" : "приложение не отвечает ожиданиям."
+      "text" : "@Программа не отвечает ожиданиям"
     }, {
-      "text" : "приложение работает медленно."
+      "text" : "@Программа работает медленно."
     }, {
-      "text" : "функции приложения не работают корректно."
+      "text" : "функции @Программа не работают корректно"
     }, {
-      "text" : "приложение выдает ошибки."
+      "text" : "@Программа выдает ошибки"
     }, {
-      "text" : "в приложении возникают проблемы."
+      "text" : "в  @Программа возникают проблемы"
     }, {
-      "text" : "приложение не функционирует должным образом."
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/PhoneBadNumber",
-    "description" : "Фразы - этот номер не отвечает / не могу дозвониться / номер недоступен\n",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "номер с утра не отвечает"
-    }, {
-      "text" : "есть другие контактные номера"
-    }, {
-      "text" : "@Телефон @НеАктивен есть другие @Телефон @duckling.duration"
-    }, {
-      "text" : "до них не дозвониться"
+      "text" : "@Программа не функционирует должным образом"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3708,7 +3690,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка" ],
+      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка", "обслуживающая компания" ],
       "value" : ""
     } ]
   }, {
@@ -3787,7 +3769,7 @@
       "rule" : [ "бот", "робот", "автомат", "автоответчик" ],
       "value" : ""
     } ]
-  },{
+  }, {
     "entity" : {
       "name" : "ИИН",
       "enabled" : true,
@@ -3804,25 +3786,6 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "инн", "иин" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Телефон",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "телефон", "номер" ],
       "value" : ""
     } ]
   }, {
@@ -3871,30 +3834,7 @@
       "hidden" : false
     },
     "records" : [ ]
-  },  {
-    "entity" : {
-      "name" : "НеАктивен",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "pattern",
-      "rule" : [ "[звони*] не (отвеча*/заблокиро*/доступ*)" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "не отвечать", "заблокировать", "не доступный" ],
-      "value" : ""
-    } ]
-  } ],{
+  }, {
     "entity" : {
       "name" : "непонял",
       "enabled" : true,
@@ -3911,6 +3851,44 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "не понял ", "не понимать", "еще раз" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Банк",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "банка ", "банк", "банке" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Программа",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "приложение" ],
       "value" : ""
     } ]
   } ],
