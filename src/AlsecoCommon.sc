@@ -87,7 +87,7 @@ theme: /AlsecoCommon
     state: AlsecoPartnersSaleContacts
         intent!:/AlsecoGivePartnersSaleContacts
         random:
-            a: По поводу партнерства с нами вы можете позвонить по телефону +7 701 485 79 86
+            a: По поводу партнерства с нами вы можете позвонить по телефону 8 727 339 50 01
         # if: countRepeatsInRow(true) < 3
         if:    countRepeats() < 3
             a: Повторить?
@@ -101,7 +101,7 @@ theme: /AlsecoCommon
             intent: /Согласие
             intent: /Повторить
             q: $numbersByWords 
-            a: +7 701 485 79 86
+            a: 8 727 339 50 01
             if: countRepeatsInRow() < 3
             # if:    countRepeats() < 3
                 a: Повторить?

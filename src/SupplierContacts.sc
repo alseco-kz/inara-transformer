@@ -229,7 +229,7 @@ theme: /SupplierContacts
                 $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
 
             a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
-                Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
+            a: Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
             
             state: MakeRequestPhoneCorrect
                 q: $yes
