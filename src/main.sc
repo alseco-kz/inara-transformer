@@ -353,6 +353,7 @@ theme: /
             
     state: BotTooSlow
         event!: timeLimit
+        a: Превышено ограничение на время обработки запроса.Переключаю вас на оператора 
         script:
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
         go!: /CallTheOperator

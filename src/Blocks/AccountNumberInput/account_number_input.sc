@@ -359,7 +359,7 @@ theme: /BlockAccountNumInput
                     
                     try{
                         FindAccountAddress().then(function(res) {
-                            //log(toPrettyString(res));
+                            log(toPrettyString(res));
                             if (res && res.accountId) {
                                 //log(res.data[0].address_full_name);
                                 $session.Account.Address = res.fullAddressName;
@@ -415,7 +415,7 @@ theme: /BlockAccountNumInput
                     script: 
                         FindAccountNumberSetResult("AddressCancel"); 
                         $analytics.setSessionData("Блок ЛС", "Другой адрес")
-                    if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
+                    if: $session.оAccount.RetryAccount < $session.Account.MaxRetryCount
                         a: Давайте еще раз проверим
                     go!: /BlockAccountNumInput/AccountInput
                 

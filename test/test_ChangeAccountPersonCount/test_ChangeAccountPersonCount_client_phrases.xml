@@ -162,4 +162,12 @@
         <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"></a>
     </test-case>
     
+    
+    <test-case id = "test_ChangeAccountPersonCount_client_phrases_4">
+        <q>/start</q><a></a><a></a>
+        <q>триста человек у меня написано пятнадцать четыре проживает двое </q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount"></a>
+        <q>ну чтобы мне там поменяли что потому что у меня нет компьютера и лучше заехать</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"></a>
+    </test-case>
 </test>

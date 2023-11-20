@@ -8,7 +8,7 @@ language: ru
 tests:
     include:
         
-          - test_NoMatch/test_NoMatchPhrases.xml
+          - test_main/test_BotTimeLimit.xml
 
         # - test_SupplierContacts/*.xml
         # - test_AccountInput/*.xml

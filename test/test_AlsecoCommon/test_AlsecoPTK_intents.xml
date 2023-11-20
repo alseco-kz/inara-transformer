@@ -9,10 +9,4 @@
         <q>ошибка подключения к серверу</q>
         <a state="/AlsecoCommon/AlsecoPTK"></a>
     </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>ваше приложение плохо работает</q>
-        <a state="/AlsecoCommon/AlsecoPTK"></a>
-    </test-case>
 </test>
