@@ -10,6 +10,11 @@
         <q>Мы приобрели квартиру и хотели бы получить лицевой счет на свое имя и расчеты согласно нынешней прописке</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
+    
+    <test-case id="Bot- 548задача 2">
+        <q>как поменять фамилию в лицевом счете и куда подойти с документами</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
 
     <test-case id = "ChangeAccountPerson_3">
         <q>/start</q><a></a><a></a>
@@ -852,6 +857,13 @@
     </test-case>
 
 
+
+    <test-case id='ChangeAccountPerson_189_0'>
+        <q>/start</q><a></a><a></a>
+        <q>перерегистрация квитанции</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
+    </test-case>
+    
     <test-case id='ChangeAccountPerson_189'>
         <q>/start</q><a></a><a></a>
         <q>по поводу смены в лицевом счете</q>
@@ -969,6 +981,17 @@
         <q>я этот не могу в личном кабинете зарегистрировать номер квитанции и последнюю оплату мне нужно изменить количество людей как сделать</q>
         <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case>
-
+    
+    <test-case id='ChangeAccountPerson_209'>
+        <q>/start</q><a></a><a></a>
+        <q>изменения собственника квартиры</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
+    
+    <test-case id='ChangeAccountPerson_209'>
+        <q>/start</q><a></a><a></a>
+        <q>мы хотели перерегистрировать алику</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
+    </test-case>    
 
 </test>

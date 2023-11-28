@@ -73,6 +73,7 @@ theme: /
     state: Start
         q!: $regex</start>
         script:
+            $.session.looser_count = 0;
             $context.session.AnswerCnt = 0;
             $.session.repeatsInRow = 0;
             $.session.repeats = {};
@@ -173,7 +174,7 @@ theme: /
             $session.catchAll.repetition += 1;
 
 
-        if: $context.session.AnswerCnt == 1 ||  $session.lastState.startsWith("/Hello")
+        if: $context.session.AnswerCnt == 1
             script:
                 $temp.index = $reactions.random(CommonAnswers.NoMatch.answers.length);
             a: {{CommonAnswers.NoMatch.answers[$temp.index]}}
@@ -296,13 +297,24 @@ theme: /
         q!: * $looser *
         q!: * $obsceneWord *
         q!: * $stupid  * 
-        random: 
-            a: Спасибо. Мне крайне важно ваше мнение
-            a: Вы очень любезны сегодня
-            a: Это комплимент или оскорбление?
         script:
             $analytics.setMessageLabel("Отрицательная")
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
+        if: $session.looser_count ==0
+            script: $session.looser_count =+1
+            random: 
+                a: Спасибо. Мне крайне важно ваше мнение
+                a: Вы очень любезны сегодня
+                a: Это комплимент или оскорбление?
+            go!: ..
+        else:
+            a: Я на вас обижена разговаривайте с живым оператором
+            go!: /CallTheOperator
+            
+
+
+
+        
 
     state: HangUp
         event!: hangup
@@ -353,9 +365,9 @@ theme: /
             
     state: BotTooSlow
         event!: timeLimit
-        a: Превышено ограничение на время обработки запроса.Переключаю вас на оператора 
         script:
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
+        a: Не смогла найти ответ. Переключаю вас на оператора 
         go!: /CallTheOperator
 
 theme: /ИнициацияЗавершения

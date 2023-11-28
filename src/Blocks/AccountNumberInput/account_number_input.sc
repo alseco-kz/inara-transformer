@@ -415,7 +415,7 @@ theme: /BlockAccountNumInput
                     script: 
                         FindAccountNumberSetResult("AddressCancel"); 
                         $analytics.setSessionData("Блок ЛС", "Другой адрес")
-                    if: $session.оAccount.RetryAccount < $session.Account.MaxRetryCount
+                    if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                         a: Давайте еще раз проверим
                     go!: /BlockAccountNumInput/AccountInput
                 

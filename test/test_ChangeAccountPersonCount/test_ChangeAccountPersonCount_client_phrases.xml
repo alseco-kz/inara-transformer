@@ -170,4 +170,10 @@
         <q>ну чтобы мне там поменяли что потому что у меня нет компьютера и лучше заехать</q>
         <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"></a>
     </test-case>
+    
+    <test-case id = "test_ChangeAccountPersonCount_client_phrases_5">
+        <q>/start</q><a></a><a></a>
+        <q>поменять количество в квитанции</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount"></a>
+    </test-case>
 </test>

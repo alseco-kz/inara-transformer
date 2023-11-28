@@ -2,11 +2,16 @@
      
      <test-case>
         <q>/start</q><a></a><a></a>
-        <q>мне нужно на не телефона канализации</q>
+        <q>скажите пожалуйста почему газ отключили</q>
         <a state = "/SupplierContacts/SupplierContacts"></a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
-    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>обслуживающая компания</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
     
     
     <test-case>
@@ -82,11 +87,43 @@
         <a state = "/SupplierContacts/SupplierContacts"></a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
- <test-case>
+    <test-case>
         <q>/start</q><a></a><a></a>
         <q>узнать контакты тск</q>
         <a state = "/SupplierContacts/SupplierContacts"></a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case> 
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать контакты кск моего дома</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>     
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>девушка мне нужен номер телефона</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте я хотела бы узнать номер кск</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>    
     
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно казовый мастера вызвать</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>  
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте я хотела да энергосбыт телефон узнать</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356, 99, 99.</a>
+        <a>Повторить?</a>
+    </test-case>    
 </test>

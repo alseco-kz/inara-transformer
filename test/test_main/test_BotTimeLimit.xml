@@ -2,7 +2,7 @@
     <test-case id="test_AccountInput_NumbersPartCheck_2">
         <state>start</state>
         <event>timeLimit</event>
-        <a></a>
+        <a>Не смогла найти ответ. Переключаю вас на оператора </a>
     </test-case> 
     
     

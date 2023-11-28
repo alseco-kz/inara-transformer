@@ -1,20 +1,24 @@
 <test>
     <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
         <q>задолженность от старого владельца</q>
         <a state = "/NoMatch"></a>
     </test-case>
 
-
+    <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
+        <q>я плачу через приложение банка</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
     <test-case id="Bot- 548задача 1">
         <q>не показывает квитанцию</q>
         <a state = "/NoMatch"></a>
     </test-case>
 
 
-    <test-case id="Bot- 548задача 2">
-        <q>как поменять фамилию в лицевом счете и куда подойти с документами</q>
-        <a state = "/NoMatch"></a>
-    </test-case>
+
 
 
     <test-case id="Bot- 548задача 3">
@@ -172,9 +176,20 @@
     </test-case>
     
 
+    <test-case id="Характер-5">
+        <q>добрый день это пкск натали первая на булак на счет восемьсот шестьдесят шесть я хочу чтобы меня соединили</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-6">
+        <q>квитанция не указана фамилия</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
     
-
-
+    <test-case id="Характер-7">
+        <q>тариф сейчас какой стал скажите пожалуйста</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
     # BOT-380
     
     <!--<test-case>-->

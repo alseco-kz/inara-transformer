@@ -182,7 +182,7 @@
         <q>/start</q><a></a><a></a>
         <q>вызвать газовщика</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
-        <a>Назовите номер вашего лицевого счета</a> 
+        <a>Назовите номер вашего лицевого счета</a>
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
@@ -191,9 +191,10 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=36&amp;serviceCodes=37</serv>     
+            <!--<serv>serviceCodes=36&amp;serviceCodes=37</serv>     -->
+            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv>   
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 22,"serviceName":"ВДГО","supplierName":"ТОО \"PROFGAZ\"","supplierCodeName":"10558","supplierContacts":"317-28-27. - - - еще номер - - 8-771-780-79-20"}]}</response>
         </mockData>  
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
@@ -203,7 +204,7 @@
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a>Записывайте.</a>
-        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>ТОО "PROFGAZ" - 317-28-27. - - - еще номер - - 8-771-780-79-20.</a>
         <a>Повторить?</a>
     </test-case>
 
@@ -312,9 +313,9 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            <serv>serviceCodes=1</serv> 
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
         </mockData>  
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
@@ -333,6 +334,9 @@
         <q>как связаться с кск</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>   
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
@@ -341,13 +345,10 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            <serv>serviceCodes=1</serv> 
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
         </mockData>  
-        <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
@@ -363,6 +364,9 @@
         <q>связать с установкой домофона</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>   
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
             <parameters><filterValue>5888492</filterValue></parameters>
@@ -371,13 +375,10 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            <serv>serviceCodes=128</serv> 
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+            <response>{"accountId":5888492,"services":[{"serviceCode":128,"serviceName":"Домофон","supplierName":"ТОО \"Сервисный Центр \"Ваш Домофон\"","supplierCodeName":"10438","supplierContacts":"335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55"}]}</response>
         </mockData>  
-        <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
@@ -411,9 +412,9 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            <serv>serviceCodes=36&amp;serviceCodes=37</serv> 
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+            <response>{"accountId":5888492,"services":[{"serviceCode":36,"serviceName":"Газ","supplierName":"Центральный округ","supplierCodeName":"almaty_gaz","supplierContacts":"258-39-70. - - - еще номер - - 274-80-49. - - - еще номер - - 244-55-33"}]}</response>
         </mockData>  
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
@@ -441,10 +442,10 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>5888492</filterValue>
-            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            <serv>serviceCodes=128</serv> 
             </parameters>
-            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
-        </mockData>  
+            <response>{"accountId":5888492,"services":[{"serviceCode":128,"serviceName":"Домофон","supplierName":"ТОО \"Сервисный Центр \"Ваш Домофон\"","supplierCodeName":"10438","supplierContacts":"335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55"}]}</response>
+        </mockData>    
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
         <a>Подождёте?</a>

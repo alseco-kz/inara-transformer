@@ -321,7 +321,7 @@
         <q>света нет что то дома</q>
         <a>У Вас нет электричества, правильно?</a>
         <q>нет есть электричество дело в том что меня не было пятнадцать дней дома</q>
-        <a state='/NoMatch'></a>
+        <a state = '/NoElectricService/CallerNoElectric/CallerNoElectricHaveEl'></a><a></a>
     </test-case> 
     
     <test-case id='no_electric_service_check_repeat_8'>
