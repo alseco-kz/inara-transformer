@@ -1,4 +1,4 @@
-name: InaraSTS 
+﻿name: InaraSTS 
 
 entryPoint: main.sc
 
@@ -7,14 +7,9 @@ language: ru
 
 tests:
     include:
-        #   - test_AlsecoCommon/*.xml
-        # - test_SupplierContacts/*.xml
-        # - test_AccountInput/*.xml
-        # - test_Bills/*.xml
-        # - test_ChangeAccountPerson/*.xml
-        # - *.*
-        # - *
+
     exclude: 
+      
         # - *.*
         # - *
         # - test_i/test_irina.xml

@@ -1,0 +1,18 @@
+<test>
+    <test-case id='errors_hello_check_1'>
+        <q>/start</q><a></a><a></a>
+        <q>соедини с оператором</q>
+        <a state = '/SwitchToOperator'></a>
+        <q>давайте</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_hello_check_1'>
+        <q>/start</q><a></a><a></a>
+        <q>, , , , , с оператором</q>
+        <a state = '/SwitchToOperator'></a>
+        <q>, знаете когда</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+</test>
