@@ -6,7 +6,7 @@
             <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=1</serv> 
             </parameters>
-            d<response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
         </mockData>
         <q>контакты поставщика услуг нам надо</q>
         <a>Назовите услугу</a>

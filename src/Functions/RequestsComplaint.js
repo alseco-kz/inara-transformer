@@ -10,16 +10,10 @@ function getUserPhone(){
         // return '1111'
     }else if ($dialer.getCaller()){
         tel = $dialer.getCaller()
-    } 
-    else if (tel.length === 7 && (tel[0]!= '7' || tel[0]!= '8')  ){
-        tel = '8727'+ tel
-        return tel
-        
     }
-    else if ((tel.length === 10  && tel [0]=== '7' ) ||   (tel.length === 11 && (tel[0] == '8' || tel[0] == '+7' ) ) ){
-        return tel
-            }
-    
+    if (tel.length == 10){
+        tel = '8'+ tel
+    }
        
     return tel
 }

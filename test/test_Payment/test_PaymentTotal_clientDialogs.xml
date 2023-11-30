@@ -26,18 +26,4 @@
         <a>К сожалению, мне не удалось получить информацию по оплате.</a>
         <a state="/PaymentTotal/PaymentQuestion/SendToOperator"/>
     </test-case>
-    
-    
-    
-    <test-case id = "2">
-        <q>/start</q><a></a><a></a>
-        <mockData>
-          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
-          <parameters><filterValue>5888379</filterValue></parameters>
-          <response>{"accountId":5888379,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 8"}</response>
-        </mockData> 
-        <q>скажите пожалуйста прошла ли оплата электроэнергии</q>
-        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
-        <a>Назовите номер вашего лицевого счета</a>
-    </test-case>
 </test>

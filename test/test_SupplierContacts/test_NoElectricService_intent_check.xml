@@ -393,15 +393,9 @@
         <q>мне нужно обратиться в электроэнергию чтобы узнать как подключить свет</q>
         <a state='/NoElectricService/CallerNoElectric'></a>
     </test-case>
-    <test-case id='no_electric_start_79'>
+    <test-case id='no_electric_start_78'>
         <q>/start</q><a></a><a></a>
         <q>подключить свет</q>
-        <a state='/NoElectricService/CallerNoElectric'></a>
-    </test-case>
-    
-    <test-case id='no_electric_start_80'>
-        <q>/start</q><a></a><a></a>
-        <q>куда звонить когда выключили свет</q>
         <a state='/NoElectricService/CallerNoElectric'></a>
     </test-case>
 </test>

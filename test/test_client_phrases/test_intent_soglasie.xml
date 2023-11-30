@@ -1,0 +1,24 @@
+<test>
+    
+    <test-case id="Phrase_согласна_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да, давайте так</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    
+    <test-case id="Phrase_согласна_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>ну окей</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    
+    <test-case id="Phrase_согласна_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>хорошо, давай так</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+
+</test>

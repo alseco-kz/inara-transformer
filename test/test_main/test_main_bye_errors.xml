@@ -1,0 +1,193 @@
+<test>
+    <test-case id='errors_bye_check_1'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>ок сейчас</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_2'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>сколько оплачено и сколько осталось</q>
+        <a state='/PaymentTotal/PaymentQuestion'></a><a></a>
+    </test-case>
+    <test-case id='errors_bye_check_3'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>ок</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_4'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>все спасибо до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <test-case id='errors_bye_check_5'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>спасибо большое до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <test-case id='errors_bye_check_6'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <!--<q>сумма</q>-->
+        <!--<a state='/NoMatch'></a>-->
+    </test-case>
+    <test-case id='errors_bye_check_7'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>ничего до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <!--<test-case id='errors_bye_check_8'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>как поменять счетчик</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--    <q>дайте на</q>-->
+    <!--    <a state='/SwitchToOperator'></a>-->
+    <!--</test-case>-->
+    
+    <test-case id='errors_bye_check_9'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>дайте нормального оператора</q>
+        <a state='/SwitchToOperator'></a>
+    </test-case>
+    <test-case id='errors_bye_check_10'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>нет дайте мне</q>
+        <a state='/SwitchToOperator'></a>
+    </test-case>
+    <test-case id='errors_bye_check_11'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>дайте обычного оператора</q>
+        <a state='/SwitchToOperator'></a>
+    </test-case>
+    <test-case id='errors_bye_check_12'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>какая сумма</q>
+        <a state='/PaymentTotal/PaymentQuestion'></a><a state='/BlockAccountNumInput/AccountInput'></a>
+    </test-case>
+    <test-case id='errors_bye_check_13'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <test-case id='errors_bye_check_14'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>спасибо до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <!--<test-case id='errors_bye_check_15'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>как поменять счетчик</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--    <q>даем давайте отвечайте к вам</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='errors_bye_check_16'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>оператора дайте</q>
+        <a state='/SwitchToOperator'></a>
+    </test-case>
+    <test-case id='errors_bye_check_17'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>нет спасибо до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <!--<test-case id='errors_bye_check_18'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>как поменять счетчик</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--    <q>давай по новой</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='errors_bye_check_19'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>ок</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_20'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>отопление такая сумма большая</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_21'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>ктация дали по счету</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_22'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>когда происходит последний день</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <!--<test-case id='errors_bye_check_23'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>как поменять счетчик</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--    <q>давай</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='errors_bye_check_24'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>давайте на двадцать семь</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_bye_check_25'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>долги алека сколько</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_bye_check_27'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>а пока</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>
+    <test-case id='errors_bye_check_28'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>до свидания</q>
+        <a state='/bye'></a><a state='/bye'></a>
+    </test-case>    
+</test>

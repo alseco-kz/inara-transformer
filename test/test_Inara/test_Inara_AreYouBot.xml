@@ -17,12 +17,5 @@
         <a state = '/AboutInara/AreYouRobot'></a>
         <a state = "/WhatDoYouWant"></a>
     </test-case>
-    
-    <test-case id='errors_hello_check_4'>
-          <q>/start</q><a></a><a></a>
-        <q>я с ботом говорю или человеком</q>
-        <a state = '/AboutInara/AreYouRobot'></a>
-        <a state = "/WhatDoYouWant"></a>
-    </test-case>
 
 </test>

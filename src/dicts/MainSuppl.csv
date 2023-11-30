@@ -1,0 +1,6 @@
+aes;AlmAes;{"suppl_code": "Aes", "suppl_full_name": "ТОО АЛМАТЫЭНЕРГОСБЫТ", "suppl_talk_name": "АлматыЭнергоСбыт", "phone": "3569999", "talk_phone": "356, 99, 99","order":1, "is_main":1}
+alts;AlmAlTS;{"suppl_code": "Alts", "suppl_full_name": "АЛМАТИНСКИЕ ТЕПЛОВЫЕ СЕТИ", "suppl_talk_name": "Алматинские тепловые сети", "phone": "3410777", "talk_phone": "341, 0, 777","order":2, "is_main":1}
+almaty_gaz;AlmARC;{"suppl_code": "Almaty_gaz", "suppl_full_name": "АРЦ Алматыгаз", "suppl_talk_name": "А Р Ц  Алматыгаз", "phone": "2445533", "talk_phone": "244, 55, 33","order":3, "is_main":1}
+tartyp;AlmTartyp;{"suppl_code": "Tartyp", "suppl_full_name": "АО Тартып", "suppl_talk_name": "Тартып", "phone": "3930803", "talk_phone": "393, 08, 03","order":4, "is_main":1}
+almaty_su;AlmSu;{"suppl_code": "Almaty_su", "suppl_full_name": "Алматы Су", "suppl_talk_name": "Алматы Су", "phone": "3777444", "talk_phone": "3, 777, 444","order":5, "is_main":1}
+kaz_tel;KazakhTelecom;{"suppl_code": "KazakhTelecom", "suppl_full_name": "Казахтелеком", "suppl_talk_name": "казах телеком", "phone": "160", "talk_phone": "160","order":6, "is_main":0}
