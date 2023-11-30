@@ -301,7 +301,7 @@ theme: /
             $analytics.setMessageLabel("Отрицательная")
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
         if: $session.looser_count ==0
-            script: $session.looser_count=1
+            script: $session.looser_count=+1
             go!: /WhatDoYouWant
         else:
             random:
