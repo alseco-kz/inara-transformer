@@ -55,7 +55,7 @@ init:
     function($context) {
         
         // log("$context 1 = "  + toPrettyString( $context ) );
-        // log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
         // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
