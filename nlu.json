@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "bot_sts-1000039011-hPY",
-    "name" : "bot_sts-1000039011-hPY",
+    "id" : "inara_sts-1000039011-Urq",
+    "name" : "inara_sts-1000039011-Urq",
     "folder" : "/platform"
   },
   "settings" : {
@@ -3044,8 +3044,70 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/PhoneBadNumber",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "этот номер не отвечает"
+    }, {
+      "text" : "есть другие контактные номера"
+    }, {
+      "text" : "номер с утра не отвечает"
+    }, {
+      "text" : "@Телефон @НеАктивен есть другие @Телефон @duckling.duration"
+    }, {
+      "text" : "до них не дозвониться"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
+    "entity" : {
+      "name" : "Телефон",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "телефон", "номер" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "НеАктивен",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "[звони*] не (отвеча*/заблокиро*/доступ*)" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "не отвечать", "заблокировать", "не доступный" ],
+      "value" : ""
+    } ]
+  }, {
     "entity" : {
       "name" : "Собственник",
       "enabled" : true,
