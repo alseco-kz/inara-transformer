@@ -228,8 +228,8 @@ theme: /SupplierContacts
                 $session.MakeRequest.userPhoneNumber = getUserPhone();
                 $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
 
-            a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
-            a: Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
+            a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
+        #   a:  
             
             state: MakeRequestPhoneCorrect
                 q: $yes
