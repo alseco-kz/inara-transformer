@@ -68,25 +68,25 @@ function SendErrorMessage(place, message){
     
 } 
 
-// bind("onScriptError",function($context){
-//     SetAnwserToUser($context);
-//     $analytics.setSessionData("Ошибка", "onScriptError: " +  $context.exception.message)
-//     log( "onScriptError: " + $context.exception.message);
+bind("onScriptError",function($context){
+    SetAnwserToUser($context);
+    $analytics.setSessionData("Ошибка", "onScriptError: " +  $context.exception.message)
+    log( "onScriptError: " + $context.exception.message);
     
-//     SendErrorMessage("onScriptError",  $context.exception.message);
-// });
+    SendErrorMessage("onScriptError",  $context.exception.message);
+});
 
-// bind("onDialogError", function($context) {
+bind("onDialogError", function($context) {
 
-//     SetAnwserToUser($context);
-//     $analytics.setSessionData("Ошибка", "onDialogError: " + $context.exception.message)
-//     log("onDialogError: " + $context.exception.message);
-//     SendErrorMessage("onDialogError",  $context.exception.message);
-// });
+    SetAnwserToUser($context);
+    $analytics.setSessionData("Ошибка", "onDialogError: " + $context.exception.message)
+    log("onDialogError: " + $context.exception.message);
+    SendErrorMessage("onDialogError",  $context.exception.message);
+});
 
-// bind("onAnyError", function($context) {
-//     SetAnwserToUser($context);
-//     $analytics.setSessionData("Ошибка", "onAnyError: " + $context.exception.message)
-//     log("onAnyError: " + $context.exception.message);
-//     SendErrorMessage("onAnyError",  $context.exception.message);
-// });
+bind("onAnyError", function($context) {
+    SetAnwserToUser($context);
+    $analytics.setSessionData("Ошибка", "onAnyError: " + $context.exception.message)
+    log("onAnyError: " + $context.exception.message);
+    SendErrorMessage("onAnyError",  $context.exception.message);
+});
