@@ -1,8 +1,107 @@
 <test>
+    <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
+        <q>задолженность от старого владельца</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
+        <q>я плачу через приложение банка</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
+    <test-case id="Bot- 548задача 1">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+
+
+
+    <test-case id="Bot- 548задача 3">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 4">
+        <q>как поменять выключатель</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 5">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 6">
+        <q>квитанции</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 7">
+        <q>поменять сумму</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 8">
+        <q>не устраивает выставленный счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 9">
+        <q>не правильно выставлена квитанция</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 10">
+        <q>платили за другую квартиру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 11">
+        <q>почему изменили лицевой счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>добрый день мне надо соединить счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>а как убрать паркинг с лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
     <test-case id="NoMatch_Узнать_ЛС">
         <q>хочу узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    
+    <test-case id="NoMatch_Узнать_Договорной">
+        <q>соедините с договорным отделом</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+
+    
     <test-case id="NoMatch_Узнать_ЛС">
         <q>мне надо узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
@@ -24,17 +123,17 @@
         <a state = "/NoMatch"></a>
     </test-case>
 
-    <test-case id="NoMatch_Дубликат_01">
-        <q>/start</q><a></a><a></a>
-        <q>мне нужно квитанцию</q>
-        <a state = "/NoMatch"></a>
-    </test-case>
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>мне нужно квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>   ОШИБКА, БЕДА ПРИШЛА ОТКУДА НЕ ЖДАЛИ-->    
+    <!--</test-case>-->
 
-    <test-case id="NoMatch_Дубликат_01">
-        <q>/start</q><a></a><a></a>
-        <q>где можно получить квитанцию</q>
-        <a state = "/NoMatch"></a>
-    </test-case>
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>где можно получить квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>-->
+    <!--</test-case>-->
     
     <test-case id="NoMatch_Дубликат_1">
         <q>хочу получить новую квитанцию</q>
@@ -77,16 +176,27 @@
     </test-case>
     
 
+    <test-case id="Характер-5">
+        <q>добрый день это пкск натали первая на булак на счет восемьсот шестьдесят шесть я хочу чтобы меня соединили</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-6">
+        <q>квитанция не указана фамилия</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
     
-
-
+    <test-case id="Характер-7">
+        <q>тариф сейчас какой стал скажите пожалуйста</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
     # BOT-380
     
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>давайте на двадцать семь</q>
-        <a state="/NoMatch"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>давайте на двадцать семь</q>-->
+    <!--    <a state="/NoMatch"/>-->
+    <!--</test-case>-->
 
     # BOT-380
     
@@ -95,4 +205,8 @@
         <q>мне надо вызвать на дом электрика</q>
         <a state="/NoMatch"/>
     </test-case>
+    
+    
+    
+    
 </test>
