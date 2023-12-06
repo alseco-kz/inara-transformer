@@ -1,7 +1,7 @@
 theme: /ChangeAccountPersonCount
     
     state: ChangeAccountPersonCountToChange
-        q!: * прописано * @duckling.number * [~человек] *
+        q!: * (прописано|поменялось) [количество]* @duckling.number * [~человек] * 
         a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
         state: ChangeAccountPersonCountToChangeConfirm
             q: $yes
@@ -33,7 +33,7 @@ theme: /ChangeAccountPersonCount
             intent: /Несогласие
             intent: /CantDoThis
             # event: speechNotRecognized
-            a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату. Хотите узнать, к каким поставщикам можно обратиться?
+            a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату, или в Алсеко по адресу Карасай Батыра, 155. Хотите узнать, к каким поставщикам можно обратиться?
             # script:
             # # встраиваем перебивание в длинный ответ 
             #     $dialer.bargeInResponse({

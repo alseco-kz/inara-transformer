@@ -393,11 +393,7 @@
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>    
     
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>алкщал приложение</q>
-        <a state="/AlsecoCommon/AlsecoMobApp"/>
-    </test-case> 
+
     
     <test-case>
         <q>/start</q><a></a><a></a>

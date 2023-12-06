@@ -229,7 +229,7 @@ theme: /SupplierContacts
                 $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
 
             a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
-                Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
+            a: Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
             
             state: MakeRequestPhoneCorrect
                 q: $yes
@@ -333,6 +333,7 @@ theme: /SupplierContacts
 theme: /NoElectricService
     state: CallerNoElectric
         intent!: /Услуга_НетСвета
+        
         script:
             $session.RepeatCnt = $session.RepeatCnt || {};
             $session.RepeatCnt.ServRepeat = 0;
@@ -373,9 +374,10 @@ theme: /NoElectricService
                 intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
         state: NotElectric
             intent: /Услуга_НетСвета
+            
             script:
                 $temp.HasElectricService = false
-                if ($parseTree._Услуга){
+                 if ($parseTree._Услуга){
                     $temp.Service = $parseTree._Услуга;
                     if (typeof($temp.Service)=="string"){
                         var  Names = $temp.Service;

@@ -73,6 +73,7 @@ theme: /
     state: Start
         q!: $regex</start>
         script:
+            $.session.looser_count = 0;
             $context.session.AnswerCnt = 0;
             $.session.repeatsInRow = 0;
             $.session.repeats = {};
@@ -126,7 +127,7 @@ theme: /
         random:
             a: Здравствуйте!
             a: Алло, я Вас слушаю
-        
+        # go!:/Start
     
     state: WhatDoYouWant
         script:
@@ -157,7 +158,7 @@ theme: /
         intent!:/Начисления_общее
         intent!:/Платеж_возврат
         go!: /NoMatch
-
+    
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
@@ -165,12 +166,14 @@ theme: /
             $session.catchAll = $session.catchAll || {};
         
             //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
-            if ($session.lastState && !$session.lastState.startsWith("/CatchAll")) {
+            if ($session.lastState && !$session.lastState.startsWith("/CatchAll") ) {
                 $session.catchAll.repetition = 0;
             } else{
                 $session.catchAll.repetition = $session.catchAll.repetition || 0;
             }
             $session.catchAll.repetition += 1;
+
+
         if: $context.session.AnswerCnt == 1
             script:
                 $temp.index = $reactions.random(CommonAnswers.NoMatch.answers.length);
@@ -222,8 +225,8 @@ theme: /
             //switchReply.phoneNumber = "5020"; // номер, на который переключаем
             # switchReply.phoneNumber = "5000"; // номер, на который переключаем
             
-            //var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@10.40.89.112>"; // последнеее - внутренний IP
-            var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.211>"; // последнеее - внутренний IP 
+            var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@10.40.89.112>"; // последнеее - внутренний IP
+            # var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.211>"; // последнеее - внутренний IP 
             //
             switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
             
@@ -294,13 +297,23 @@ theme: /
         q!: * $looser *
         q!: * $obsceneWord *
         q!: * $stupid  * 
-        random: 
-            a: Спасибо. Мне крайне важно ваше мнение
-            a: Вы очень любезны сегодня
-            a: Это комплимент или оскорбление?
         script:
             $analytics.setMessageLabel("Отрицательная")
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
+        if: $session.looser_count ==0
+            script: $session.looser_count=+1
+            go!: /WhatDoYouWant
+        else:
+            random:
+                a: Не ругайтесь пожалуйста. Соединяю вас с оператором.
+                a: Спасибо.Мне важно ваше мнение. Перевожу вас на оператора.
+                a: Давайте не будем переживать. Перевожу вас на оператора.
+            go!: /CallTheOperator
+            
+
+
+
+        
 
     state: HangUp
         event!: hangup
@@ -346,12 +359,15 @@ theme: /
         event!: sessionDataSoftLimitExceeded
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
-    
+
+            
+            
     state: BotTooSlow
         event!: timeLimit
         script:
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
-        
+        a: Не смогла найти ответ. Переключаю вас на оператора 
+        go!: /CallTheOperator
 
 theme: /ИнициацияЗавершения
     
