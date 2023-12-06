@@ -3055,9 +3055,39 @@
     }, {
       "text" : "номер с утра не отвечает"
     }, {
-      "text" : "@Телефон @НеАктивен есть другие @Телефон @duckling.duration"
+      "text" : " @Телефон @НеАктивен есть друге @Телефон @duckling.duration"
     }, {
       "text" : "до них не дозвониться"
+    }, {
+      "text" : "@Делать @НеАктивен"
+    }, {
+      "text" : "@Делать"
+    }, {
+      "text" : "@НеАктивен"
+    }, {
+      "text" : "@НеАктивен @Делать"
+    }, {
+      "text" : "@Телефон"
+    }, {
+      "text" : "@Телефон @НеАктивен @Делать"
+    }, {
+      "text" : "@Телефон @Делать @НеАктивен"
+    }, {
+      "text" : "@Делать @Телефон @НеАктивен"
+    }, {
+      "text" : "@Делать @НеАктивен @Телефон"
+    }, {
+      "text" : "@НеАктивен  @Делать @Телефон"
+    }, {
+      "text" : "@НеАктивен @Телефон  @Делать"
+    }, {
+      "text" : "@Телефон @Делать"
+    }, {
+      "text" : "@Телефон @НеАктивен"
+    }, {
+      "text" : "@Делать @Телефон"
+    }, {
+      "text" : "@НеАктивен @Телефон"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3066,6 +3096,25 @@
     "priority" : 0
   } ],
   "entities" : [ {
+    "entity" : {
+      "name" : "Делать",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : true,
+      "phoneticSearch" : false,
+      "fuzzySearch" : true,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "я не смог могу уже это *дел*" ],
+      "value" : ""
+    } ]
+  }, {
     "entity" : {
       "name" : "Телефон",
       "enabled" : true,
@@ -3083,6 +3132,14 @@
       "type" : "synonyms",
       "rule" : [ "телефон", "номер" ],
       "value" : ""
+    }, {
+      "type" : "pattern",
+      "rule" : [ "*звон*" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "набирал", "набрал", "набираю", "набирала", "набрала" ],
+      "value" : ""
     } ]
   }, {
     "entity" : {
@@ -3092,15 +3149,15 @@
       "type" : "annotation",
       "priority" : 1,
       "noSpelling" : true,
-      "noMorph" : false,
+      "noMorph" : true,
       "phoneticSearch" : false,
-      "fuzzySearch" : false,
+      "fuzzySearch" : true,
       "client" : false,
       "hidden" : false
     },
     "records" : [ {
       "type" : "pattern",
-      "rule" : [ "[звони*] не (отвеча*/заблокиро*/доступ*)" ],
+      "rule" : [ "[звон*] не (отвеча*/заблокиро*/доступ*)" ],
       "value" : ""
     }, {
       "type" : "synonyms",
