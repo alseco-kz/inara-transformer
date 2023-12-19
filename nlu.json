@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_509-1000039011-mgY",
-    "name" : "inara_bot_509-1000039011-mgY",
+    "id" : "in-1000039011-THa",
+    "name" : "in-1000039011-THa",
     "folder" : "/platform"
   },
   "settings" : {
@@ -1211,8 +1211,6 @@
       "text" : "юридическое лицо"
     }, {
       "text" : "за какой месяц пришла квитанция"
-    }, {
-      "text" : "сделать возврат"
     }, {
       "text" : "на лицевой счет"
     }, {
@@ -2767,11 +2765,77 @@
       "text" : "отмена последнего платежа"
     }, {
       "text" : "возврат неправильного платежа"
+    }, {
+      "text" : "сделать возврат"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/NotToday",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не сегодня"
+    }, {
+      "text" : "а завтра"
+    }, {
+      "text" : "сегодня не могу "
+    }, {
+      "text" : "не получится сегодня"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/WhichPlace",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "к кому обратится"
+    }, {
+      "text" : "куда идти"
+    }, {
+      "text" : "где находится место"
+    }, {
+      "text" : "кого искать для решения вопроса"
+    }, {
+      "text" : "какое место посетить "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ReturnDate",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "а какие сроки возврата?"
+    }, {
+      "text" : "узнать сроки возращения денег"
+    }, {
+      "text" : "сколько ждать денег"
+    }, {
+      "text" : "В течение какого времени будет возврат"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Новый интент",
+    "enabled" : true,
+    "shared" : false,
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "priority" : 0
   } ],
   "entities" : [ {

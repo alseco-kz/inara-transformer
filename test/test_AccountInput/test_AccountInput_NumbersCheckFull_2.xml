@@ -325,6 +325,7 @@
     	<a>Подождёте?</a>
     	<timeoutReply interval="1"/>
     </test-case>
+    
     <test-case id="test_AccountInput_NumbersCheck_207">
     	<q>последний платеж</q>
     	<a></a>

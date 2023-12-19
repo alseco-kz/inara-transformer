@@ -5,10 +5,10 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Согласие_сегодня"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Согласие_сегодня/Question"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Согласие_сегодня"/>
+        
     </test-case>
 
     <test-case id='sp_ago_wo_extra_questions'>
@@ -16,10 +16,10 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
     </test-case>
     
     <test-case id='sp_dontknow_wo_extra_questions'>
@@ -27,10 +27,10 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>не знаю</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
     </test-case>
     
     <test-case id='sp_ago_cometoalseco'>
@@ -38,13 +38,13 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state ="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>а можно к вам прийти</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/ComeToAlseco"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/ComeToAlseco"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
     </test-case>
     
     <test-case id='sp_ago_WhereToGo'>
@@ -52,13 +52,13 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>а куда идти</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/HowFindContacts"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
     </test-case>
     
     <test-case id='sp_ago_HowFindContacts'>
@@ -66,13 +66,13 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>подскажите их контакты</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/HowFindContacts"/><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/HowFindContacts"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
     </test-case>
     
     
@@ -81,13 +81,13 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>кто может принести документы</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/Whobringsdocs"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Whobringsdocs"/><a></a>
+        <!--<a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>-->
     </test-case>
     
     <test-case id='sp_ago_WhereToGo_Whobringsdocs'>
@@ -95,16 +95,16 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>а куда идти</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/HowFindContacts"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>кто может принести документы</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/Whobringsdocs"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Whobringsdocs"/><a></a>
+        <!--<a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>-->
     </test-case>
     
     <test-case id='sp_ago_WhereToGo_ChangeAccountPerson'>
@@ -112,13 +112,13 @@
         <q>оплатили дважды</q>
         <a state="/SecondPayment/SecondPayment"/>
         <q>да</q>
-        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>давно</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>а куда идти</q>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
-        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <a state="/SecondPayment/TransferPoint/HowFindContacts"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации"/>
         <q>как сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>

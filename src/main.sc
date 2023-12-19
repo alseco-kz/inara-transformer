@@ -332,7 +332,8 @@ theme: /
 
     state: sessionDataSoftLimitExceeded
         # // обрабатываем событие о достижении soft лимита
-        event!: sessionDataSoftLimitExceeded
+        
+        event!: sessionDataSoftLimitExceeded   
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
     
