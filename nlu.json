@@ -144,6 +144,9 @@
       }, {
         "entityName" : "ОсновнойПоставщик",
         "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "Мусорные_синонимы",
+        "predicate" : "CONTAINS_NOT"
       } ]
     },
     "patterns" : [ "{(хочу/нужно/необходимо) узнать}" ],
@@ -1549,7 +1552,7 @@
     }, {
       "text" : "поменять квадратуру"
     }, {
-      "text" : "пкск натали первая на булак на счет"
+      "text" : "@КСК первая на счет чтобы меня соединили"
     }, {
       "text" : "Коммунальные услуги как долги"
     }, {
@@ -4035,6 +4038,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "приложение", "программа" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Мусорные_синонимы",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "сумма", "программа", "тариф", "адрес" ],
       "value" : ""
     } ]
   } ],

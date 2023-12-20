@@ -154,8 +154,8 @@
     <test-case id = '3'>
         <q>/start</q><a></a><a></a>
         <q>здравствуйте я хотела да энергосбыт телефон узнать</q>
-        <a state = "/SupplierContacts/SupplierContacts"></a>
-        <a state = "/BlockAccountNumInput/AccountInput"></a>
+        <a state = '/SupplierContacts/SupplierContacts/SupplierContactsSayContacts'></a>
+        <a></a><a></a>
     </test-case>
     
     
@@ -163,8 +163,8 @@
     <test-case id = '4 '>
         <q>/start</q><a></a><a></a>
         <q>здравствуйте я хотела да энергосбыт телефон узнать</q>
-        <a state = "/SupplierContacts/SupplierContacts"></a>
-        <a state = "/BlockAccountNumInput/AccountInput"></a>
+        <a state = '/SupplierContacts/SupplierContacts/SupplierContactsSayContacts'></a>
+        <a></a><a></a>
     </test-case>
     
     

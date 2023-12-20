@@ -1000,13 +1000,13 @@
     <test-case id='ChangeAccountPerson_210'>
         <q>/start</q><a></a><a></a>
         <q>здравствуйте мне нужно изменить инн</q>
-        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case> 
 
     <test-case id='ChangeAccountPerson_211'>
         <q>/start</q><a></a><a></a>
         <q>мне нужно изменить иин</q>
-        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case> 
     
 
@@ -1020,13 +1020,13 @@
     <test-case id='ChangeAccountPerson_2130'>
         <q>/start</q><a></a><a></a>
         <q>мы хотели перерегистрировать алику</q>
-        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
     </test-case> 
     
     
     <test-case id='ChangeAccountPerson_214'>
         <q>/start</q><a></a><a></a>
         <q>мы хотели перерегистрировать алсеко</q>
-        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson_Question'></a>
     </test-case>     
 </test>

@@ -224,7 +224,56 @@
     <test-case>
         <q>/start</q><a></a><a></a>
         <q>не надо мне человек менять твою мать</q>
-        <a state="/NoMatch"/>
+        <a state="/Start/DialogMakeQuestion"/>
     </test-case>   
     
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>последние данные за август месяц</q>
+        <a state="/NoMatch"/>
+    </test-case>  
+    
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела узнать какая сумма поступила</q>
+        <a state="/NoMatch"/>
+    </test-case>  
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать как в вашей новой программе</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать почему у меня прописано</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать тарифы</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать у нас адрес изменился</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать цыке это раз сеньку во первых</q>
+        <a state="/NoMatch"/>
+    </test-case>
 </test>
+
