@@ -206,7 +206,25 @@
         <a state="/NoMatch"/>
     </test-case>
     
+    # BOT-560
     
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно заключить договор</q>
+        <a state="/NoMatch"/>
+    </test-case>
     
+        
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно зарегистрировать кск</q>
+        <a state="/NoMatch"/>
+    </test-case>
+   
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>не надо мне человек менять твою мать</q>
+        <a state="/NoMatch"/>
+    </test-case>   
     
 </test>
