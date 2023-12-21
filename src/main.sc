@@ -341,7 +341,7 @@ theme: /
         event!: timeLimit
         script:
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
-        
+
 
 theme: /ИнициацияЗавершения
     
