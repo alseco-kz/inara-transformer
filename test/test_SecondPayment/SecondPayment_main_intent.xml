@@ -1,0 +1,75 @@
+<test>
+
+    <test-case id='second_pay_global_int'>
+        <q>/start</q><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>несколько раз отправил деньги</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>в приложении снялось два раза</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>банк списал деньги дважды</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>оплата прошла несколько раз</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>платила два раза за месяц</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>оплатила дважды</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>двойная оплата</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>двойной платеж</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+    
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>сдвоенный платеж</q>
+          <a state="/SecondPayment/SecondPayment"/>
+    </test-case>
+
+
+
+</test>
