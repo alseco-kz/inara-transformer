@@ -3044,18 +3044,156 @@
     },
     "patterns" : [ ],
     "priority" : 0
-  }, {
-    "path" : "/ReturnDate",
+  },  {
+    "path" : "/SecondPayment",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "В течение какого времени будет возврат"
+      "text" : "оплатила @квитанция дважды"
     }, {
-      "text" : "сколько ждать денег"
+      "text" : " платила два раза за месяц"
     }, {
-      "text" : "узнать сроки возращения денег"
+      "text" : "оплата прошла несколько раз"
     }, {
-      "text" : "а какие сроки возврата?"
+      "text" : "банк списал деньги дважды"
+    }, {
+      "text" : "в приложении снялось два раза"
+    }, {
+      "text" : "несколько раз отправил деньги"
+    }, {
+      "text" : "двойная оплата"
+    }, {
+      "text" : "двойной платеж"
+    }, {
+      "text" : "сдвоенный платеж"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/TimeToGetMoney",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "как быстро вернут деньги"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Whobringsdocs",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "кто может привезти бумаги"
+    }, {
+      "text" : "кто может прийти"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ComeToAlseco",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "А можно к вам прийти"
+    }, {
+      "text" : "у вас решить этот вопрос"
+    }, {
+      "text" : "через вас можно"
+    }, {
+      "text" : "а в алсеко это можно сделать"
+    }, {
+      "text" : "но в алсеко прийти"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/HowFindContacts",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "как найти их контакты"
+    }, {
+      "text" : "хочу с ними связаться"
+    }, {
+      "text" : "подскажите контакты поставщиков"
+    }, {
+      "text" : "нужны их телефоны"
+    }, {
+      "text" : "продиктуйте телефоны поставщиков"
+    }, {
+      "text" : "подскажите их контакты"
+    }, {
+      "text" : "как с ними можно связаться"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_двойная_оплата",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "так точно"
+    }, {
+      "text" : "да проплатила дважды"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Не_знаю",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не знаю я"
+    }, {
+      "text" : "не помню"
+    }, {
+      "text" : "давно было"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_сегодня",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Только что оплатил"
+    }, {
+      "text" : "совсем недавно"
+    }, {
+      "text" : "сегодня сделал"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/WhereToGo",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "куда идти"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3067,35 +3205,95 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "сделать возврат"
-    }, {
-      "text" : "возврат неправильного платежа"
-    }, {
-      "text" : "возврат неправильного платежа"
-    }, {
-      "text" : "откатить платеж"
-    }, {
-      "text" : "осуществить возврат платежа"
-    }, {
-      "text" : " сделать возврат"
-    }, {
-      "text" : "сделать возврат средств"
-    }, {
-      "text" : "вернуть платеж"
-    }, {
-      "text" : "верните деньги"
-    }, {
-      "text" : "вернуть оплату"
-    }, {
-      "text" : "возврат платежа   возврат денег"
-    }, {
-      "text" : "вернуть переплату"
+      "text" : "возврат средств"
     }, {
       "text" : "отменить платеж"
     }, {
       "text" : "вернуть деньги"
     }, {
-      "text" : "отменить платежвозврат средств"
+      "text" : "вернуть переплату"
+    }, {
+      "text" : "возврат денег"
+    }, {
+      "text" : "возврат платежа"
+    }, {
+      "text" : "вернуть оплату"
+    }, {
+      "text" : "верните деньги"
+    }, {
+      "text" : "вернуть платеж"
+    }, {
+      "text" : "сделать возврат средств"
+    }, {
+      "text" : " сделать возврат"
+    }, {
+      "text" : "осуществить возврат платежа"
+    }, {
+      "text" : "откатить платеж"
+    }, {
+      "text" : "отмена последнего платежа"
+    }, {
+      "text" : "возврат неправильного платежа"
+    }, {
+      "text" : "сделать возврат"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/NotToday",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не сегодня"
+    }, {
+      "text" : "завтра"
+    }, {
+      "text" : "сегодня не могу "
+    }, {
+      "text" : "не получится сегодня"
+    }, {
+      "text" : "не успею "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/WhichPlace",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "к кому обратится"
+    }, {
+      "text" : "куда идти"
+    }, {
+      "text" : "где находится место"
+    }, {
+      "text" : "кого искать для решения вопроса"
+    }, {
+      "text" : "какое место посетить "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ReturnDate",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "а какие сроки возврата?"
+    }, {
+      "text" : "узнать сроки возращения денег"
+    }, {
+      "text" : "сколько ждать денег"
+    }, {
+      "text" : "В течение какого времени будет возврат"
     } ],
     "classificationRules" : {
       "refs" : [ ]
