@@ -1,0 +1,147 @@
+<test>
+
+
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>возврат средств</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>отменить платеж</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>вернуть деньги</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>вернуть переплату</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+    <test-case id='second_pay_global_int'>
+          <q>/start</q><a></a><a></a>
+          <q>возврат денег</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+    
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>откатить платеж</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>осуществить возврат платежа</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>Хотелось бы сделать возврат</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>сделать возврат средств</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>хочу вернуть платеж</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>верните деньги</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>вернуть оплату</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>возврат платежа</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>возврат денег</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>вернуть переплату</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>вернуть деньги</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>                            
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>отменить платеж</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>/SecondPayment/TransferPoint/Agreement
+    </test-case>
+
+    <test-case id="ReturnPayment_global_int">
+          <q>/start</q><a></a><a></a>
+          <q>возврат средств</q>
+          <a state="/SecondPayment/ReturnPayment"/>
+          <q>да</q>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>
+    </test-case>
+</test>
