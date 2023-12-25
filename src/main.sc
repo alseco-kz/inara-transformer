@@ -30,10 +30,10 @@ require: SupplierContacts.sc
 require: AlsecoCommon.sc
 # общие вопросы по Инаре
 require: AboutInara.sc
-# сценарий по двойной оплате
-require: SecondPayments.sc
 # вопросы по налогам
 require: Tax.sc
+
+require: KazLanguage.sc
 
 # Сохранение данных по клиенту 
 require: Functions/ClientData.js
@@ -80,8 +80,9 @@ theme: /
             # переключаем Инару на радостный голос "Алены" 
             $dialer.setTtsConfig({emotion: "good"});
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
-        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
-        a: подсказать дату последней оплаты или контакты поставщика услуг
+        a: Я Инара, ваш виртуальный помощник.
+        # Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
+        # a: подсказать дату последней оплаты или контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
@@ -92,7 +93,7 @@ theme: /
                 bargeIn: "phrase",
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
-             FindAccountNumberClear();
+            FindAccountNumberClear();
         
         state: DialogMakeQuestion
             intent: /НачалоРазговора 
@@ -100,6 +101,7 @@ theme: /
             q: девушка
             q: * мне [надо/нужно] поменять
             q: * [меня] интересует [такой] вопрос
+            q: [$oneWord] знаете [$oneWord]
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
@@ -354,8 +356,7 @@ theme: /
 
     state: sessionDataSoftLimitExceeded
         # // обрабатываем событие о достижении soft лимита
-        
-        event!: sessionDataSoftLimitExceeded   
+        event!: sessionDataSoftLimitExceeded
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
 
@@ -367,7 +368,6 @@ theme: /
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
         a: Не смогла найти ответ. Переключаю вас на оператора 
         go!: /CallTheOperator
-
 
 theme: /ИнициацияЗавершения
     

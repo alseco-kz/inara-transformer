@@ -1,6 +1,6 @@
 <test>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>адрес скажите</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>повторите пожалуйста</q>
@@ -8,12 +8,15 @@
         <q>не понял можете ли вы повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>повторите</q>
-        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>     
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>  
+        <q>повторите</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a> 
     </test-case>
     
+
     
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>адрес скажите</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>повторите пожалуйста</q>
@@ -26,7 +29,7 @@
     
     
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>адрес скажите</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>повторите пожалуйста</q>
@@ -39,34 +42,60 @@
     
     
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>укажите адрес</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>я вас не поняла можете ли вы повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
-        <q>155 что можете повторить</q>
+        <q>сто пятьдесят пять что можете повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>укажите адрес</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>я вас не поняла можете ли вы повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
-        <q>155 что можете повторить</q>
+        <q>сто пятьдесят пять что можете повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
+
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>укажите адрес</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
         <q>я вас не поняла можете ли вы повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
-        <q>155 что можете повторить</q>
+        <q>сто пятьдесят пять что можете повторить</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>адрес скажите свой</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
+        <q>еще есть адреса</q>
+        <a state = "/AlsecoCommon/AlsecoAddress/AlsecoAddressHaveOtherAddress"></a>
+        <q>повторите адрес</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
+    </test-case>    
     
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>адрес скажите свой</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
+        <q>у вас только один офис</q>
+        <a state = "/AlsecoCommon/AlsecoAddress/AlsecoAddressHaveOtherAddress"></a>
+    </test-case>   
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>адрес скажите свой</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
+        <q>а где еще вы есть</q>
+        <a state = "/AlsecoCommon/AlsecoAddress/AlsecoAddressHaveOtherAddress"></a>
+    </test-case>   
     
     
 </test>   

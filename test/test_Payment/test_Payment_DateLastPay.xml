@@ -1,27 +1,27 @@
 <test>
     <test-case id="test_Payment_DateLast_Pay_intent_1">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>дата последней оплаты</q>
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
     
     <test-case id="test_Payment_DateLast_Pay_intent_2">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>прошла ли оплата по лицевому счету</q>
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
     
     <test-case id="test_Payment_DateLast_Pay_intent_3">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>когда в последний раз платили по моему счету</q>
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
 
     <test-case id="test_Payment_DateLast_Pay_intent_3_1">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>когда в последний раз платили по моему счету</q>
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -31,7 +31,7 @@
     </test-case>
 
     <test-case id="test_Payment_DateLast_Pay_intent_3_2">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>когда в последний раз платили по моему счету</q>
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -56,7 +56,7 @@
     </test-case>
 
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>а будьте добры а вы можете подсказать по квитанции прошла ли сумма или нет или я не туда набрала</q>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>

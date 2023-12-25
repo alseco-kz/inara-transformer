@@ -3,7 +3,7 @@
     <!--NEW TESTS-->
     
      <test-case id="Услуга какой номер по Электроэнергия с лицевым, контакты поставщика получены">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>дай номер поставщиков</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>   
@@ -36,7 +36,7 @@
 
 
     <test-case id="Услуга какой номер по  электроснабжение с лицевым, контакты поставщика получены">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>дай номер поставщиков</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>   
@@ -937,5 +937,36 @@
         <a>АлматыЭнергоСбыт - 356-04-63.</a>
         <a>Повторить?</a>
     </test-case>
+
+	<test-case id="Услуга какой номер по телефон с лицевым, контакты поставщика получены">
+        <q>дай номер поставщиков</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <!--18, 202, 211, 289-->
+            <serv>serviceCodes=18&amp;serviceCodes=202&amp;serviceCodes=211&amp;serviceCodes=289</serv>     
+            </parameters>
+            <response>{"accountId":7174543,"services":[{"serviceCode":18,"serviceName":"Телефон","supplierName":"Казах телеком","supplierCodeName":"601","supplierContacts":"160"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <q>да</q>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Назовите услугу</a>
+        <q>телефон</q>
+        <a>Записывайте.</a>
+        <a>Казах телеком - 160.</a>
+        <a>Повторить?</a>
+    </test-case>    
 
 </test>

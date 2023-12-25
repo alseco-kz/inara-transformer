@@ -13,7 +13,7 @@ function FindAccountNumberClear(){
     $session.Account = {};
     $session.Account.Number = 0;
     $session.Account._number = 0;
-    $session.repeats = null;
+    
     
 }
 //---------------------------------------------------------------------------

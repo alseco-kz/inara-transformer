@@ -1,6 +1,6 @@
- <test>
+<test>
     <test-case id="AlsecoEmail_1">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>мне нужна ваша бухгалтерия</q>
         <a state="/AlsecoCommon/AlsecoFinance"/>
         <!--<q>повторите</q>-->
