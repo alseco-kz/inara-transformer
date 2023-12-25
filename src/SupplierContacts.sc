@@ -46,8 +46,6 @@ theme: /SupplierContacts
                 SupplContactsSetServ($temp.Service.SERV_ID)
             } else if ($parseTree._алсеко){
                 $reactions.transition("/AlsecoCommon/AlsecoPhones");
-            } else if ($parseTree._КСК){
-                SupplContactsSetServ([1])
             }
             
 
@@ -112,26 +110,13 @@ theme: /SupplierContacts
 
             state: SupplierContactsByAccountPhone
                 q: телефон
-                q: * (телефония/телефонная связь) * 
                 script:
                     SupplContactsSetServ([18, 202, 211, 289])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
-                    go!: /CallTheOperator    
-            
-            state: SupplierContactsByAccountWater
-                q: вода
-                a: уточните, какая вода интересует - горячая или холодная? 
-                go: SupplierContactsByAccountServ
-                
-                state: SupplierContactsByAccountHotWater
-                    q: * горяч* *
-                    script:
-                        SupplContactsSetServ([206, 178, 14, 7, 209])
-                    if: SupplContactsGetServices()
-                        go!:../../../SupplierContactsSayContacts
+                    go!: /CallTheOperator                    
 
                 state: SupplierContactsByAccountColdWater
                     q: * холод* *
@@ -178,7 +163,7 @@ theme: /SupplierContacts
                 event: noMatch
                 a: Я не нашла услугу. Перевожу Вас на оператора
                 go!: /CallTheOperator
-        
+                
         
         state: SupplierContactsSayContacts
             script:
@@ -307,7 +292,6 @@ theme: /SupplierContacts
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить
                 intent: /Повторить
-                q: * @duckling.number *
                 go!: ../../SupplierContactsSayContacts
 
             state: CanIHelpYouAgree
@@ -323,7 +307,6 @@ theme: /SupplierContacts
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
-                intent: /Несогласие_перечислить
                 go!: /bye                    
             
             
@@ -342,11 +325,10 @@ theme: /NoElectricService
             a: Так, у Вас отключили свет?
             a: Нужен телефон по свету? 
             
-        
         state: CallerNoElectricYes
             intent: /Согласие
             intent: /Согласие_адрес_определен_верно
-            
+            intent: /Услуга_НетСвета
             q: $yes *
             q: $agree *
             go!: CallerNoElectricSayAES

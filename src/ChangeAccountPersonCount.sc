@@ -194,8 +194,4 @@ theme: /ChangeAccountPersonCount
                 intent: /Несогласие
                 intent: /Несогласие_помочь
                 intent: /greeting
-                go!: /bye  
-            
-            state: RepeatSite
-                intent: /SiteRepeat
-                go!:/ChangeAccountPersonCount/ChangeAccountPersonCount/Online
+                go!: /bye        

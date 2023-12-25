@@ -210,7 +210,6 @@ theme: /ChangeAccountPerson
 
             state: CanIHelpYouOnline
                 intent: /Онлайн
-                intent: /SiteRepeat
                 go!: ../../Online
             
             state: CanIHelpYouOffline

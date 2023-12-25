@@ -647,7 +647,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно узнать номер лицевого счета</q>
         <a state="/NoMatch"/>
     </test-case>

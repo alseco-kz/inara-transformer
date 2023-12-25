@@ -98,9 +98,7 @@ function GetMainSupplNames(MainSuppList){
     var return_str = "";
 
     Object.keys(MainSuppList).forEach(function(elem){
-        if (MainSuppList[elem].value.is_main){
-            return_str = return_str + (return_str.length > 0 ? ", ": " ")  + MainSuppList[elem].value.suppl_talk_name;
-        }
+        return_str = return_str + (return_str.length > 0 ? ", ": " ")  + MainSuppList[elem].value.suppl_talk_name;
     });
         
     return return_str;
@@ -116,11 +114,9 @@ function GetMainSupplNamesContracts(MainSuppList){
     Object.keys(MainSuppList).forEach(function(elem,i){
         // last не работает. надо как-то понять, что это элемент последний
         var last = (i == MainSuppList.length-1) && (i>1);
-        if (MainSuppList[elem].value.is_main){
-             return_str = return_str + (return_str.length > 0 ? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
-        }
+        
 //        $reactions.answer(i);
-       
+        return_str = return_str + (return_str.length > 0 ? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
     });
         
     return return_str;
@@ -160,10 +156,9 @@ function isAccountHasSuppl(name) {
 // возвращает название поставщика и телефон
 function GetMainSupplNamesContact(MainSuppList, suppl_name){
     var $session = $jsapi.context().session;
-    
     var return_str = MainSuppList[suppl_name].value.suppl_talk_name + " - " + MainSuppList[suppl_name].value.talk_phone ;
-    
-    return return_str
+
+    return return_str;
 
      
  }

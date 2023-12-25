@@ -2,11 +2,11 @@
 	<test-case>
     	<random>0</random>
     	<q>/start</q>
-    	<a>Я Инара, ваш виртуальный помощник.</a>
-    	
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции,</a>
+    	<a> подсказать дату последней оплаты или контакты поставщика услуг</a>
+    	<a>Что вы хотите узнать?</a>
     	<q>алло я хотела</q>
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Что вы хотите узнать?</a>
     	<q>оператора сека соедините пожалуйста</q>
         <a state ="/SwitchToOperator">Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос</a>
     	<q>оператор</q>
@@ -16,11 +16,11 @@
 	<test-case>
     	<random>0</random>
     	<q>/start</q>
-    	<a>Я Инара, ваш виртуальный помощник.</a>
-    	
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции,</a>
+    	<a> подсказать дату последней оплаты или контакты поставщика услуг</a>
+    	<a>Что вы хотите узнать?</a>
     	<q>да мне не надо менять</q>
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Что вы хотите узнать?</a>
     	<q>оператора сека соедините пожалуйста</q>
         <a state ="/SwitchToOperator">Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос</a>
     	<!--<q>да мне не надо менять</q>-->
@@ -28,24 +28,29 @@
 	</test-case>	
 	<test-case>
     	<random>0</random>
-	    <q>/start</q><a></a><a></a>
+	    <q>/start</q>
+	    <a></a>
+	    <a></a>
+	    <a></a>
 	    <q>мне нужно</q>
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Что вы хотите узнать?</a>
 	    
 	</test-case>
 	<test-case>
     	<random>0</random>
-	    <q>/start</q><a></a><a></a>
+	    <q>/start</q><a></a><a></a><a></a>
 	    <q>ну зачем мне это все рассказывать</q>
-    	<a>Чем я могу помочь Вам?</a>
+    	<a>Что вы хотите узнать?</a>
 	</test-case>
 	
     #  BOT-245
     
     <test-case>
         <random>0</random>
-	    <q>/start</q><a></a><a></a>
-
+        <q>/start</q>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Ладно.</q>
         <a state="/Start/DialogMakeQuestion"></a>
     </test-case>
@@ -53,7 +58,7 @@
     # BOT-316
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте я хотела бы чтобы наш</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>
@@ -61,7 +66,7 @@
     # BOT-316
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>вы</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>
@@ -69,7 +74,7 @@
     # BOT-316
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>добрый день можно к вам такой вопрос</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>
@@ -77,20 +82,23 @@
     # BOT-258
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>
     
     <test-case id='test_main_dialstart_1'>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>девушка здравствуйте меня интересует такой вопрос</q>
         <a state = '/Start/DialogMakeQuestion'></a>
     </test-case>
     # BOT-295
     
     <test-case>
-	    <q>/start</q><a></a><a></a>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
         <q>хочу узнать</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>    

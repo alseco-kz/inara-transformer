@@ -1,4 +1,4 @@
-﻿name: InaraSTS 
+name: InaraSTS 
 
 entryPoint: main.sc
 
@@ -22,7 +22,12 @@ tests:
         # - *.*
         # - *
         # - test_i/test_irina.xml
-        # - test_AlsecoCommon/*.xml
+        #  - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
+          
+          #- test_SecondPayment/SecondPayment_offline_wo_words.xml
+        #  - test_SecondPayment/SecondPayment_main_intent.xml
+        #   - test_SecondPayment/SecondPayment_offline_wo_words.xml
+
 
 messages:
   onError:

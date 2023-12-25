@@ -1,7 +1,7 @@
 <test>
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>дай контакты поставщиков</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -10,7 +10,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по полив</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -19,7 +19,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по Холодная вода</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -28,7 +28,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по скважина</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -37,7 +37,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по Отопление</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -46,7 +46,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по тепло</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -55,7 +55,7 @@
 
 
           <test-case>
-              <q>/start</q><a></a><a></a>
+              <q>/start</q><a></a><a></a><a></a>
               <q>какой номер по Отопление жилплощади</q>
               <a state = "/SupplierContacts/SupplierContacts"></a>
               <a state = "/BlockAccountNumInput/AccountInput"></a>
@@ -426,7 +426,7 @@
         # BOT-294
         
         <test-case>
-            <q>/start</q><a></a><a></a>
+            <q>/start</q><a></a><a></a><a></a>
             <q>мне нужно узнать номер телефона по оплате холодной воды жетысуйский район</q>
             <a state="/SupplierContacts/SupplierContacts"/>
             <a state="/BlockAccountNumInput/AccountInput"/>

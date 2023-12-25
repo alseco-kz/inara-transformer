@@ -17,11 +17,6 @@ function countRepeatsInRow() {
     } else{
        $.session.repeatsInRow = 1; // число раз подряд
     }
-    // log($.session.repeatsInRow)
+    log($.session.repeatsInRow)
     return $.session.repeatsInRow;
-}
-
-function NewSessionHistoryClear(){
-    FindAccountNumberClear();
-    $session.repeats = null;
 }
