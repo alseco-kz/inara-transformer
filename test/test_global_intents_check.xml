@@ -1,10 +1,7 @@
 <test>
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -16,10 +13,7 @@
     </test-case>
         
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -33,10 +27,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -50,10 +41,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -67,10 +55,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -84,10 +69,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -101,10 +83,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -118,10 +97,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -135,10 +111,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -152,10 +125,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -169,10 +139,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -186,10 +153,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -203,10 +167,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -220,10 +181,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -237,10 +195,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -254,10 +209,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -271,10 +223,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>
@@ -288,10 +237,7 @@
     
     
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>это сложно для меня</q>

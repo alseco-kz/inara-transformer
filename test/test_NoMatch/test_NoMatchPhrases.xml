@@ -118,10 +118,7 @@
     </test-case>
     
     <test-case id="NoMatch_Дубликат_01">
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a>
         <q>как получить дубликат счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
@@ -132,7 +129,7 @@
     <!--    <a state = "/NoMatch"></a>   ОШИБКА, БЕДА ПРИШЛА ОТКУДА НЕ ЖДАЛИ-->    
     <!--</test-case>-->
 
-    </test-case>
+    <!--<test-case id="NoMatch_Дубликат_01">-->
     <!--    <q>/start</q><a></a><a></a>-->
     <!--    <q>где можно получить квитанцию</q>-->
     <!--    <a state = "/NoMatch"></a>-->
@@ -204,7 +201,7 @@
     # BOT-380
     
     <test-case>
-        
+        <q>/start</q><a></a><a></a>
         <q>мне надо вызвать на дом электрика</q>
         <a state="/NoMatch"/>
     </test-case>

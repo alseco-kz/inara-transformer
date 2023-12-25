@@ -1,0 +1,7 @@
+<test>
+    <test-case id="test_Bill_intent_01">
+        <q>/start</q><a></a><a></a>
+        <q>по квитанциям</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+</test>
