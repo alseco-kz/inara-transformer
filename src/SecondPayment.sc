@@ -52,7 +52,7 @@ theme: /SecondPayment
                 state: Согласие_Обратиться
                     intent: /Согласие
                     a:  Отлично!
-                    go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                    go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
                 
                 state: Несогласие_Обратиться
                     intent: /Несогласие
@@ -63,7 +63,7 @@ theme: /SecondPayment
   
                     if: $temp.hour<9  ||( $temp.hour==9 && $temp.minute <30)
                         a:  **Сегодня,  до шестнадцати ноль ноль** нужно принести  чек и копию удостоверения личности по адресу Карасай Батыра, 155 в офис Алсеко !
-                        go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                        go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
                     else:
                         
                         # go!: /SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю - ПРОВЕРИТЬ, туда ли направляет
@@ -85,32 +85,32 @@ theme: /SecondPayment
                 a:  Ваши деньги **уже поступили поставщикам** и  будут учтены как переплата  в следующей квитанции.
                     АЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг.
                     Возврат могут сделать только поставщики, контакты которых указаны в квитанции.
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
                 
-            state: Требование_дальнейшей_консультации
+        state: Требование_дальнейшей_консультации
+            random:
+                a: Вам нужна дальнейшая консультация?
+                a: Необходима ли вам дальнейшая консультация по данному вопросу?
+                
+            
+            state: Требование_дальнейшей_консультации_Yes
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
                 random:
-                    a: Вам нужна дальнейшая консультация?
-                    a: Необходима ли вам дальнейшая консультация по данному вопросу?
-                    
-                
-                state: Требование_дальнейшей_консультации_Yes
-                    q: $yes
-                    q: $agree
-                    intent: /Согласие
-                    intent: /Согласие_помочь
-                    random:
-                        a: Задайте Ваш Вопрос
-                        a: Я вас слушаю
-                    # go!:..
-                state: Требование_дальнейшей_консультации_No
-                    q: $no
-                    q: $disagree
-                    intent: /Несогласие
-                    intent: /Несогласие_помочь
-                    go!: ../../../../CanIHelpYou 
-                state: Требование_дальнейшей_консультации_Повтор
-                    intent: /Повторить
-                    go!: /repeat
+                    a: Задайте Ваш Вопрос
+                    a: Я вас слушаю
+                # go!:..
+            state: Требование_дальнейшей_консультации_No
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                go!: ../../../../CanIHelpYou 
+            state: Требование_дальнейшей_консультации_Повтор
+                intent: /Повторить
+                go!: /repeat
     
         state: Whobringsdocs
             intent: /Whobringsdocs
@@ -121,10 +121,10 @@ theme: /SecondPayment
                 random:
                     a: У к+аждого поставщика  **свои правила**. Лучше уточн+ите у них
                     a: У к+аждого поставщика  **свои правила**. Актуальную информацию можно узнать только у них
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
             else:
                 a: Это не важно. Главное принести нужные документы.
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
        
         # state: Sroki_vozvrata
         #     intent: /Sroki
@@ -142,22 +142,22 @@ theme: /SecondPayment
             intent: /WhichPlace
             if: $session.nesoglasie == 1
                 a: Вам нужно обратиться с заявлением к каждому поставщику услуг. Контакты поставщиков Вы можете найти в квитанции, либо на нашем сайте алсеко точка кей зет.
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
             else:
             #В какой банк ?Куда идти?
                 a: Идите в банк через который оплатили квитанцию
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
                 
         state: ComeToAlseco
             intent: /ComeToAlseco
             intent: /Лично
             if: $session.nesoglasie == 1
                 a:  К **н+ам н+ет**. Возвраты осуществляют **только поставщики** услуг
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
             else:
                 a: **Сегодня,  до шестнадцати ноль ноль** нужно принести  чек и копию удостоверения личности по адресу Карасай Батыра, 155 в офис Алсеко !
                         # go!: /SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю - ПРОВЕРИТЬ, туда ли направляет
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации 
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации 
             
                     
                 # state: CanIHelpYouAgree
@@ -167,10 +167,10 @@ theme: /SecondPayment
                 #     intent: /Согласие_помочь
                 #     go!: /WhatDoYouWant
         state: NotToday
-            intent!: /NotToday
-            a: К тому времени Ваши деньги уже поступят поставщикам и будут учтены как переплата  в следующей квитанцииАЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг.Возврат могут сделать только поставщики, контакты которых указаны в квитанции
+            intent: /NotToday
+            a: К тому времени Ваши деньги уже поступят поставщикам и будут учтены как переплата  в следующей квитанции АЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг.Возврат могут сделать только поставщики, контакты которых указаны в квитанции
     
-            go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации 
+            go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации 
                 
 
         
@@ -178,10 +178,10 @@ theme: /SecondPayment
             intent: /ReturnDate
             if: $session.nesoglasie==1
                 a:У к+аждого поставщика  **свои правила**. Лучше уточн+ите у них
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации 
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации 
             else:
                 a: Срок возврата уточните  у банка, через который производилась оплата. Он зависит только от них
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации 
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации 
             
     state: CanIHelpYou 
         script:

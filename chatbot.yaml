@@ -19,6 +19,7 @@ tests:
         # - *
         #   - test_NoMatch/test_NoMatchPhrases.xml
         #   - test_main/test_main_trashToOperatior.xml 
+        #    - test_SecondPayment/*.xml
     exclude: 
       
         # - *.*
