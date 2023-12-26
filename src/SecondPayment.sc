@@ -1,5 +1,4 @@
-theme: /
-    theme: /SecondPayment
+theme: /SecondPayment
     
     state: SecondPayment
         intent!: /SecondPayment
