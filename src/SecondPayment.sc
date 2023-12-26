@@ -33,6 +33,8 @@ theme: /SecondPayment
             
         state: Agreement
             intent: /Согласие
+            intent: /ReturnPayment
+            intent: /SecondPayment
             script:
                 $session.nesoglasie = 0; 
             random: 

@@ -236,11 +236,7 @@
     
     
     
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>я хотела узнать какая сумма поступила</q>
-        <a state="/NoMatch"/>
-    </test-case>  
+  
     
     
     <test-case>
