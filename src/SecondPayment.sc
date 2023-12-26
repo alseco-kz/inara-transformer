@@ -79,6 +79,7 @@ theme: /SecondPayment
             state: Несогласие_не_знаю
                 intent: /Несогласие
                 intent: /Не_знаю
+                intent: /NotToday
                 script:
                     $session.nesoglasie = 1
                 a:  Ваши деньги **уже поступили поставщикам** и  будут учтены как переплата  в следующей квитанции.
@@ -166,11 +167,11 @@ theme: /SecondPayment
                 #     intent: /Согласие_помочь
                 #     go!: /WhatDoYouWant
         state: NotToday
-            intent: /NotToday
+            intent!: /NotToday
             a: К тому времени Ваши деньги уже поступят поставщикам и будут учтены как переплата  в следующей квитанцииАЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг.Возврат могут сделать только поставщики, контакты которых указаны в квитанции
-
+    
             go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации 
-            
+                
 
         
         state: ReturnDate
