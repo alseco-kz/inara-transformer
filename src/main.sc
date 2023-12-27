@@ -33,6 +33,8 @@ require: AboutInara.sc
 # вопросы по налогам
 require: Tax.sc
 
+require: SecondPayment.sc
+
 require: KazLanguage.sc
 
 # Сохранение данных по клиенту 

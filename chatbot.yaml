@@ -17,6 +17,7 @@ tests:
         # - test_ChangeAccountPerson/*.xml
         # - *.*
         # - *
+          -  test_SecondPayment/*.xml
     exclude: 
       
         # - *.*
