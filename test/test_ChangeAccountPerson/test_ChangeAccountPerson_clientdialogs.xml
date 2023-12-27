@@ -1,0 +1,23 @@
+<test>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>нам надо переоформить с одной фамилией на другую</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+        <q>да онлайн хотим задать заявку подать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"></a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"></a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou"></a>
+        <q>а еще можете повторить что надо сделать</q>
+        <a state="/repeat"></a>
+        <q>так быстро говорили я не успел записать то что я должен сделать с мат зайти</q>
+        <a state="/repeat"></a>
+    </test-case>
+	<test-case>
+        <q>/start</q><a></a><a></a>
+		<q>сменить фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+	    <q>господи да ничего я не хочу никаких онлайн можно по человечески взять и ответить</q>
+		<a state = "/SwitchToOperator"></a>
+	</test-case>
+
+</test>

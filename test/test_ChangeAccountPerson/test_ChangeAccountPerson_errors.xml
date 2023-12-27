@@ -1,0 +1,389 @@
+<test>
+        <test-case id='change_person_error2'>
+        <q>/start</q><a></a><a></a>
+        <q>мы поменяли компанию клининговую</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error3'>
+        <q>/start</q><a></a><a></a>
+        <q>подскажите пожалуйста недавно пришла квитанция примерно пятого мая за какой месяц она пришла</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error4'>
+        <q>/start</q><a></a><a></a>
+        <q>квитанцию не правильно начислили</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error5'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня произошла ошибка в квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error6'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать почему на манже четыре второй месяц не приносят квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error7'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно ввести пароль</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error8'>
+        <q>/start</q><a></a><a></a>
+        <q>доставка квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error9'>
+        <q>/start</q><a></a><a></a>
+        <q>нам надо в квитанцию добавить строчку</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error10'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела сообщить что мне сегодня разносили квитанции и вот</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error11'>
+        <q>/start</q><a></a><a></a>
+        <q>мне не пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error12'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно подключить домофон</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error13'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу чтобы квитанции мне приходила на электронную почту</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error14'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно поменять букву</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error15'>
+        <q>/start</q><a></a><a></a>
+        <q>нужно мне нужно поменять буковку в название улицы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <!--<test-case id='change_person_error16'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>дом пять</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='change_person_error17'>
+        <q>/start</q><a></a><a></a>
+        <q>подскажите пожалуйста там в квитанции неправильно указали объем квадратуру домов как можно это изменить</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error18'>
+        <q>/start</q><a></a><a></a>
+        <q>не приходит квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error19'>
+        <q>/start</q><a></a><a></a>
+        <q>почему не приносят в бумажном носителе квитанцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error20'>
+        <q>/start</q><a></a><a></a>
+        <q>да почему не приносят квитанцию в бумажном носителе</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <!--<test-case id='change_person_error21'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>изменить адрес</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='change_person_error22'>
+        <q>/start</q><a></a><a></a>
+        <q>вы не правильно указываете данные в квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error23'>
+        <q>/start</q><a></a><a></a>
+        <q>да мне не надо менять</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error24'>
+        <q>/start</q><a></a><a></a>
+        <q>не надо мне ничего менять</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error25'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно чтобы сделали изоляцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error26'>
+        <q>/start</q><a></a><a></a>
+        <q>информация квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error27'>
+        <q>/start</q><a></a><a></a>
+        <q>не пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+
+    <test-case id='change_person_error29'>
+        <q>/start</q><a></a><a></a>
+        <q>не приносят квитанцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error30'>
+        <q>/start</q><a></a><a></a>
+        <q>дом третий месяц не приходит квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error31'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать почему счет за телеком нет на квитанции квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error32'>
+        <q>/start</q><a></a><a></a>
+        <q>четчик надо поменять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error33'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error34'>
+        <q>/start</q><a></a><a></a>
+        <q>мне надо поставить на учет счетчик водообеспечения</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error35'>
+        <q>/start</q><a></a><a></a>
+        <q>сменили счетчик дома и испортилось калькуляция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error36'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно изменить площадь квартиры</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error37'>
+        <q>/start</q><a></a><a></a>
+        <q>не от квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error38'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно поменять площадь квартиры сделать корректировку</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error39'>
+        <q>/start</q><a></a><a></a>
+        <q>на лицевой счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error40'>
+        <q>/start</q><a></a><a></a>
+        <q>квитанции не обнаружилась мне</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error41'>
+        <q>/start</q><a></a><a></a>
+        <q>квитанции нет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error42'>
+        <q>/start</q><a></a><a></a>
+        <q>не принесли квитанцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+
+    <test-case id='change_person_error44'>
+        <q>/start</q><a></a><a></a>
+        <q>почему почему я хочу чтобы одной квитанции подключали сека и в</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error45'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно кк которая относится</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error46'>
+        <q>/start</q><a></a><a></a>
+        <q>по вопросу не получения квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error47'>
+        <q>/start</q><a></a><a></a>
+        <q>показания передать</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error48'>
+        <q>/start</q><a></a><a></a>
+        <q>не привезли квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error49'>
+        <q>/start</q><a></a><a></a>
+        <q>я не получил квитанцию об оплате за</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error50'>
+        <q>/start</q><a></a><a></a>
+        <q>не своевременная доставка квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error51'>
+        <q>/start</q><a></a><a></a>
+        <q>а почему квитанция не пришла</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error52'>
+        <q>/start</q><a></a><a></a>
+        <q>не принесли квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error53'>
+        <q>/start</q><a></a><a></a>
+        <q>девушка</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error54'>
+        <q>/start</q><a></a><a></a>
+        <q>я не могу распечатать квитанции по адресу</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error55'>
+        <q>/start</q><a></a><a></a>
+        <q>я постою</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error56'>
+        <q>/start</q><a></a><a></a>
+        <q>у нас квитанции вообще не пришли</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error57'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня почему то квитанция на на каски пришла нулевой оплатой я вот хотела уточнить это что</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error58'>
+        <q>/start</q><a></a><a></a>
+        <q>и один и несколько лицевых счет в один на юридический адрес</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error59'>
+        <q>/start</q><a></a><a></a>
+        <q>объединить две квитанции в одну</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error60'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error61'>
+        <q>/start</q><a></a><a></a>
+        <q>на лицевой счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error62'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня произошла ошибка в квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error63'>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте у меня на лицевой счет за свет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error64'>
+        <q>/start</q><a></a><a></a>
+        <q>если долг на лицевом счете</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error65'>
+        <q>/start</q><a></a><a></a>
+        <q>на счету очень много долгов от бывшего хозяина</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error66'>
+        <q>/start</q><a></a><a></a>
+        <q>нужно передать контролеру показания счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error67'>
+        <q>/start</q><a></a><a></a>
+        <q>почему квитанции не пишет казактелеком</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error68'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно поменять показания</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error69'>
+        <q>/start</q><a></a><a></a>
+        <q>по поменять жилплощадь</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error71'>
+        <q>/start</q><a></a><a></a>
+        <q>в квитации не указана оплата за телефон</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error72'>
+        <q>/start</q><a></a><a></a>
+        <q>квитанции данные не поменялись</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error73'>
+        <q>/start</q><a></a><a></a>
+        <q>счетчик в квитанции не отмечен</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error74'>
+        <q>/start</q><a></a><a></a>
+        <q>узнать собственника недвижимости</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error75'>
+        <q>/start</q><a></a><a></a>
+        <q>в квитанции данные не поправили</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error76'>
+        <q>/start</q><a></a><a></a>
+        <q>неправильные показания в квитанции</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error77'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать вот пришла квитанция услуги за кабельное телевидение ну нет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error78'>
+        <q>/start</q><a></a><a></a>
+        <q>мне надо поменять</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='change_person_error79'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать вот пришла квитанция услуги за кабельное телевидение ну нет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error80'>
+        <q>/start</q><a></a><a></a>
+        <q>почему не начислили мне в квитанции за телефон</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='change_person_error81'>
+        <q>/start</q><a></a><a></a>
+        <q>вот я хочу вас спросить вот пришли сейчас квитанции а мне пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+</test>

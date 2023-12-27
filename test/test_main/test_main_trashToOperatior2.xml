@@ -1,0 +1,227 @@
+<test>
+    <test-case id="double_bill_1">
+        <q>/start</q><a></a><a></a>
+        <q>я недавно оплатила ком услуги почему мне опять выставили квитанцию</q>        
+        <a state="/NoMatch"></a>
+    </test-case>
+    <test-case id='double_bill_2'>
+        <q>/start</q><a></a><a></a>
+        <q>Я только что заплатила за коммунальные услуги, почему я снова получаю счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_3'>
+        <q>/start</q><a></a><a></a>
+        <q>Я недавно оплатила коммунальные услуги, почему мне снова пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_4'>
+        <q>/start</q><a></a><a></a>
+        <q>почему квитанция выставлена второй раз я только вчера платила</q>
+        <a state='/NoMatch'></a>
+        <!--<a state= "/PaymentTotal/PaymentQuestion"></a><a></a>-->
+    </test-case>
+    <test-case id='double_bill_5'>
+        <q>/start</q><a></a><a></a>
+        <q>Я только что расплатилась за коммунальные услуги, почему мне снова выставили счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_6'>
+        <q>/start</q><a></a><a></a>
+        <q>Я недавно заплатила за коммунальные услуги, почему мне снова отправили квитанцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_7'>
+        <q>/start</q><a></a><a></a>
+        <q>Я только что оплатила коммунальные услуги, почему мне опять прислали счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_8'>
+        <q>/start</q><a></a><a></a>
+        <q>Я недавно расплатилась за коммунальные услуги, почему мне опять пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_9'>
+        <q>/start</q><a></a><a></a>
+        <q>Я недавно оплатила квитанцию, почему мне снова еще раз </q>
+        <a state= "/PaymentTotal/PaymentQuestion"></a><a></a>
+        <!--<a state='/NoMatch'></a>-->
+    </test-case>    
+    
+    <test-case id='other_theme_1'>
+        <q>/start</q><a></a><a></a>
+        <q>не надо мне ничего менять</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+        <q>мне нужно чтобы сделали изоляцию</q>
+        <a state='/NoMatch'></a>
+        <q>сделали мне проводку изоляцию не сделали вы что теперь думаете не та кого убьет и что</q>
+        <a state='/NoMatch'></a>
+        
+    </test-case>    
+    
+    # BOT-273
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>готовность отчета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>хочу перезаключить договор</q>
+        <a state="/NoMatch"/>
+    </test-case>
+            
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>не надо узнать алека квитанция по адресу солодовникова двадцать один квартира двести пятьдесят три почему не приходит как мне оплачивать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>информация квитанции</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    <!--информация по льготам-->
+    <test-case id='service_discount_1'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать по льготам по инвалидности</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_2'>
+        <q>/start</q><a></a><a></a>
+        <q>ну я имею ввиду если это там ранение стяжки телесные повреждения если например это ну как там там примерки то там это льготы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_3'>
+        <q>/start</q><a></a><a></a>
+        <q>я обращаюсь по вопросу я пенсионер мне нужна адресную справку вам отправить чтобы мне как пенсионеру там льготы на мусор и</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_4'>
+        <q>/start</q><a></a><a></a>
+        <q>положены ли льготы инвалиды третьей группы по снижению коммунальных услуг</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_5'>
+        <q>/start</q><a></a><a></a>
+        <q>имеются ли льготы для инвалидов третьей группы по снижению оплаты за коммунальные услуги</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_6'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела бы узнать льготы для инвалидов первой группы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_7'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать какие льготы предоставляются для инвалидов первой группы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+		<q>мне нужно поменять букву</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+		<q>мне нужно обратиться вам все где алека допускает ошибку в адресе нашей улицы неправильно названа одна буква это виноваты алека</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+		<q>девушка мне надо насчет квитанции узнать</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+
+    <!--<test-case id='errors_switch_check_1'>-->
+    <!--      <q>/start</q><a></a><a></a>-->
+    <!--    <q>вообще комарика</q>-->
+    <!--    <a state = '/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='errors_switch_check_2'>
+          <q>/start</q><a></a><a></a>
+        <q>изменение тарифа</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_3'>
+          <q>/start</q><a></a><a></a>
+        <q>квитанция пока нет я на телефон получаю вот эти данные алека</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_4'>
+        <q>/start</q><a></a><a></a>
+        <q>когда будет вот эта квитанция я получаю на телефон</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_5'>
+          <q>/start</q><a></a><a></a>
+        <q>нужна справка</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_6'>
+          <q>/start</q><a></a><a></a>
+        <q>осе же канал рымы</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_7'>
+          <q>/start</q><a></a><a></a>
+        <q>подскажите пожалуйста клининговую компанию работающие в микрорайоне аксай один</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_8'>
+          <q>/start</q><a></a><a></a>
+        <q>хотел оставить заявку в горводоканал</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_9'>
+          <q>/start</q><a></a><a></a>
+        <q>хотим отказаться от предоставления услуг клининга</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_10'>
+          <q>/start</q><a></a><a></a>
+        <q>щика услуг</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_11'>
+          <q>/start</q><a></a><a></a>
+        <q>это я звоню с космолета</q>
+        <a state = '/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_1'>
+          <q>/start</q><a></a><a></a>
+        <q>алло да мне надо информацию а с маджик</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_dialog_start_3'>
+          <q>/start</q><a></a><a></a>
+        <q>девушка мне надо заявку дать</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_6'>
+          <q>/start</q><a></a><a></a>
+        <q>мне нужно дать заявку</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_7'>
+          <q>/start</q><a></a><a></a>
+        <q>мне нужно заменить на в до не два</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_dialog_start_13'>
+          <q>/start</q><a></a><a></a>
+        <q>я хотела отменить заказ</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+</test>

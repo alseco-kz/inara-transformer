@@ -1,0 +1,325 @@
+<test>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно перенести счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+<!--показания счетчика воды кому передать-->
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте можно вам передать показания счетчиков</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно перенести счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    <test-case id='meter_from_customers_1'>
+        <q>/start</q><a></a><a></a>
+        <q>замена счетчиков</q>
+        <a state="/SupplierContacts/SupplierContacts"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    <test-case id='meter_from_customers_2'>
+        <q>/start</q><a></a><a></a>
+        <q>пломба планировать надо горячей холодного до счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_3'>
+        <q>/start</q><a></a><a></a>
+        <q>почему нужно заменить счетчики</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_4'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать у меня наверное счетчик неправильно работает</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_5'>
+        <q>/start</q><a></a><a></a>
+        <q>потому что у меня я живу одна у меня счетчик четыреста пятьсот триста киловатт показывает я столько не жду в чем дело я не могу понять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_6'>
+        <q>/start</q><a></a><a></a>
+        <q>пожалуйста мне я хотела делай отчуждение или хотела поменять ну я за новый счетчик что ли поставить</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+   <!--выходдит на конакты поставщика-->
+   <!-- <test-case id='meter_from_customers_7'>-->
+   <!--     <q>/start</q><a></a><a></a>-->
+   <!--     <q>я обращаюсь это у меня счетчик стоят я не знаю хозяева я недавно купил но ничего не оставили и это самое вот счетчик стоит не знаю пошечка платить или так платить</q>-->
+   <!--     <a state='/NoMatch'></a>-->
+   <!-- </test-case>-->
+    <test-case id='meter_from_customers_8'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела бы узнать замена счетчиков</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+   <!--выходдит на конакты поставщика-->
+    <!--<test-case id='meter_from_customers_9'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>не мне счетчика надо чек меня счетчики стоят я не знаю по шечек платить или так платить вот это</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='meter_from_customers_10'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня дома счетчики стоят не номеров никаких паспортов нет мне хозяева так оставили</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_11'>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу знать когда перестанут звонить каждый день поменяла ли я счетчик я давно поменяла</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_12'>
+        <q>/start</q><a></a><a></a>
+        <q>я звонят каждый день поменяла ли я счетчики воды горячей холодной я их поменяла еще года нет как я их поменяла а это звонят каждый день я устала отвечать</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_13'>
+        <q>/start</q><a></a><a></a>
+        <q>скажите где можно добиться правды чтобы отметили что поменян счетчик холодной и горячей воды совсем недавно ну звонят ежедневно как заведенные каждый день каждый день кто звонит не могу найти кто звонит</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_14'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно чтоб кто то отметил что у меня поменяны счетчики горячий и холодный воды еще года нет как я их поменяла ну звонят почему то ежедневно</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_15'>
+        <q>/start</q><a></a><a></a>
+        <q>мне надо показания счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_16'>
+        <q>/start</q><a></a><a></a>
+        <q>показания счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_17'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно счетчики поменять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_18'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно счетчики поменять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_19'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела поменять счетчики</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_20'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела поменять счетчики как это можно сделать</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_21'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать как поменять воду холодно горячую счетчики</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_22'>
+        <q>/start</q><a></a><a></a>
+        <q>хотели поменять счетчики</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_23'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_24'>
+        <q>/start</q><a></a><a></a>
+        <q>хотели поменять счетчик</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_25'>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте у меня произошла странная вещь позвонила совершенно неизвестная женщина не назвала какой она фирмы но сказала следующее у вас закончился у вас закончился срок на счетчики горячей холодной воды представляете она откуда то знаю</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_26'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня нет поступления на счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_27'>
+        <q>/start</q><a></a><a></a>
+        <q>поверка счетчиков</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    
+    <!--определяется как state '/PaymentTotal/PaymentQuestion' -->
+    <!--<test-case id='meter_from_customers_28'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>хотела посмотреть по какое показание у меня оплачен счетчик мой лицевой мой лицевой счет два ноля восемьсот сорок четыре пятьдесят шесть пятьдесят шесть</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='meter_from_customers_29'>
+        <q>/start</q><a></a><a></a>
+        <q>замена электрического счетчика</q>
+        <!--<a state='/NoMatch'></a>-->
+        <a state="/SupplierContacts/SupplierContacts"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    <test-case id='meter_from_customers_30'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно опломбировать счетчики</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_31'>
+        <q>/start</q><a></a><a></a>
+        <q>извините показания счетчиков</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_32'>
+        <q>/start</q><a></a><a></a>
+        <q>нужно изменить показания счетчиков</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_33'>
+        <q>/start</q><a></a><a></a>
+        <q>меня с оператором свяжите я хочу узнать про пломбирование счетчиков</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_34'>
+        <q>/start</q><a></a><a></a>
+        <q>нужно запломбировать счетчики</q>
+        <a state='/NoMatch'></a>
+        <!--<a state="/SupplierContacts/SupplierContacts"/>-->
+        <!--<a state="/BlockAccountNumInput/AccountInput"/>-->
+    </test-case>
+    <test-case id='meter_from_customers_35'>
+        <q>/start</q><a></a><a></a>
+        <q>я бы хотела узнать информацию о меня чуть счетчик надо поменять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_36'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать как сделать поверку счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_37'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать как нужно сделать поверку счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_38'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно узнать как сделать поверку счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_39'>
+        <q>/start</q><a></a><a></a>
+        <q>как оплачивать за услуги по электроэнергии если сменили счетчик</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_40'>
+        <q>/start</q><a></a><a></a>
+        <q>у нас нет показаний счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_41'>
+        <q>/start</q><a></a><a></a>
+        <q>счетчик в квитанции не отмечен</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_42'>
+        <q>/start</q><a></a><a></a>
+        <q>пускай позвонят мне этот оператор кто мне надо счетчик посмотреть старый счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_43'>
+        <q>/start</q><a></a><a></a>
+        <q>нам нужно посчитать этот счетчик короче у нас новый счетчик</q>
+        <a state='/NoMatch'></a>
+        <!--<a state="/SupplierContacts/SupplierContacts"/>-->
+        <!--<a state="/BlockAccountNumInput/AccountInput"/>-->
+    </test-case>
+    <test-case id='meter_from_customers_44'>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте мне надо знать показания счетчика когда мы последний раз платили</q>
+        <a state='/NoMatch'></a>
+        <!--<a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>-->
+        <!--<a>Назовите номер вашего лицевого счета</a>-->
+    </test-case>
+    <test-case id='meter_from_customers_45'>
+        <q>/start</q><a></a><a></a>
+        <q>да то показания счетчика</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_46'>
+        <q>/start</q><a></a><a></a>
+        <q>показания счетчика воды кому передать</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='meter_from_customers_47'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно перенести счетчик</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    
+    <test-case id='meter_from_customers_48'>
+        <q>/start</q><a></a><a></a>
+        <q>здравствуйте можно вам передать показания счетчиков</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    
+    # BOT-277
+    
+    <test-case id='meter_from_customers_49'>
+        <q>/start</q><a></a><a></a>
+        <q>вам надо было поменять счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+<!--BOT-397-->
+    <test-case id='meter_from_customers_50'>
+        <q>/start</q><a></a><a></a>
+        <q>я обращаюсь это у меня счетчик стоят я не знаю хозяева я недавно купил но ничего не оставили и это самое вот счетчик стоит не знаю пошечка платить или так платить</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case id='meter_from_customers_51'>
+        <q>/start</q><a></a><a></a>
+        <q>не мне счетчика надо чек меня сучки стоят я не знаю по шечек платить или так платить вот это</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case id='meter_from_customers_52'>
+        <q>/start</q><a></a><a></a>
+        <q>у меня дома счетчики стоят не номеров никаких паспортов нет мне хозяева так оставили</q>
+        <a state="/NoMatch"/>
+    </test-case>
+<!--BOT-419-->
+
+    <test-case  id='meter_from_customers_53'>
+        <q>/start</q><a></a><a></a>
+        <q>алло девушка хотела насчет пломбы что счетчики пломбы посадили</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id='meter_from_customers_54'>
+        <q>/start</q><a></a><a></a>
+        <q>алло дело такое что у нас заменили счетчик а теперь надо написать показания старого счетчика и нового как это сделать</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id='meter_from_customers_55'>
+        <q>/start</q><a></a><a></a>
+        <q>я хотел узнать по поводу счетчиков горячей воды кто ответственность несет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id='meter_from_customers_56'>
+        <q>/start</q><a></a><a></a>
+        <q>счетчик как к вам будет снять советчика</q>
+        <a state = "/NoMatch"></a>
+    </test-case>    
+
+</test>

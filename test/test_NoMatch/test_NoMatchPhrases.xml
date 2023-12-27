@@ -1,0 +1,275 @@
+<test>
+    <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
+        <q>задолженность от старого владельца</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Bot- 548задача 0">
+        <q>start</q><a></a>
+        <q>я плачу через приложение банка</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
+    <test-case id="Bot- 548задача 1">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+
+
+
+    <test-case id="Bot- 548задача 3">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 4">
+        <q>как поменять выключатель</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 5">
+        <q>как поменять квадратуру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 6">
+        <q>квитанции</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 7">
+        <q>поменять сумму</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 8">
+        <q>не устраивает выставленный счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 9">
+        <q>не правильно выставлена квитанция</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 10">
+        <q>платили за другую квартиру</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+
+    <test-case id="Bot- 548задача 11">
+        <q>почему изменили лицевой счет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>не показывает квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    
+    <test-case id="NoMatch_Соединить Счета">
+        <q>добрый день мне надо соединить счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>а как убрать паркинг с лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>хочу узнать номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Узнать_Договорной">
+        <q>соедините с договорным отделом</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+
+    
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>мне надо узнать номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="NoMatch_Долг">
+        <q>откуда у меня долги в квитанции</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат">
+        <q>получить дубликат счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_01">
+        <q>/start</q><a></a><a></a>
+        <q>как получить дубликат счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>мне нужно квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>   ОШИБКА, БЕДА ПРИШЛА ОТКУДА НЕ ЖДАЛИ-->    
+    <!--</test-case>-->
+
+    <!--<test-case id="NoMatch_Дубликат_01">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>где можно получить квитанцию</q>-->
+    <!--    <a state = "/NoMatch"></a>-->
+    <!--</test-case>-->
+    
+    <test-case id="NoMatch_Дубликат_1">
+        <q>хочу получить новую квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_2">
+        <q>где моя квитанция. обычно приходит пятого, а сегодня уже десятое и ее нет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_3">
+        <q>когда принесут квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="NoMatch_Дубликат_3">
+        <q>расскажите как можно уменьшить счет за коммуналку</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-1">
+        <q>да я хотел бы с вами познакомиться</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="Характер-2">
+        <q>здравствуйте инара я тоже виртуальный на виртуальной я хочу с вами познакомиться можно</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-3">
+        <q>я хотел бы с вами познакомиться можно</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-4">
+        <q>зачем вам номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+
+    <test-case id="Характер-5">
+        <q>добрый день это пкск натали первая на булак на счет восемьсот шестьдесят шесть я хочу чтобы меня соединили</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-6">
+        <q>квитанция не указана фамилия</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="Характер-7">
+        <q>тариф сейчас какой стал скажите пожалуйста</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    # BOT-380
+    
+    <!--<test-case>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>давайте на двадцать семь</q>-->
+    <!--    <a state="/NoMatch"/>-->
+    <!--</test-case>-->
+
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне надо вызвать на дом электрика</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-560
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно заключить договор</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+        
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно зарегистрировать кск</q>
+        <a state="/NoMatch"/>
+    </test-case>
+   
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>не надо мне человек менять твою мать</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>   
+    
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>последние данные за август месяц</q>
+        <a state="/NoMatch"/>
+    </test-case>  
+    
+    
+    
+  
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать как в вашей новой программе</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать почему у меня прописано</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать тарифы</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать у нас адрес изменился</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хочу узнать цыке это раз сеньку во первых</q>
+        <a state="/NoMatch"/>
+    </test-case>
+</test>
+
