@@ -67,7 +67,7 @@ theme: /SecondPayment
                     else:
                         
                         # go!: /SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю - ПРОВЕРИТЬ, туда ли направляет
-                        go!: /SecondPayment/TransferPoint/Несогласие_не_знаю
+                        go!: /SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю
                         
                     
                     state: AlsecoAddressRepeat
@@ -130,10 +130,10 @@ theme: /SecondPayment
         #     intent: /Sroki
         #     if: $session.nesoglasie == 1 
         #         a: У каждого поставщика услуг свои правила. Поэтому уточните у них
-        #         go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+        #         go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
         #     else:
         #         a: Срок возврата уточните  у банка, через который производилась оплата. Он зависит только от них
-        #         go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+        #         go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
        
                        
         state: HowFindContacts
@@ -153,7 +153,7 @@ theme: /SecondPayment
             intent: /Лично
             if: $session.nesoglasie == 1
                 a:  К **н+ам н+ет**. Возвраты осуществляют **только поставщики** услуг
-                go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+                go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
             else:
                 a: **Сегодня,  до шестнадцати ноль ноль** нужно принести  чек и копию удостоверения личности по адресу Карасай Батыра, 155 в офис Алсеко !
                         # go!: /SecondPayment/TransferPoint/Agreement/Несогласие_не_знаю - ПРОВЕРИТЬ, туда ли направляет

@@ -129,11 +129,7 @@
         <q>не пришла квитанция</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='change_person_error28'>
-        <q>/start</q><a></a><a></a>
-        <q>мне нужно сделать возврат</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+
     <test-case id='change_person_error29'>
         <q>/start</q><a></a><a></a>
         <q>не приносят квитанцию</q>

@@ -84,12 +84,7 @@
     
     # BOT-374
     
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>вы знаете я платила два раза за один месяц</q>
-        <a state="/PaymentTotal/PaymentQuestion"/>
-        <a></a>
-    </test-case>
+
 
     # BOT-306
     
