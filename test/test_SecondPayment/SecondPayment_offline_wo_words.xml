@@ -8,7 +8,7 @@
         <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>да</q>
         <a state="/SecondPayment/TransferPoint/Agreement/Согласие_сегодня"/>
-        
+        <a></a>
     </test-case>
 
     <test-case id='sp_ago_wo_extra_questions'>
