@@ -57,11 +57,37 @@
           <a state="/SecondPayment/ReturnPayment"/>
     </test-case>
 
+    <test-case id='change_person_error28'>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно сделать возврат</q>
+         <a state="/SecondPayment/ReturnPayment"/>
+    </test-case>
+
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>вы знаете я платила два раза за один месяц</q>
+        <a state="/SecondPayment/SecondPayment"/>
+      
+    </test-case>
+    
     <test-case id="ReturnPayment_global_int">
           <q>/start</q><a></a><a></a>
           <q>хочу вернуть платеж</q>
           <a state="/SecondPayment/ReturnPayment"/>
     </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>мне нужно сделать возврат</q>
+		 <a state="/SecondPayment/ReturnPayment"/>
+    </test-case>
+    <test-case id ="Возврат платежа">
+        <q>/start</q><a></a><a></a>
+        <q>я хотела вообще то сделать возврат и заново заполнить</q>
+		<a state="/SecondPayment/ReturnPayment"/>
+    </test-case>    
+
 
     <test-case id="ReturnPayment_global_int">
           <q>/start</q><a></a><a></a>
@@ -111,7 +137,8 @@
           <a state="/SecondPayment/ReturnPayment"/>
     </test-case>
     
-    <test-case>
+    
+        <test-case>
         <random>0</random>
         <q>/start</q><a state="/Start"></a><a state="/Start"></a>
         <q>Я желаю вернуть деньги</q>
@@ -119,28 +146,6 @@
         <!--<a>Назовите номер вашего лицевого счета</a>-->
         <a state="/SecondPayment/ReturnPayment"/>
     </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a>
-        <q>мне нужно сделать возврат</q>
-		<a state="/SecondPayment/ReturnPayment"/>
-    </test-case>
-    
-    <test-case>
-        <random>0</random>
-        <q>/start</q><a state="/Start"></a><a state="/Start"></a>
-        <q>Необходимо осуществить возврат.</q>
-        <a state="/SecondPayment/ReturnPayment"/>
-    </test-case>
-    
-    
-    
-    <test-case id ="Возврат платежа">
-        <q>/start</q><a></a><a></a>
-        <q>я хотела вообще то сделать возврат и заново заполнить</q>
-		<a state="/SecondPayment/ReturnPayment"/>
-    </test-case>
-    
     
     <test-case>
         <random>0</random>
@@ -156,5 +161,12 @@
         <q>Мне нужно сделать возврат средств.</q>
         <a state="/SecondPayment/ReturnPayment"/>
     </test-case>
-
+    
+    <test-case>
+        <random>0</random>
+        <q>/start</q><a state="/Start"></a><a state="/Start"></a>
+        <q>Необходимо осуществить возврат.</q>
+        <a state="/SecondPayment/ReturnPayment"/>
+    </test-case>
+    
 </test>

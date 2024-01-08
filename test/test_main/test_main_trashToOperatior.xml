@@ -137,7 +137,7 @@
     </test-case>
     
 
- 
+
     
     <test-case id ="Счетчик">
         <q>/start</q><a></a><a></a>
@@ -369,13 +369,6 @@
     </test-case>
     
     # BOT-302
-    
-
-    
-
-    
-    
-
     
 
     

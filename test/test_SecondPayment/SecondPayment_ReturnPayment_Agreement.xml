@@ -134,7 +134,7 @@
           <q>отменить платеж</q>
           <a state="/SecondPayment/ReturnPayment"/>
           <q>да</q>
-          <a state="/SecondPayment/TransferPoint/Agreement"/>
+          <a state="/SecondPayment/TransferPoint/Agreement"/>/SecondPayment/TransferPoint/Agreement
     </test-case>
 
     <test-case id="ReturnPayment_global_int">

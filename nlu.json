@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "testovyj_dlya_dmitri-1000039011-Hvg",
-    "name" : "testovyj_dlya_dmitri-1000039011-Hvg",
+    "id" : "inara_tst-1000039011-xzD",
+    "name" : "inara_tst-1000039011-xzD",
     "folder" : "/platform"
   },
   "settings" : {
@@ -143,9 +143,6 @@
         "predicate" : "CONTAINS_NOT"
       }, {
         "entityName" : "ОсновнойПоставщик",
-        "predicate" : "CONTAINS_NOT"
-      }, {
-        "entityName" : "Мусорные_синонимы",
         "predicate" : "CONTAINS_NOT"
       } ]
     },
@@ -290,6 +287,8 @@
     }, {
       "text" : "сам сделаю"
     }, {
+      "text" : "хочу самостоятельно"
+    }, {
       "text" : "а если онлайн хочу поменять"
     }, {
       "text" : "какой сайт"
@@ -369,6 +368,8 @@
       "text" : "спросить у @Оператор"
     }, {
       "text" : "задать вопрос живому"
+    }, {
+      "text" : "спросить у @Оператор"
     }, {
       "text" : "дайте нормального @Оператор"
     }, {
@@ -679,6 +680,8 @@
     }, {
       "text" : "я хочу в офис приехать"
     }, {
+      "text" : "я не могу онлайн подать а вот в офис приехать"
+    }, {
       "text" : "дома не удобно"
     }, {
       "text" : "а можно не с телефона"
@@ -769,6 +772,8 @@
     }, {
       "text" : "узнать по оплате"
     }, {
+      "text" : "возврат @duckling.number не поступила сумма"
+    }, {
       "text" : "узнать сроки оплаты"
     }, {
       "text" : "какой срок оплаты квитанции"
@@ -795,11 +800,9 @@
     }, {
       "text" : "за @Услуга оплатили в @duckling.time"
     }, {
-      "text" : "проверить оплату"
+      "text" : "прошла ли оплата"
     }, {
-      "text" : "оплата узнать "
-    }, {
-      "text" : "прошла оплата"
+      "text" : "оплата"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1374,6 +1377,8 @@
     }, {
       "text" : "подключить домофон"
     }, {
+      "text" : "подключить домофон"
+    }, {
       "text" : "сделать изоляцию"
     }, {
       "text" : "сделали мне проводку изоляцию не сделали"
@@ -1419,6 +1424,8 @@
       "text" : "можно зайти на циску анекот контакт"
     }, {
       "text" : "поменять буковку в квитанции"
+    }, {
+      "text" : "поменять буковку в квитанции @алсеко"
     }, {
       "text" : "чтобы вошел  в квитанции @алсеко"
     }, {
@@ -1522,9 +1529,11 @@
     }, {
       "text" : "как поменять выключатель"
     }, {
+      "text" : "соединить счета"
+    }, {
       "text" : "поменять квадратуру"
     }, {
-      "text" : "@КСК первая на счет чтобы меня соединили"
+      "text" : "пкск натали первая на булак на счет"
     }, {
       "text" : "Коммунальные услуги как долги"
     }, {
@@ -1537,8 +1546,6 @@
       "text" : "сменили счетчик как платить"
     }, {
       "text" : "какие льготы предоставляются для инвалидов группы"
-    }, {
-      "text" : "пкск натали первая на булак на счет"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1717,6 +1724,8 @@
     }, {
       "text" : "копию чека"
     }, {
+      "text" : "дубликат чека"
+    }, {
       "text" : "повторно прислать чек"
     }, {
       "text" : "отправьте еще раз квитанцию"
@@ -1726,6 +1735,8 @@
       "text" : "отправьте дубликат квитанции"
     }, {
       "text" : "пришлите мне копию чека"
+    }, {
+      "text" : "дубликат чека"
     }, {
       "text" : "повторно пришлите"
     }, {
@@ -1760,6 +1771,8 @@
       "text" : "где получить @квитанция"
     }, {
       "text" : "получить вторую копию @квитанция"
+    }, {
+      "text" : "получить дубликат @квитанция"
     }, {
       "text" : "получить дубликат счета"
     }, {
@@ -1958,6 +1971,8 @@
       "text" : "чек пришлите мне на электронный ящик"
     }, {
       "text" : "квитанцию прислать на электронный адрес"
+    }, {
+      "text" : "начисления через интернет"
     }, {
       "text" : "начисления на почту"
     }, {
@@ -2869,11 +2884,13 @@
     }, {
       "text" : "я не собственник"
     }, {
-      "text" : "я не собственник "
+      "text" : "я не собственник  могу к вам приехать"
     }, {
       "text" : "вместо хозяина подойти хочу"
     }, {
       "text" : "привезти за владельца"
+    }, {
+      "text" : "вместо хозяина"
     }, {
       "text" : "вместо хозяина"
     }, {
@@ -2991,56 +3008,8 @@
       "text" : "@Программа выдает ошибки"
     }, {
       "text" : "в  @Программа возникают проблемы"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/PhoneBadNumber",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "этот номер не отвечает"
     }, {
-      "text" : "есть другие контактные номера"
-    }, {
-      "text" : "номер с утра не отвечает"
-    }, {
-      "text" : " @Телефон @НеАктивен есть другие @Телефон @duckling.duration"
-    }, {
-      "text" : "до них не дозвониться"
-    }, {
-      "text" : "@Делать @НеАктивен"
-    }, {
-      "text" : "@Делать"
-    }, {
-      "text" : "@НеАктивен"
-    }, {
-      "text" : "@НеАктивен @Делать"
-    }, {
-      "text" : "@Телефон"
-    }, {
-      "text" : "@Телефон @НеАктивен @Делать"
-    }, {
-      "text" : "@Телефон @Делать @НеАктивен"
-    }, {
-      "text" : "@Делать @Телефон @НеАктивен"
-    }, {
-      "text" : "@Делать @НеАктивен @Телефон"
-    }, {
-      "text" : "@НеАктивен  @Делать @Телефон"
-    }, {
-      "text" : "@НеАктивен @Телефон  @Делать"
-    }, {
-      "text" : "@Телефон @Делать"
-    }, {
-      "text" : "@Телефон @НеАктивен"
-    }, {
-      "text" : "@Делать @Телефон"
-    }, {
-      "text" : "@НеАктивен @Телефон"
+      "text" : "@Программа не функционирует должным образом"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3069,8 +3038,6 @@
       "text" : "двойной платеж"
     }, {
       "text" : "сдвоенный платеж"
-    }, {
-      "text" : "заплатила случайно дважды"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3238,13 +3205,9 @@
     }, {
       "text" : "отмена последнего платежа"
     }, {
-      "text" : "сделать возврат"
-    }, {
-      "text" : "возврат @duckling_number не поступила сумма"
-    }, {
-      "text" : "вернуть платеж"
-    }, {
       "text" : "возврат неправильного платежа"
+    }, {
+      "text" : "сделать возврат"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -3311,176 +3274,148 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/PhoneBadNumber",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@Телефон @НеАктивен"
+    }, {
+      "text" : "@Телефон @Делать"
+    }, {
+      "text" : "@НеАктивен @Телефон  @Делать"
+    }, {
+      "text" : "@НеАктивен  @Делать @Телефон"
+    }, {
+      "text" : "@Делать @НеАктивен @Телефон"
+    }, {
+      "text" : "@Делать @Телефон @НеАктивен"
+    }, {
+      "text" : "@Телефон @Делать @НеАктивен"
+    }, {
+      "text" : "@Телефон @НеАктивен @Делать"
+    }, {
+      "text" : "@Телефон"
+    }, {
+      "text" : "@НеАктивен @Делать"
+    }, {
+      "text" : "@НеАктивен"
+    }, {
+      "text" : "@Делать"
+    }, {
+      "text" : "@Делать @НеАктивен"
+    }, {
+      "text" : "до них не дозвониться"
+    }, {
+      "text" : " @Телефон @НеАктивен есть другие @Телефон @duckling.duration"
+    }, {
+      "text" : "номер с утра не отвечает"
+    }, {
+      "text" : "есть другие контактные номера"
+    }, {
+      "text" : "этот номер не отвечает"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AnotherPhone",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "другой телефон"
+    }, {
+      "text" : "запишите другой номер телефона"
+    }, {
+      "text" : "сейчас дам новый номер телефона"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
-      "name" : "classRule_1728",
+      "name" : "Собственник",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : false,
+      "noSpelling" : true,
       "noMorph" : false,
       "phoneticSearch" : false,
       "fuzzySearch" : false,
       "client" : false,
-      "hidden" : true
+      "hidden" : false
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "самостоятельно" ],
+      "rule" : [ "владелец", "собственник", "хозяин", "получатель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "плательщик" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "classRule_2505",
+      "name" : "Недвижимость",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : false,
+      "noSpelling" : true,
       "noMorph" : false,
       "phoneticSearch" : false,
       "fuzzySearch" : false,
       "client" : false,
-      "hidden" : true
+      "hidden" : false
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "оплата", "платеж", "заявка" ],
+      "rule" : [ "Дом" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Офис" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Квартира" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "недвижимость" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "classRule_6476",
+      "name" : "Сущность_Онлайн",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : false,
+      "noSpelling" : true,
       "noMorph" : false,
       "phoneticSearch" : false,
       "fuzzySearch" : false,
       "client" : false,
-      "hidden" : true
+      "hidden" : false
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "не", "нет" ],
+      "rule" : [ "онлайн" ],
       "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_6488",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
+    }, {
       "type" : "synonyms",
-      "rule" : [ "ладно", "надоело" ],
+      "rule" : [ "компьютер" ],
       "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_7443",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
-      "type" : "pattern",
-      "rule" : [ "(~вода/*телефон*)" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_766",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
+    }, {
       "type" : "synonyms",
-      "rule" : [ "медленно" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_7988",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "лично" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_8213",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "принял", "принять", "принято" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "classRule_9449",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : false,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : true
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "сумма", "ок", "оплачено" ],
+      "rule" : [ "из дома" ],
       "value" : ""
     } ]
   }, {
@@ -3504,6 +3439,44 @@
     } ]
   }, {
     "entity" : {
+      "name" : "classRule_7988",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "лично" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_6476",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "не", "нет" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
       "name" : "classRule_9714",
       "enabled" : true,
       "shared" : false,
@@ -3523,7 +3496,7 @@
     } ]
   }, {
     "entity" : {
-      "name" : "алсеко",
+      "name" : "Услуга",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3537,12 +3510,112 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека", "аска", "алина", "алика", "алику", "окко", "утека", "окко" ],
-      "value" : ""
+      "rule" : [ "Холодный вода", "скважина", "питьевой вода", "полив" ],
+      "value" : "{\n  \"SERV_ID\": [\n    454,\n    452,\n    376,\n    375,\n    357,\n    335,\n    327,\n    185,\n    12,\n    5\n  ],\n  \"serv_code\": \"cold_water\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Отопление", "тепло", "Отопление жилплощади", "Штраф за самовольное подключение" ],
+      "value" : "{\n  \"SERV_ID\": [\n    458,\n    198,\n    181,\n    166,\n    160,\n    90,\n    32,\n    31,\n    8\n  ],\n  \"serv_code\": \"heat\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Лифт", "электропитание лифта" ],
+      "value" : "{\n  \"SERV_ID\": [    388,\n    76,\n    10\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Вывоз ТБО", "мусор", "вывоз мусора", "твердые бытовые отходы", "мусорка", "Вывоз строительного мусора" ],
+      "value" : "{\n  \"SERV_ID\": [\n    400,\n    135,\n    94,\n    11\n  ],\n  \"serv_code\": \"garbage\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Электроэнергия", "свет", "электроснабжение", "электричество", "электро", "освещение", "цвет", "совет" ],
+      "value" : "{\n  \"SERV_ID\": [\n    23,\n    13\n  ], \"serv_code\": \"electric\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Горячий вода", "горячий водоснабжение", "горячий водичка", "Химически очищенный вода" ],
+      "value" : "{\n  \"SERV_ID\": [\n    206,\n    178,\n    14,\n    7,\n    209\n  ],\n  \"serv_code\": \"hot_water\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Газ" ],
+      "value" : "{\n  \"SERV_ID\": [\n    36,\n    37\n  ],\n  \"serv_code\": \"gaz\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Приготовление пищи" ],
+      "value" : "{\n  \"SERV_ID\": [\n    345,\n    113,\n    54,\n    37,\n    30\n  ],\n  \"serv_code\": \"gas_part\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "газовый обслуживание", "обслуживание газ", "ВДГО", "обслуживать газ", "газовик", "газовщик", "казовый мастер" ],
+      "value" : "{\n  \"SERV_ID\": [\n    450,\n    38,\n    22\n  ],\n  \"serv_code\": \"vgdo\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Отопление бани", "Баня" ],
+      "value" : "{\n  \"SERV_ID\": [\n    49,\n    33\n  ],\n  \"serv_code\": \"sauna\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Канализация", "Канализация холодной воды" ],
+      "value" : " {\"SERV_ID\": [377,337,336,116,114,25,21,17,6]}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Домофон", "домофонный компания" ],
+      "value" : "{\n  \"SERV_ID\": [\n    128\n  ],\n  \"serv_code\": \"domofon\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Видеонаблюдение", "Облачное Видеонаблюдение" ],
+      "value" : "{\n  \"SERV_ID\": [\n    341,\n    190\n  ],\n  \"serv_code\": \"video\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Накопление капитальный ремонт", "капитальный ремонт", "кап ремонт" ],
+      "value" : "{\n  \"SERV_ID\": [\n    203,\n    195, 207\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Интернет", "Интернет алма ти ви" ],
+      "value" : "{\n  \"SERV_ID\": [\n    290,\n    264,\n    146\n  ],\n  \"serv_code\": \"internet\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Телевидение" ],
+      "value" : "{\n  \"SERV_ID\": [\n    291,\n    256,\n    145,\n    144\n  ],\n  \"serv_code\": \"tv\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Налог на имущество" ],
+      "value" : "{\n  \"SERV_ID\": [\n    133\n  ],\n  \"serv_code\": \"property_tax\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Налог на землю", "земельный налог" ],
+      "value" : "{\n  \"SERV_ID\": [\n    134\n  ],\n  \"serv_code\": \"land_tax\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье", "Расходы на содержание жилья" ],
+      "value" : "{\n  \"SERV_ID\": [\n    1\n  ],\n  \"serv_code\": \"ksk_main\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Уборка подъезд", "убирать подъезд", "клининг", "клининговая организация", "клининговая компания", "уборщица дома", "уборка дома" ],
+      "value" : "{\n  \"SERV_ID\": [\n    82\n  ],\n  \"serv_code\": \"clining\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "замена лифт", "заменить лифт", "поменять лифт" ],
+      "value" : "{\n  \"SERV_ID\": [\n    281\n  ],\n  \"serv_code\": \"lift_change\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "радио" ],
+      "value" : "{\n  \"SERV_ID\": [\n    4\n  ],\n  \"serv_code\": \"radio\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Охрана" ],
+      "value" : "{\n  \"SERV_ID\": [\n    350,\n    302,\n    286,\n    249,\n    157,\n    103\n  ],\n  \"serv_code\": \"security\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Паркинг", "содержание паркинг" ],
+      "value" : "{\n  \"SERV_ID\": [\n    393,\n    367,\n    305,\n    276,\n    158,\n    149,\n    111\n  ],\n  \"serv_code\": \"parking\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Аварийка", "аварийно технический служба", "аварийный" ],
+      "value" : "{\n  \"SERV_ID\": [\n    403,\n    273\n  ],\n  \"serv_code\": \"emergency\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Налог на транспортные средства", "Налог на транспорт", "налог транспорт", "налог за транспорт", "транспортный налог" ],
+      "value" : "{\n  \"SERV_ID\": [\n    171,\n    172,\n    173,\n    174,\n    225\n  ],\n  \"serv_code\": \"transport_tax\"\n}"
     } ]
   }, {
     "entity" : {
-      "name" : "Банк",
+      "name" : "ОсновнойПоставщик",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3556,31 +3629,32 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "банка ", "банк", "банке" ],
-      "value" : ""
+      "rule" : [ "АлматыЭнергоСбыт", "энергосбыт", "электросбыт", "электросеть", "энерг сбыт" ],
+      "value" : "{\"code\":\"aes\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Алматинский тепловой сеть", "тепловой сеть", "теплосеть", "тепловых сетей" ],
+      "value" : "{\"code\":\"alts\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Тартып", "Тартыпа", "торты", "арты" ],
+      "value" : "{\"code\":\"tartyp\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "алматыгаз", "алматы газ" ],
+      "value" : "{\"code\": \"almaty_gaz\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу", "алмат осу", "долма ты су", "ано тессу" ],
+      "value" : "{\"code\":\"almaty_su\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "казактелеком", "ростелеком", "казахтелеком", "казах телеком", "казак телеком" ],
+      "value" : "{\n  \"code\": \"kaz_tel\"\n}"
     } ]
   }, {
     "entity" : {
-      "name" : "Делать",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : true,
-      "phoneticSearch" : false,
-      "fuzzySearch" : true,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "pattern",
-      "rule" : [ "я не смог могу уже это *дел*" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "жалоба",
+      "name" : "УслугаСл",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3594,31 +3668,59 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "жалоба", "претензия" ],
-      "value" : ""
+      "rule" : [ "установка общедомовой счетчик" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой счетчик\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "расход дом", "расход содержание жилья", "обслуживание жилища", "обслужить дом" ],
+      "value" : "{\n  \"SERV_ID\": [\n    1,169\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "налог" ],
+      "value" : "{\n  \"SERV_ID\": [\n133\t,\n134\t,\n171\t,\n172\t,\n173\t,\n174\t,\n225\t\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "установка общедомовой прибор" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой прибор\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "приобретение датчика тепловой энергия" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"приобретение датчика тепловой энергия\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "установка прибор учета тепловой энергия" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка прибор учета тепловой энергия\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "установка общедомовой датчик" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой датчик\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "покупка общий @Cчетчик" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\"serv_name\":\"покупка общий @Cчетчик\"\n}"
     } ]
   }, {
     "entity" : {
-      "name" : "ивц",
+      "name" : "classRule_1728",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : true,
+      "noSpelling" : false,
+      "noMorph" : false,
       "phoneticSearch" : false,
       "fuzzySearch" : false,
       "client" : false,
-      "hidden" : false
+      "hidden" : true
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "и в", "и вот с", "и вэ цэ", "ивц" ],
+      "rule" : [ "самостоятельно" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "ИИН",
+      "name" : "Оператор",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3632,62 +3734,66 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "инн", "иин" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Казахтелеком",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "казахтелеком", "ростелеком", "казактелеком" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "квитанция",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "квитанция", "квиток", "платежная ведомость", "бумажка ", "начисления", "расчет", "чек", "сумма начисления", "расчетная ведомость", "китанции", "расчетка", "платежка", "ктация", "квитан", "квита", "квитанции" ],
+      "rule" : [ "техподдержка" ],
       "value" : ""
     }, {
       "type" : "synonyms",
-      "rule" : [ "квитанция по оплате коммунальных услуг" ],
+      "rule" : [ "оператор", "менеджер", "консультант", "диспетчер", "специалист", "сотрудник" ],
       "value" : ""
     }, {
       "type" : "synonyms",
-      "rule" : [ "ки танцы" ],
+      "rule" : [ "человек" ],
       "value" : ""
     }, {
       "type" : "synonyms",
-      "rule" : [ "счет", "лицевой счет", "платежный документ" ],
+      "rule" : [ "эксперт" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "живой оператор" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "КСК",
+      "name" : "classRule_766",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "медленно" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_9449",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "сумма", "ок", "оплачено" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Счетчик",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3701,26 +3807,26 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка", "обслуживающая компания" ],
+      "rule" : [ "счетчик", "прибор", "датчик", "прибор учета", "четчик", "шечек" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "Мусорные_синонимы",
+      "name" : "classRule_8213",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : true,
+      "noSpelling" : false,
       "noMorph" : false,
       "phoneticSearch" : false,
       "fuzzySearch" : false,
       "client" : false,
-      "hidden" : false
+      "hidden" : true
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "сумма", "программа", "тариф", "адрес" ],
+      "rule" : [ "принял", "принять", "принято" ],
       "value" : ""
     } ]
   }, {
@@ -3763,6 +3869,56 @@
     } ]
   }, {
     "entity" : {
+      "name" : "алсеко",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека", "аска", "алина", "алика", "алику", "окко", "утека", "окко" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "квитанция",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "квитанция", "квиток", "платежная ведомость", "бумажка ", "начисления", "расчет", "чек", "сумма начисления", "расчетная ведомость", "китанции", "расчетка", "платежка", "ктация", "квитан", "квита", "квитанции" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "счет", "лицевой счет", "платежный документ" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ки танцы" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "квитанция по оплате коммунальных услуг" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
       "name" : "Начисление",
       "enabled" : true,
       "shared" : false,
@@ -3782,7 +3938,102 @@
     } ]
   }, {
     "entity" : {
-      "name" : "НеАктивен",
+      "name" : "classRule_7443",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "(~вода/*телефон*)" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_6488",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "ладно", "надоело" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Казахтелеком",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "казахтелеком", "ростелеком", "казактелеком" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "КСК",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка", "обслуживающая компания", "пкск" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_2505",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "оплата", "платеж", "заявка" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "ивц",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3790,22 +4041,18 @@
       "noSpelling" : true,
       "noMorph" : true,
       "phoneticSearch" : false,
-      "fuzzySearch" : true,
+      "fuzzySearch" : false,
       "client" : false,
       "hidden" : false
     },
     "records" : [ {
-      "type" : "pattern",
-      "rule" : [ "[звон*] не (отвеча*/заблокиро*/доступ*)" ],
-      "value" : ""
-    }, {
       "type" : "synonyms",
-      "rule" : [ "не отвечать", "заблокировать", "не доступный" ],
+      "rule" : [ "и в", "и вот с", "и вэ цэ", "ивц" ],
       "value" : ""
     } ]
   }, {
     "entity" : {
-      "name" : "Недвижимость",
+      "name" : "жалоба",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3819,146 +4066,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "Дом" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Квартира" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "недвижимость" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Офис" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "непонял",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "не понял ", "не понимать", "еще раз" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Новая_сущность",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ ]
-  }, {
-    "entity" : {
-      "name" : "Оператор",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "живой оператор" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "оператор", "менеджер", "консультант", "диспетчер", "специалист", "сотрудник" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "техподдержка" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "человек" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "эксперт" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "ОсновнойПоставщик",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "Алматинский тепловой сеть", "тепловой сеть", "теплосеть", "тепловых сетей" ],
-      "value" : "{\"code\":\"alts\"}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "алматыгаз", "алматы газ" ],
-      "value" : "{\"code\": \"almaty_gaz\"}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу", "алмат осу", "долма ты су", "ано тессу" ],
-      "value" : "{\"code\":\"almaty_su\"}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "АлматыЭнергоСбыт", "энергосбыт", "электросбыт", "электросеть", "энерг сбыт" ],
-      "value" : "{\"code\":\"aes\"}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "казактелеком", "ростелеком", "казахтелеком", "казах телеком", "казак телеком" ],
-      "value" : "{\n  \"code\": \"kaz_tel\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Тартып", "Тартыпа", "торты", "арты" ],
-      "value" : "{\"code\":\"tartyp\"}"
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Программа",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "приложение", "программа" ],
+      "rule" : [ "жалоба", "претензия" ],
       "value" : ""
     } ]
   }, {
@@ -3982,7 +4090,7 @@
     } ]
   }, {
     "entity" : {
-      "name" : "Собственник",
+      "name" : "ИИН",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
@@ -3996,251 +4104,8 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "владелец", "собственник", "хозяин", "получатель" ],
+      "rule" : [ "инн", "иин" ],
       "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "плательщик" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Сущность_Онлайн",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "из дома" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "компьютер" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "онлайн" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Счетчик",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "счетчик", "прибор", "датчик", "прибор учета", "четчик", "шечек" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Телефон",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "pattern",
-      "rule" : [ "*звон*" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "набирал", "набрал", "набираю", "набирала", "набрала" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "телефон", "номер" ],
-      "value" : ""
-    } ]
-  }, {
-    "entity" : {
-      "name" : "Услуга",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "Аварийка", "аварийно технический служба", "аварийный" ],
-      "value" : "{\n  \"SERV_ID\": [\n    403,\n    273\n  ],\n  \"serv_code\": \"emergency\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Видеонаблюдение", "Облачное Видеонаблюдение" ],
-      "value" : "{\n  \"SERV_ID\": [\n    341,\n    190\n  ],\n  \"serv_code\": \"video\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Вывоз ТБО", "мусор", "вывоз мусора", "твердые бытовые отходы", "мусорка", "Вывоз строительного мусора" ],
-      "value" : "{\n  \"SERV_ID\": [\n    400,\n    135,\n    94,\n    11\n  ],\n  \"serv_code\": \"garbage\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Газ" ],
-      "value" : "{\n  \"SERV_ID\": [\n    36,\n    37\n  ],\n  \"serv_code\": \"gaz\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "газовый обслуживание", "обслуживание газ", "ВДГО", "обслуживать газ", "газовик", "газовщик", "казовый мастер" ],
-      "value" : "{\n  \"SERV_ID\": [\n    450,\n    38,\n    22\n  ],\n  \"serv_code\": \"vgdo\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Горячий вода", "горячий водоснабжение", "горячий водичка", "Химически очищенный вода" ],
-      "value" : "{\n  \"SERV_ID\": [\n    206,\n    178,\n    14,\n    7,\n    209\n  ],\n  \"serv_code\": \"hot_water\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Домофон", "домофонный компания" ],
-      "value" : "{\n  \"SERV_ID\": [\n    128\n  ],\n  \"serv_code\": \"domofon\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "замена лифт", "заменить лифт", "поменять лифт" ],
-      "value" : "{\n  \"SERV_ID\": [\n    281\n  ],\n  \"serv_code\": \"lift_change\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Интернет", "Интернет алма ти ви" ],
-      "value" : "{\n  \"SERV_ID\": [\n    290,\n    264,\n    146\n  ],\n  \"serv_code\": \"internet\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Канализация", "Канализация холодной воды" ],
-      "value" : " {\"SERV_ID\": [377,337,336,116,114,25,21,17,6]}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Лифт", "электропитание лифта" ],
-      "value" : "{\n  \"SERV_ID\": [    388,\n    76,\n    10\n  ]\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Накопление капитальный ремонт", "капитальный ремонт", "кап ремонт" ],
-      "value" : "{\n  \"SERV_ID\": [\n    203,\n    195, 207\n  ]\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Налог на землю", "земельный налог" ],
-      "value" : "{\n  \"SERV_ID\": [\n    134\n  ],\n  \"serv_code\": \"land_tax\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Налог на имущество" ],
-      "value" : "{\n  \"SERV_ID\": [\n    133\n  ],\n  \"serv_code\": \"property_tax\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Налог на транспортные средства", "Налог на транспорт", "налог транспорт", "налог за транспорт", "транспортный налог" ],
-      "value" : "{\n  \"SERV_ID\": [\n    171,\n    172,\n    173,\n    174,\n    225\n  ],\n  \"serv_code\": \"transport_tax\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Отопление бани", "Баня" ],
-      "value" : "{\n  \"SERV_ID\": [\n    49,\n    33\n  ],\n  \"serv_code\": \"sauna\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Отопление", "тепло", "Отопление жилплощади", "Штраф за самовольное подключение" ],
-      "value" : "{\n  \"SERV_ID\": [\n    458,\n    198,\n    181,\n    166,\n    160,\n    90,\n    32,\n    31,\n    8\n  ],\n  \"serv_code\": \"heat\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Охрана" ],
-      "value" : "{\n  \"SERV_ID\": [\n    350,\n    302,\n    286,\n    249,\n    157,\n    103\n  ],\n  \"serv_code\": \"security\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Паркинг", "содержание паркинг" ],
-      "value" : "{\n  \"SERV_ID\": [\n    393,\n    367,\n    305,\n    276,\n    158,\n    149,\n    111\n  ],\n  \"serv_code\": \"parking\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Приготовление пищи" ],
-      "value" : "{\n  \"SERV_ID\": [\n    345,\n    113,\n    54,\n    37,\n    30\n  ],\n  \"serv_code\": \"gas_part\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "радио" ],
-      "value" : "{\n  \"SERV_ID\": [\n    4\n  ],\n  \"serv_code\": \"radio\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье", "Расходы на содержание жилья" ],
-      "value" : "{\n  \"SERV_ID\": [\n    1\n  ],\n  \"serv_code\": \"ksk_main\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Телевидение" ],
-      "value" : "{\n  \"SERV_ID\": [\n    291,\n    256,\n    145,\n    144\n  ],\n  \"serv_code\": \"tv\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Уборка подъезд", "убирать подъезд", "клининг", "клининговая организация", "клининговая компания", "уборщица дома", "уборка дома" ],
-      "value" : "{\n  \"SERV_ID\": [\n    82\n  ],\n  \"serv_code\": \"clining\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Холодный вода", "скважина", "питьевой вода", "полив" ],
-      "value" : "{\n  \"SERV_ID\": [\n    454,\n    452,\n    376,\n    375,\n    357,\n    335,\n    327,\n    185,\n    12,\n    5\n  ],\n  \"serv_code\": \"cold_water\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "Электроэнергия", "свет", "электроснабжение", "электричество", "электро", "освещение", "цвет", "совет" ],
-      "value" : "{\n  \"SERV_ID\": [\n    23,\n    13\n  ], \"serv_code\": \"electric\"\n}"
-    } ]
-  }, {
-    "entity" : {
-      "name" : "УслугаСл",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ {
-      "type" : "synonyms",
-      "rule" : [ "налог" ],
-      "value" : "{\n  \"SERV_ID\": [\n133\t,\n134\t,\n171\t,\n172\t,\n173\t,\n174\t,\n225\t\n  ]\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "покупка общий @Cчетчик" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\"serv_name\":\"покупка общий @Cчетчик\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "приобретение датчика тепловой энергия" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"приобретение датчика тепловой энергия\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "расход дом", "расход содержание жилья", "обслуживание жилища", "обслужить дом" ],
-      "value" : "{\n  \"SERV_ID\": [\n    1,169\n  ]\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "установка общедомовой датчик" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой датчик\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "установка общедомовой прибор" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой прибор\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "установка общедомовой счетчик" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка общедомовой счетчик\"\n}"
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "установка прибор учета тепловой энергия" ],
-      "value" : "{\n  \"SERV_ID\": [\n    176\n  ],\n  \"serv_name\": \"установка прибор учета тепловой энергия\"\n}"
     } ]
   }, {
     "entity" : {
@@ -4258,11 +4123,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "имя" ],
-      "value" : ""
-    }, {
-      "type" : "synonyms",
-      "rule" : [ "имя", "фамилия", "отчество" ],
+      "rule" : [ "фамилия" ],
       "value" : ""
     }, {
       "type" : "synonyms",
@@ -4270,7 +4131,83 @@
       "value" : ""
     }, {
       "type" : "synonyms",
-      "rule" : [ "фамилия" ],
+      "rule" : [ "имя", "фамилия", "отчество" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "имя" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Новая_сущность",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ ]
+  }, {
+    "entity" : {
+      "name" : "непонял",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "не понял ", "не понимать", "еще раз" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Банк",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "банка ", "банк", "банке" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Программа",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "приложение", "программа" ],
       "value" : ""
     } ]
   } ],
@@ -4384,31 +4321,81 @@
     "replies" : [ ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Где вы находитесь?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, я или оператор сможем Вам помочь по телефону? Задайте Ваш вопрос",
+      "markup" : "plain",
+      "key" : "_rx10283p1"
+    }, {
+      "type" : "text",
+      "text" : "Карасай батыра, 155 угол Виноградова. Может, мы можем решить вопрос по телефону?",
+      "markup" : "plain",
+      "key" : "_apfmp5maz"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В каких городах есть офисы?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "У нас есть офис только в Алматы. ",
+      "markup" : "plain",
+      "key" : "_jchqu42qn"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Как связаться со службой поддержки?",
     "replies" : [ ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/По каким дням вы работаете?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "мы работаем в будни с 8 до 16. суббота, воскресенье - выходной",
+      "markup" : "plain",
+      "key" : "_bsgfietvq"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Как вас найти в интернете?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "В интернете у нас есть сайт - алсеко точка кей зет",
+      "markup" : "plain",
+      "key" : "_pk8x3qpr8"
+    }, {
+      "type" : "text",
+      "text" : "в интернете вы нас можете найти на сайте алсеко кей зет \n",
+      "markup" : "plain",
+      "key" : "_cbuyf6lh3"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Есть ли у вас мобильное приложение?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "Приложение Алсеко доступно для скачивания в апп сторе и плей маркете",
+      "markup" : "plain",
+      "key" : "_23o7l0ugk"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Какая у вас электронная почта?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "наш емейл - info собачка алсеко кей зет. буква к в Алсеко пишется через букву си - как эс на русском. ",
+      "markup" : "plain",
+      "key" : "_udwcevsyd"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Хочу сотрудничать",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "По поводу партнерства с нами вы можете позвонить по телефону 339 50 15",
+      "markup" : "plain",
+      "key" : "_i9w0cybmc"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В какое время вы работаете?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "Мы работаем с 8 до 16. Звонки принимаем до 18 00 ",
+      "markup" : "plain",
+      "key" : "_1pqyefwdi"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В каких странах есть офисы?",
     "replies" : [ ]

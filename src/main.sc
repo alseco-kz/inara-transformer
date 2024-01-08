@@ -15,7 +15,7 @@ require: Functions/AccountsSuppliers.js
 #########################################
 # логирование произошедших ошибок
 require: ErrorBind/ErrorLogger.js
-
+ 
 #########################################
 # ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ
 # сценарий смена собственника
@@ -32,7 +32,6 @@ require: AlsecoCommon.sc
 require: AboutInara.sc
 # вопросы по налогам
 require: Tax.sc
-
 
 require: SecondPayment.sc
 

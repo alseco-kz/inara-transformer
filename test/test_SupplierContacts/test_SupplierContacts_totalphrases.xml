@@ -432,6 +432,28 @@
             <a state="/BlockAccountNumInput/AccountInput"/>
         </test-case>
 
-
+        <test-case>
+            <q>/start</q><a></a><a></a>
+            <q>мне нужно узнать номер телефона по оплате холодной воды жетысуйский район</q>
+            <a state="/SupplierContacts/SupplierContacts"/>
+            <a state="/BlockAccountNumInput/AccountInput"/>
+        </test-case>
+        
+        
+        
+        
+        <test-case>
+            <q>/start</q><a></a><a></a>
+            <q>девушка мне нужен номер телефона</q>
+            <a state="/SupplierContacts/SupplierContacts"/>
+            <a state="/BlockAccountNumInput/AccountInput"/>
+        </test-case>
+        
+       <test-case>
+            <q>/start</q><a></a><a></a>
+            <q>девушка мне нужен номер телефона</q>
+            <a state="/SupplierContacts/SupplierContacts"/>
+            <a state="/BlockAccountNumInput/AccountInput"/>
+        </test-case>
          # BOT-477
 </test>
