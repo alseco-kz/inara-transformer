@@ -329,5 +329,31 @@
         <q>/start</q><a></a><a></a>
         <q>техподдержка пожалуйста</q>
         <a state = '/SwitchToOperator'></a>
-    </test-case>     
+    </test-case>   
+    
+    
+    # BOT-560
+    
+    
+    <test-case id='errors_switch_check_14'>
+        <q>/start</q><a></a><a></a>
+        <q>отключите меня пожалуйста с оператором</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case> 
+   
+     <test-case id='errors_switch_check_15'>
+        <q>/start</q><a></a><a></a>
+        <q>подключите меня пожалуйста с оператором</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>
+    
+    
+    
+    <test-case id='errors_switch_check_15'>
+        <q>/start</q><a></a><a></a>
+        <q>подключите меня пожалуйста с оператором</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case> 
+    
+    
 </test>

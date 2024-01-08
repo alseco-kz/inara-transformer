@@ -25,7 +25,8 @@ theme: /ChangeAccountPerson
             intent: /CantDoThis
             intent: /Несогласие
             # event: speechNotRecognized
-            a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
+            a: Вы можете обратиться в абонентский отдел, к одному, из основных поставщиков услуг, указанных в верхней части счёта на оплату.
+
             # script:
             # # встраиваем перебивание в длинный ответ 
             #     $dialer.bargeInResponse({
@@ -38,11 +39,11 @@ theme: /ChangeAccountPerson
                 a: Хотите узнать, к каким поставщикам можно обратиться?
                 # script:
                 #     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
-                state: AlsecoAddressConfirm
-                    # q: * сто пятьдесят * 
-                    intent: /AlsecoAdressConfirm
-                    a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
-                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
+                # state: AlsecoAddressConfirm
+                #     # q: * сто пятьдесят * 
+                #     intent: /AlsecoAdressConfirm
+                #     a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
+                #     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
     
                 state: No_Suppliers_List
                     q: $no
@@ -86,13 +87,13 @@ theme: /ChangeAccountPerson
                     
 
                     state: SupplierContactsFull
-                        a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор - {{GetMainSupplNames($MainSuppl)}}.
+                        a:   Вы можете обратиться  к одному из основных поставщиков коммунальных услуг на выбор - {{GetMainSupplNames($MainSuppl)}}.
                         go!: ../Contacts
                                     
                     state: SupplierContactsByAccount
                         # где-то здесь надо получить список поставщиков из БД и сформировать строку 
                         if: GetAccountMainSuppls()
-                            a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
+                            a:   Вы можете обратиться  к одному из основных поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
                         else:
                             go!: ../SupplierContactsFull
                         # go!: /PersonChange/PersonChange/Offline/Yes_Suppliers_List/Contacts
@@ -125,9 +126,9 @@ theme: /ChangeAccountPerson
                                 q: $no
                                 q: $disagree
                                 intent: /Несогласие_повторить
-                                intent: /Несогласие
+                                intent: /Несогласие 
                                 go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
-                                
+                               
                             state: Yes_Repeat
                                 q: $yes
                                 q: $agree

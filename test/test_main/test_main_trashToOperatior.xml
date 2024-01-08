@@ -493,4 +493,13 @@
         <a state="/NoMatch"></a>
     </test-case>
 
+
+#BOT 560 
+ 
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела узнать инвалид первой группы</q>
+        <a state="/NoMatch"></a>
+    </test-case>
+
 </test>
