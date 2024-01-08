@@ -1,6 +1,6 @@
 require:  Functions/SupplContacts.js
 require:  Functions/RequestsComplaint.js
-
+require:  Functions/PhoneNumberInput.js
 
 theme: /SupplierContacts
     state: SupplierContacts
@@ -231,11 +231,66 @@ theme: /SupplierContacts
             a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
             a: Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
             
+            
+            state: MakeRequestAnotherSuplierPhone
+                q: *другой номер*
+                a: да
+                go!: /MakeRequestAnotherPhone
+            state: MakeRequestAnotherPhone
+                intent: /AnotherPhone
+                script:
+                    $session.Phone = {};
+                    $session.Phone.NotMyPhoneCounter = 0
+                a: Можете назвать номер телефона целиком?
+                state: NoPhone
+                    q: $no
+                    q: $disagree
+                    intent: /Несогласие
+                    intent: /Несогласие_помочь
+                    intent: /Несогласие_перечислить
+                    event: noMatch
+                    go:../CallTheOperator
+                state: PhoneInputNumber
+                    q: * $numbers *
+                    q: * @duckling.number *
+                    script:
+                        $temp.PhoneNum = "";
+                        if ($session.PhoneNumberContinue)
+                            $temp.PhoneNum  = GetTempPhoneNumber();
+                        TrySetNumberforPhone($temp.PhoneNum + words_to_number($entities));    
+                    # if: ((($temp.PhoneNum.length) <= 6 && ($temp.PhoneNum[0] != '7' || $temp.PhoneNum[0] != '8') )) ||  ((($temp.PhoneNum.length) <= 9 && ($temp.PhoneNum[0] === '7' ) ))  || ((($temp.PhoneNum.length) <= 10 && ($temp.PhoneNum[0] === '8' ||  tel[0] == '+7') ))   
+                    #     a: {{PhoneTalkNumber(GetTempPhoneNumber())}}. **д+альше** || bargeInIf = PhoneNumDecline
+                    # else
+                    a:  Ваш номер телефона {{PhoneTalkNumber(GetTempPhoneNumber())}}.?
+                    state: NotMyPhone
+                        q: $no
+                        q: $disagree
+                        intent: /Несогласие
+                        intent: /Несогласие_помочь
+                        intent: /Несогласие_перечислить
+                        event: noMatch
+                        script:
+                            if ($session.Phone.NotMyPhoneCounter < 2 )
+                               $session.Phone.NotMyPhoneCounter = $session.Phone.NotMyPhoneCounter +1
+                        if: $session.Phone.NotMyPhoneCounter ==2
+                            go!: /CallTheOperator
+                        else:
+                            a: Давайте попробуем снова
+                            go!: /PhoneInputNumber
+                    state: YesItismyPhone
+                        q: $yes
+                        q: $agree
+                        intent: /Согласие
+                        intent: /Согласие_помочь
+                        script:
+                            setUserPhone(GetTempPhoneNumber())
+                        go!: /MakeRequestSave
             state: MakeRequestPhoneCorrect
                 q: $yes
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_помочь
+                
                 go!: ../MakeRequestSave
                     
             state: MakeRequestSave
@@ -302,7 +357,13 @@ theme: /SupplierContacts
                 intent: /PhoneBadNumber 
                 q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) *
                 go!: ../../MakeRequest
-                
+            state: MyRequsetsHasBeenCreated
+                q:моя заявка создана?
+                random:
+                    a: Да.
+                    a: Ваша Заявка с+здана!
+                    a: Ваша Заявка передана в обработку
+                go!: /CanIHelpYou
             state: Repeat
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить

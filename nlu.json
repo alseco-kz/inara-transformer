@@ -3320,6 +3320,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/AnotherPhone",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "другой телефон"
+    }, {
+      "text" : "запишите другой номер телефона"
+    }, {
+      "text" : "сейчас дам новый номер телефона"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
