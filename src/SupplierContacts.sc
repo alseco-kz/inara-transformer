@@ -233,11 +233,16 @@ theme: /SupplierContacts
             
             
             state: MakeRequestAnotherSuplierPhone
-                q: *другой номер*
+                q: *можно дать*
                 a: да
                 go!: /MakeRequestAnotherPhone
             state: MakeRequestAnotherPhone
                 intent: /AnotherPhone
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                intent: /Несогласие_перечислить
                 script:
                     $session.Phone = {};
                     $session.Phone.NotMyPhoneCounter = 0
@@ -272,11 +277,11 @@ theme: /SupplierContacts
                         script:
                             if ($session.Phone.NotMyPhoneCounter < 2 )
                                $session.Phone.NotMyPhoneCounter = $session.Phone.NotMyPhoneCounter +1
-                        if: $session.Phone.NotMyPhoneCounter ==2
+                        if: $session.Phone.NotMyPhoneCounter == 2
                             go!: /CallTheOperator
                         else:
-                            a: Давайте попробуем снова
-                            go!: /PhoneInputNumber
+                            a: Давайте попробуем снова.Назовите номер телефона целиком.
+                            
                     state: YesItismyPhone
                         q: $yes
                         q: $agree
@@ -284,7 +289,8 @@ theme: /SupplierContacts
                         intent: /Согласие_помочь
                         script:
                             setUserPhone(GetTempPhoneNumber())
-                        go!: /MakeRequestSave
+                        a: {{$.session.MakeRequest.userPhoneNumber}}
+                        go!: ../../../MakeRequestSave
             state: MakeRequestPhoneCorrect
                 q: $yes
                 q: $agree
@@ -296,6 +302,7 @@ theme: /SupplierContacts
             state: MakeRequestSave
                 script:
                     $temp.IsRequestAdded = AddRequestComplaint()
+                a:{{$session.MakeRequest.userPhoneNumber}}
                 if: $temp.IsRequestAdded
                     a: Я сохранила Вашу заявку. С Вами обязательно свяжется наш специалист и сообщит результаты. 
                     go!: ../../CanIHelpYou
@@ -304,9 +311,10 @@ theme: /SupplierContacts
                     go!: /CallTheOperator 
             
             state: MakeRequestDecline
+                intent: /DontNeedRequest
                 q: ($no/$disagree) заявк*
                 if: countRepeats() == 1 
-                    a: Заявка позволит быстрее решить Ваш вопрос. Давайте проверим Ваш номер телефона?  
+                    a: Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?  
                 else:
                     a: Для решения Вашего вопроса перевожу Вас на оператора
                     go!: /CallTheOperator 
@@ -358,7 +366,8 @@ theme: /SupplierContacts
                 q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) *
                 go!: ../../MakeRequest
             state: MyRequsetsHasBeenCreated
-                q:моя заявка создана?
+                q:* заяв* созда* *
+                q: * *переда* заявк* *
                 random:
                     a: Да.
                     a: Ваша Заявка с+здана!
