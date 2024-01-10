@@ -289,7 +289,7 @@ theme: /SupplierContacts
                         intent: /Согласие_помочь
                         script:
                             setUserPhone(GetTempPhoneNumber())
-                        a: {{$.session.MakeRequest.userPhoneNumber}}
+                       
                         go!: ../../../MakeRequestSave
             state: MakeRequestPhoneCorrect
                 q: $yes
@@ -302,7 +302,7 @@ theme: /SupplierContacts
             state: MakeRequestSave
                 script:
                     $temp.IsRequestAdded = AddRequestComplaint()
-                a:{{$session.MakeRequest.userPhoneNumber}}
+                
                 if: $temp.IsRequestAdded
                     a: Я сохранила Вашу заявку. С Вами обязательно свяжется наш специалист и сообщит результаты. 
                     go!: ../../CanIHelpYou

@@ -7,7 +7,7 @@
         <q>да</q>
         <a state="/SecondPayment/TransferPoint/Agreement"/>
         <q>да</q>
-        <a state="/SecondPayment/TransferPoint/Agreement/Согласие_сегодня"/>
+        <a state="/SecondPayment/TransferPoint/Agreement/Согласие_сегодня"/><a></a>
         
     </test-case>
 
