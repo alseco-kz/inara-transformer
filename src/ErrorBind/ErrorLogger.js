@@ -10,7 +10,7 @@ function SetAnwserToUser($context){
     
 }
 function SendBotChannelMessage(header,message, addBotInfo){
-
+   
     var token = $secrets.get("InaraErrorBotToken", "Токен не найден");
     var chat_id = $env.get("InaraErrorBotChatId", "Чат не найден");
     if (addBotInfo){
@@ -25,13 +25,13 @@ function SendBotChannelMessage(header,message, addBotInfo){
         message = "Бот: "+$request.botId+"\n" + message;//Бот - 
     }
 
-
+  if ($request.channelType!= "chatwidget"){
     var url = "https://api.telegram.org/bot"+token+"/sendMessage?chat_id="+chat_id+"&text="+header + "\n"+message;//+"&parse_mode=Markdown";
     var response =  $http.query(url, {method: "GET"
     //,timeout: 20000        // таймаут выполнения запроса в мс
             })
     
-    
+  }
 }
 
 function SendWarningMessage(message){
