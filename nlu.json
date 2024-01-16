@@ -3357,9 +3357,9 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "заявка  создана"
+      "text" : "заявка точно  создана"
     }, {
-      "text" : "передадите заявку"
+      "text" : "точно передадите заявку"
     } ],
     "classificationRules" : {
       "refs" : [ ]
