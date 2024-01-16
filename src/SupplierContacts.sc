@@ -284,6 +284,7 @@ theme: /SupplierContacts
                             a: Давайте попробуем снова.Назовите номер телефона целиком.
                             
                     state: YesItismyPhone
+                        intent: /YesItsMyPhone
                         q: $yes
                         q: $agree
                         intent: /Согласие

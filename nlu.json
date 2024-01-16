@@ -3366,6 +3366,20 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/YesItsMyPhone",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "да это мой номер телефон"
+    }, {
+      "text" : "определенно это мой номер"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
