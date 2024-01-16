@@ -233,7 +233,7 @@ theme: /SupplierContacts
             
             
             state: MakeRequestAnotherSuplierPhone
-                q: *можно дать*
+                q: * сейчас можно *
                 a: да
                 go!: /MakeRequestAnotherPhone
             state: MakeRequestAnotherPhone
