@@ -33,7 +33,7 @@ theme: /ChangeAccountPersonCount
             intent: /Несогласие
             intent: /CantDoThis
             # event: speechNotRecognized
-            a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату, или в Алсеко по адресу Карасай Батыра, 155. Хотите узнать, к каким поставщикам можно обратиться?
+            a: Вы можете обратиться в абонентский отдел, к одному, из основных поставщиков услуг, указанных в верхней части счёта на оплату. Хотите узнать, к каким поставщикам можно обратиться?
             # script:
             # # встраиваем перебивание в длинный ответ 
             #     $dialer.bargeInResponse({
@@ -41,10 +41,10 @@ theme: /ChangeAccountPersonCount
             #         bargeInTrigger: "interim",
             #         noInterruptTime: 2});
 
-            state: AlsecoAddressConfirm
-                intent: /AlsecoAdressConfirm
-                a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
-                go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
+            # state: AlsecoAddressConfirm
+            #     intent: /AlsecoAdressConfirm
+            #     a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
+            #     go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
 
             state: No_Suppliers_List
                 q: $no
@@ -76,14 +76,14 @@ theme: /ChangeAccountPersonCount
                     
 
                 state: SupplierContactsFull
-                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetMainSupplNames($MainSuppl)}}. Если вы уменьшаете количество проживающих, то еще необходимо обратиться в Тартып.
+                    a:   Вы можете обратиться  к одному из основных поставщиков коммунальных услуг на выбор -  {{GetMainSupplNames($MainSuppl)}}. Если вы уменьшаете количество проживающих, то еще необходимо обратиться в Тартып.
                     go!: ../Contacts
                                     
                 state: SupplierContactsByAccount
                     # где-то здесь надо получить список поставщиков из БД и сформировать строку
                         # где-то здесь надо получить список поставщиков из БД и сформировать строку 
                     if: GetAccountMainSuppls()
-                        a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
+                        a:   Вы можете обратиться  к одному из основных поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
                         if: isAccountHasSuppl('tartyp')
                             a: Если вы уменьшаете количество проживающих, то еще необходимо обратиться в Тартып.
                     else:

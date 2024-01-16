@@ -17,9 +17,8 @@ tests:
         # - test_ChangeAccountPerson/*.xml
         # - *.*
         # - *
-        #   - test_NoMatch/test_NoMatchPhrases.xml
-        #   - test_main/test_main_trashToOperatior.xml 
-        #    - test_SecondPayment/*.xml
+        #   -  test_SecondPayment/*.xml
+        #   - test_SupplierContacts/test_SupplierContacts_WrongNumber.xml
     exclude: 
       
         # - *.*

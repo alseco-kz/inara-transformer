@@ -87,7 +87,6 @@ theme: /SecondPayment
                     Возврат могут сделать только поставщики, контакты которых указаны в квитанции.
                 go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
                 
-                
         state: Требование_дальнейшей_консультации
             random:
                 a: Вам нужна дальнейшая консультация?
@@ -131,10 +130,10 @@ theme: /SecondPayment
         #     intent: /Sroki
         #     if: $session.nesoglasie == 1 
         #         a: У каждого поставщика услуг свои правила. Поэтому уточните у них
-        #         go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+        #         go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
         #     else:
         #         a: Срок возврата уточните  у банка, через который производилась оплата. Он зависит только от них
-        #         go!: /SecondPayment/TransferPoint/Agreement/Требование_дальнейшей_консультации
+        #         go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации
        
                        
         state: HowFindContacts
