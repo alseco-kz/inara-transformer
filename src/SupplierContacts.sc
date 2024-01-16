@@ -368,6 +368,7 @@ theme: /SupplierContacts
             state: MyRequsetsHasBeenCreated
                 q:* заяв* созда* *
                 q: * *переда* заявк* *
+                intent: /MyRequsetsHasBeenCreated
                 random:
                     a: Да.
                     a: Ваша Заявка со+здана!

@@ -3352,6 +3352,20 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/MyRequsetsHasBeenCreated",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "заявка  создана"
+    }, {
+      "text" : "передадите заявку"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
