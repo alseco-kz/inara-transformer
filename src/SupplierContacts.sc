@@ -372,7 +372,7 @@ theme: /SupplierContacts
                     a: Да.
                     a: Ваша Заявка с+здана!
                     a: Ваша Заявка передана в обработку
-                go!: /CanIHelpYou
+                go!: ..
             state: Repeat
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить
