@@ -24,14 +24,15 @@ function SendBotChannelMessage(header,message, addBotInfo){
         message = "Канал: "+$request.channelType+"\n\n" + message;
         message = "Бот: "+$request.botId+"\n" + message;//Бот - 
     }
-
-
-    var url = "https://api.telegram.org/bot"+token+"/sendMessage?chat_id="+chat_id+"&text="+header + "\n"+message;//+"&parse_mode=Markdown";
-    var response =  $http.query(url, {method: "GET"
-    //,timeout: 20000        // таймаут выполнения запроса в мс
-            })
     
+
+   if ($request.channelType!= "chatwidget"){
+        var url = "https://api.telegram.org/bot"+token+"/sendMessage?chat_id="+chat_id+"&text="+header + "\n"+message;//+"&parse_mode=Markdown";
+        var response =  $http.query(url, {method: "GET"
+        //,timeout: 20000        // таймаут выполнения запроса в мс
+                })
     
+    }
 }
 
 function SendWarningMessage(message){
