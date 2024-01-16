@@ -278,6 +278,7 @@ theme: /SupplierContacts
                             if ($session.Phone.NotMyPhoneCounter < 2 )
                                $session.Phone.NotMyPhoneCounter = $session.Phone.NotMyPhoneCounter +1
                         if: $session.Phone.NotMyPhoneCounter == 2
+                            a: Для решения Вашего вопроса перевожу Вас на оператора
                             go!: /CallTheOperator
                         else:
                             a: Давайте попробуем снова.Назовите номер телефона целиком.
@@ -304,7 +305,7 @@ theme: /SupplierContacts
                     $temp.IsRequestAdded = AddRequestComplaint()
                 
                 if: $temp.IsRequestAdded
-                    a: Я сохранила Вашу заявку. С Вами обязательно свяжется наш специалист и сообщит результаты. 
+                    a: Я зафиксировала Вашу заявку. Мы с Вами свяжемся в течение трех рабочих дней.
                     go!: ../../CanIHelpYou
                 else:
                     a: Мне не удалось сохранить заявку. Для решения Вашего вопроса перевожу Вас на оператора
