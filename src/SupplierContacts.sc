@@ -241,7 +241,7 @@ theme: /SupplierContacts
                 q: $no
                 q: $disagree
                 intent: /Несогласие
-                intent: /Несогласие_помочь
+                
                 intent: /Несогласие_перечислить
                 script:
                     $session.Phone = {};
@@ -314,6 +314,7 @@ theme: /SupplierContacts
             
             state: MakeRequestDecline
                 intent: /DontNeedRequest
+                intent: /Несогласие_помочь
                 q: ($no/$disagree) заявк*
                 if: countRepeats() == 1 
                     a: Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?  

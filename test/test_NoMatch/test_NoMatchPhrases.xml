@@ -242,7 +242,7 @@
     <test-case>
         <q>/start</q><a></a><a></a>
         <q>я хочу узнать как в вашей новой программе</q>
-        <a state="/Start/DialogMakeQuestion"/>
+        <a state="/NoMatch"/>
     </test-case>
     
     
@@ -262,7 +262,7 @@
     <test-case>
         <q>/start</q><a></a><a></a>
         <q>я хочу узнать у нас адрес изменился</q>
-        <a state="/Start/DialogMakeQuestion"/>
+        <a state="/NoMatch"/>
     </test-case>
     
     
