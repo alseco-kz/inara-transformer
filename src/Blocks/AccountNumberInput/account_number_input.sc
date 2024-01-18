@@ -203,20 +203,19 @@ theme: /BlockAccountNumInput
                 a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline
                 # go!: AccountInputNumberContinue
             else
-                a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
-                a: Подождёте?
-                script:
-                    $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                    $dialer.setNoInputTimeout(3000); // Бот ждёт ответ 1 секунду и начинает искать.
-            script:
-                $dialer.bargeInResponse({
-                    //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
-                    bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
-                    bargeInTrigger: "interim",
-                    //bargeInTrigger: "final",
-                    // noInterruptTime: 1500
-                    noInterruptTime: 0
-                    });
+                go!:  ./AccountInputNumberNumComplete
+                # script:
+                #     $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                #     $dialer.setNoInputTimeout(3000); // Бот ждёт ответ 1 секунду и начинает искать.
+            # script:
+            #     $dialer.bargeInResponse({
+            #         //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+            #         bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
+            #         bargeInTrigger: "interim",
+            #         //bargeInTrigger: "final",
+            #         // noInterruptTime: 1500
+            #         noInterruptTime: 0
+            #         });
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
@@ -250,14 +249,13 @@ theme: /BlockAccountNumInput
                     TrySetNumber($temp.AccNum + $temp.CurrentNum);
                     $temp.AccNumLen = GetTempAccountNumber().length;
                 if: ($temp.AccNumLen) < 9
-                    a:
-                        {{AccountTalkNumber($temp.CurrentNum)}}
+                    a:{{AccountTalkNumber($temp.CurrentNum)}}
                     random:
                         a: **д+альше**
                         # a: Так
                         a: **продолж+айте**
                 elseif: (($temp.AccNumLen ==  9)||($temp.AccNumLen ==  10))
-                    go!: AccountInputNumberComplete
+                    go!: /AccountInputNumberComplete
                 else:
                     random:
                         a: Это слишком длинный номер. В базе такого нет. 
@@ -309,16 +307,44 @@ theme: /BlockAccountNumInput
                 state: AccountInputNumberComplete
                     q: все 
                     intent: /ЛС_цифры_закончились
-                    a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Подождите 
-                    script:
-                        $reactions.timeout({interval: '1s', targetState: '../../FindAccount'});
-                        $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    random:
+                        a: Подскажите, это Ваш лицевой счет? {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
+                        a: Верно ли я записала Ваш лицевой счет?  {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
                     
-                    # go!: ../../FindAccount
+                    state: AccountInputNumberComplete
+                        q: $yes
+                        q: $agree
+                        intent: /Согласие
+                        intent: /Согласие_подожду
+                        event: noMatch
+                        a: Поиск займет пару секунд, Подождите пожалуйста.
+                        script:
+                            $reactions.timeout({interval: '1s', targetState: '../../../FindAccount'});
+                            $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                        script:
+                                $dialer.bargeInResponse({
+                                //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                                bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
+                                bargeInTrigger: "interim",
+                                //bargeInTrigger: "final",
+                                // noInterruptTime: 1500
+                                noInterruptTime: 0
+                                });
+                        
+                        # go!: ../../FindAccount
                     state: AccountInputNumberCompleteNoSpeech
                         event: speechNotRecognized
                         go!: ../../../FindAccount
-
+                    state: AccountInputNumberDisagree
+                        q: $no
+                        q: $disagree
+                        intent: /Несогласие
+                        intent: /Несогласие_подожду
+                        a: Давайте попробуем снова
+                        if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
+                            go!:  ../../../../../../BlockAccountNumInput/AccountInput
+                        else
+                            go!:../../../AccountNotFound
 
             state: AccountInputNumberNumComplete
                 intent: /ЛС_цифры_закончились
@@ -366,6 +392,7 @@ theme: /BlockAccountNumInput
                                 // $session.Account.Address = res.data[0].address_full_name;
                                 $reactions.transition('../AccountAddressConfirm')
                                 $session.Account.AddressRepeatCount = 0;
+                                
                             } else {
                                 $session.Account.Address = "";
                                 $reactions.transition('../AccountNotFound');
