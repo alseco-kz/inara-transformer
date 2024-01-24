@@ -19,6 +19,8 @@ tests:
         # - *
         #   -  test_SecondPayment/*.xml
         #   - test_SupplierContacts/test_SupplierContacts_WrongNumber.xml
+        #   - block_tests.xml 
+        
     exclude: 
       
         # - *.*
