@@ -75,7 +75,13 @@ function GetPhoneNumber(){
 }
 //---------------------------------------------------------------------------
 // Как говорить номер телефона (разбиение по разрядам)
-function PhoneTalkNumber(phone_num){
-    return phone_num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, "- - ")    
+function PhoneTalkNumber(phone_num) {
+    var pn = phone_num.toString();
+    if (pn[0] === "7" || pn[0] === "8") {
+        return pn.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '8-$2-$3-$4-$5');
+    } else {
+        return pn.replace(/\B(?=(\d{2})+(?!\d))/g, "- - ");
+    }
 }
+
 

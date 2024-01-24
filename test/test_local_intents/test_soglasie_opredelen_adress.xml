@@ -15,11 +15,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>     
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
          <q>это мой адрес</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -41,11 +41,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
          <q>понял верно</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -67,11 +67,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
          <q>распознал верно</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -93,11 +93,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
          <q>норм</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -119,11 +119,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
          <q>правильно</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
