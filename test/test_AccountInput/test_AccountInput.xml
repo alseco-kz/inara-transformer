@@ -81,11 +81,11 @@
           </response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -110,11 +110,11 @@
           </response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -122,7 +122,7 @@
     
     <test-case id="лс_где_взять_да_подождете_speechnotrecognized">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
-        <q>да</q>
+        <q>да</q> 
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
         <q>А где его взять?</q>
@@ -139,9 +139,9 @@
           </response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <event>speechNotRecognized</event>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
@@ -218,10 +218,11 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
@@ -298,17 +299,17 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>         
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+       
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>   
     
-лс_задан
+
 
     <test-case id="ЛС_не_ждет">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
@@ -321,11 +322,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>нет</q>
-        <a>Давайте еще раз проверим</a>
+        <a>Давайте попробуем снова</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
     </test-case>   
 
@@ -340,11 +341,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
         <a>Я Вас не расслышала. Повторите еще раз.</a>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
@@ -365,11 +366,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -386,11 +387,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
         <a>Я Вас не расслышала. Повторите еще раз.</a>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
@@ -410,20 +411,21 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>         
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
-        <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q> 
+
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -444,20 +446,20 @@
           </response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 92. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+         <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
         <q>да</q>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -477,18 +479,16 @@
           <!--<response status="200"/>-->
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -507,18 +507,20 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -537,18 +539,20 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -567,18 +571,20 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -597,18 +603,20 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
@@ -627,18 +635,18 @@
           <response></response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета по цифрам</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 90</a>
+        <!---->
         <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
