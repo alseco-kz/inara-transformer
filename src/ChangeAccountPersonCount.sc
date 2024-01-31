@@ -1,5 +1,99 @@
 theme: /ChangeAccountPersonCount
     
+    state: ChangeAccountPersonStart
+        intent!: /ChangeAccountPersonCount
+        script:
+            $temp.HasTBOservice = false
+                 if ($parseTree._Услуга){
+                    $temp.Service = $parseTree._Услуга;
+                    if (typeof($temp.Service)=="string"){
+                        var  Names = $temp.Service;
+                        Names = Names.replaceAll( "\"","\'");
+                        Names = Names.replaceAll( "\'","\"");
+                        $temp.Service = JSON.parse(Names);
+                    }
+                    $temp.HasTBOservice = $temp.Service.SERV_ID[0] == 400
+                }
+        # a: {{toPrettyString($parseTree._Услуга)}}
+        if: $temp.HasTBOservice
+            go!: ../ChangeAccountPersonTBOoMain
+        else:
+            go!:../ChangeAccountPersonCountQuestion
+            
+    
+    
+    
+    state: ChangeAccountPersonCountQuestion
+        a: Вы можете сменить количество зарегитрированныъх проживающих в квитанции по основным услугаим или в графе вывоз ТэБэО. Где бы вы хотели сменить количество?
+        
+        state: TBO
+            intent: /TBO
+            go!: ../../ChangeAccountPersonTBOoMain
+        state: ChangeAccountPersonCount
+            intent:  /ChangeAccountPersonCount
+            intent: /ServiceInSmart
+            script:
+                $temp.HasTBOservice = false
+                     if ($parseTree._Услуга){
+                        $temp.Service = $parseTree._Услуга;
+                        if (typeof($temp.Service)=="string"){
+                            var  Names = $temp.Service;
+                            Names = Names.replaceAll( "\"","\'");
+                            Names = Names.replaceAll( "\'","\"");
+                            $temp.Service = JSON.parse(Names);
+                        }
+                        $temp.HasTBOservice = $temp.Service.SERV_ID[0] == 400
+                    }
+        # a: {{toPrettyString($parseTree._Услуга)}}
+            if: $temp.HasTBOservice
+                go!: ../ChangeAccountPersonTBOoMain
+            else:
+                go!: ../../ChangeAccountPersonCount
+    
+    state: ChangeAccountPersonTBOoMain
+        random: 
+            a: Вам необходимо обратиться в Тартып
+            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып
+
+        go!:  /ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
+        
+        
+        state: CanIHelpYouTBO
+            script:
+                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
+            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+            
+            state: CanIHelpYouRepeat
+                intent: /Повторить
+                go!: /repeat            
+            
+            state: CanIHelpYouAgree
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
+                go!: /WhatDoYouWant
+                
+            state: CanIHelpYouDisagree
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                intent: /greeting
+                go!: /bye  
+        
+        
+        
+        
+        
+        state: DocumentsToChangeAccountPerson
+            intent: /NeedSomeDocument 
+            a: Необходимо уточнить в "Тартып"
+            go!: ../CanIHelpYou
+        
+
+    
+    
     state: ChangeAccountPersonCountToChange
         q!: * (прописано|поменялось) [количество]* @duckling.number * [~человек] * 
         a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
@@ -21,7 +115,7 @@ theme: /ChangeAccountPersonCount
             go:/WhatDoYouWant
         
     state: ChangeAccountPersonCount
-        intent!: /ChangeAccountPersonCount
+        
         a: Изменить количество проживающих можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
         state: Offline

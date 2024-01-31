@@ -640,16 +640,25 @@
     }, {
       "text" : "людей было @duckling.number стало @duckling.number"
     }, {
-      "text" : "поменять количество в @квитанция"
+      "text" : "поменять количество в квитанции в графе @Услуга"
     }, {
-      "text" : "изменилось количество людей проживающих в квартире"
+      "text" : "изменилось количество людей проживающих в квартире в графе @Услуга"
     }, {
       "text" : " написано @duckling.number проживает @duckling.number"
+    }, {
+      "text" : "как поменять количество проживающих человек в графе @Услуга"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
     "patterns" : [ "(сменить | поменять | изменить | выписать  | уменьшить  | увеличить  | исключить  | внести  | модифицировать) [состав  | количество  | список  | перечень] (жильцов  | человек  | людей  | проживающих  | прописанных)" ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : true
+    } ],
     "priority" : 0
   }, {
     "path" : "/Лично",
@@ -3379,6 +3388,46 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ServiceInSmart",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Зарегистрированных в Смарт ЖКХ"
+    }, {
+      "text" : "те что в смарте"
+    }, {
+      "text" : "по основным услугам"
+    }, {
+      "text" : "по услугам"
+    }, {
+      "text" : "другие"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/TBO",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@Услуга"
+    }, {
+      "text" : "в графе ТБО"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
     "priority" : 0
   } ],
   "entities" : [ {
