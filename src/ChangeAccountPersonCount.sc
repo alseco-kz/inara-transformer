@@ -24,7 +24,7 @@ theme: /ChangeAccountPersonCount
     
     
     state: ChangeAccountPersonCountQuestion
-        a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Где бы вы хотели сменить количество?
+        a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз Тэ Бэ О. Где бы вы хотели сменить количество?
         
         state: TBO
             intent: /TBO
@@ -53,7 +53,7 @@ theme: /ChangeAccountPersonCount
     state: ChangeAccountPersonTBOoMain
         random: 
             a: Вам необходимо обратиться в Тартып
-            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып
+            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып по адресу
 
         go!:  /ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
         
@@ -88,8 +88,8 @@ theme: /ChangeAccountPersonCount
         
         state: DocumentsToChangeAccountPerson
             intent: /NeedSomeDocument 
-            a: Необходимо уточнить в "Тартып"
-            go!: ../CanIHelpYou
+            a: Необходимо уточнить в "Тартып" по адресу
+            go!: ../../../ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
         
 
     

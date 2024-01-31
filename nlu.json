@@ -3435,6 +3435,22 @@
       "prompts" : [ ]
     } ],
     "priority" : 0
+  }, {
+    "path" : "/NeedSomeDocument",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "какие нужны документы"
+    }, {
+      "text" : "документы какие нужны"
+    }, {
+      "text" : "удостоверение нужно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
