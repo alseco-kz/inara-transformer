@@ -25,8 +25,7 @@ theme: /ChangeAccountPersonCount
     
     state: ChangeAccountPersonCountQuestion
         a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Где бы вы хотели сменить количество?\
-        a: О
-        
+       
         state: TBO
             intent: /TBO
             go!: ../../ChangeAccountPersonTBOoMain
