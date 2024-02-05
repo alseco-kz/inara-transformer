@@ -24,14 +24,20 @@ theme: /ChangeAccountPersonCount
     
     
     state: ChangeAccountPersonCountQuestion
-        a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Где бы вы хотели сменить количество?\
+        a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Вы хотите сменить количество проживающих по основным услугам?
        
         state: TBO
             intent: /TBO
+            q: $no 
+            q: $disagree 
+            intent: /Несогласие
             go!: ../../ChangeAccountPersonTBOoMain
         state: ChangeAccountPersonCount
             intent:  /ChangeAccountPersonCount
             intent: /ServiceInSmart
+            q: $yes
+            q: $agree
+            intent: /Согласие    
             script:
                 $temp.HasTBOservice = false
                      if ($parseTree._Услуга){
@@ -52,12 +58,27 @@ theme: /ChangeAccountPersonCount
     
     state: ChangeAccountPersonTBOoMain
         random: 
-            a: Вам необходимо обратиться в Тартып
-            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып по адресу
-
-        go!:  /ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
-        
-        
+            a: Вам необходимо обратиться в Тартып в офис или онлайн
+            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып в офис или онлайн
+        a: Желаете ли вы посетить офис?
+        state: Online
+            intent: /Онлайн
+            intent: /HowCanIDoThis
+            q: $no 
+            q: $disagree 
+            intent: /Несогласие
+            intent: /CantDoThis  
+            
+            a: Вы можете направить заявление с подтверждающими документами на адрес электронной почты инфо собачка тартып точка кей зет.
+            go!: ../CanIHelpYouTBO    
+        state:Offline
+            intent: /Лично
+            intent: /НеОнлайн
+            q: $yes
+            q: $agree
+            intent: /Согласие     
+            a:  Вам нужен абонентский отдел ТОО Тартып по адресу микрорайон Коктем 2, дом номер 2
+            go!: ../CanIHelpYouTBO   
         state: CanIHelpYouTBO
             script:
                 $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
@@ -88,7 +109,7 @@ theme: /ChangeAccountPersonCount
         
         state: DocumentsToChangeAccountPerson
             intent: /NeedSomeDocument 
-            a: Необходимо уточнить в "Тартып" по адресу
+            a: Необходимо уточнить в "Тартып" по номеру 393, 08, 03 или по адресу электронной почты инфо собачка кей зет 
             go!: ../../../ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
         
 
