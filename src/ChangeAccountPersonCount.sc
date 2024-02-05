@@ -1,5 +1,120 @@
 theme: /ChangeAccountPersonCount
     
+    state: ChangeAccountPersonStart
+        intent!: /ChangeAccountPersonCount
+        script:
+            $temp.HasTBOservice = false
+                 if ($parseTree._Услуга){
+                    $temp.Service = $parseTree._Услуга;
+                    if (typeof($temp.Service)=="string"){
+                        var  Names = $temp.Service;
+                        Names = Names.replaceAll( "\"","\'");
+                        Names = Names.replaceAll( "\'","\"");
+                        $temp.Service = JSON.parse(Names);
+                    }
+                    $temp.HasTBOservice = $temp.Service.SERV_ID[0] == 400
+                }
+        # a: {{toPrettyString($parseTree._Услуга)}}
+        if: $temp.HasTBOservice
+            go!: ../ChangeAccountPersonTBOoMain
+        else:
+            go!:../ChangeAccountPersonCountQuestion
+            
+    
+    
+    
+    state: ChangeAccountPersonCountQuestion
+        a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Вы хотите сменить количество проживающих по основным услугам?
+       
+        state: TBO
+            intent: /TBO
+            q: $no 
+            q: $disagree 
+            intent: /Несогласие
+            go!: ../../ChangeAccountPersonTBOoMain
+        state: ChangeAccountPersonCount
+            intent:  /ChangeAccountPersonCount
+            intent: /ServiceInSmart
+            q: $yes
+            q: $agree
+            intent: /Согласие    
+            script:
+                $temp.HasTBOservice = false
+                     if ($parseTree._Услуга){
+                        $temp.Service = $parseTree._Услуга;
+                        if (typeof($temp.Service)=="string"){
+                            var  Names = $temp.Service;
+                            Names = Names.replaceAll( "\"","\'");
+                            Names = Names.replaceAll( "\'","\"");
+                            $temp.Service = JSON.parse(Names);
+                        }
+                        $temp.HasTBOservice = $temp.Service.SERV_ID[0] == 400
+                    }
+        # a: {{toPrettyString($parseTree._Услуга)}}
+            if: $temp.HasTBOservice
+                go!: ../ChangeAccountPersonTBOoMain
+            else:
+                go!: ../../ChangeAccountPersonCount
+    
+    state: ChangeAccountPersonTBOoMain
+        random: 
+            a: Вам необходимо обратиться в Тартып в офис или онлайн
+            a: Для решения вашего вопроса Вам необходимо обратиться в Тартып в офис или онлайн
+        a: Вы бы хотели посетить офис?
+        state: Online
+            intent: /Онлайн
+            intent: /HowCanIDoThis
+            q: $no 
+            q: $disagree 
+            intent: /Несогласие
+            intent: /CantDoThis  
+            
+            a: Вы можете направить заявление с подтверждающими документами на адрес электронной почты инфо собачка тартып точка кей зет.
+            go!: ../CanIHelpYouTBO    
+        state:Offline
+            intent: /Лично
+            intent: /НеОнлайн
+            q: $yes
+            q: $agree
+            intent: /Согласие     
+            a:  Вам нужен абонентский отдел ТОО Тартып по адресу микрорайон Коктем 2, дом номер 2
+            go!: ../CanIHelpYouTBO   
+        state: CanIHelpYouTBO
+            script:
+                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
+            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+            
+            state: CanIHelpYouRepeat
+                intent: /Повторить
+                go!: /repeat            
+            
+            state: CanIHelpYouAgree
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
+                go!: /WhatDoYouWant
+                
+            state: CanIHelpYouDisagree
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                intent: /greeting
+                go!: /bye  
+        
+        
+        
+        
+        
+        state: DocumentsToChangeAccountPerson
+            intent: /NeedSomeDocument 
+            a: Необходимо уточнить в "Тартып" по номеру 393, 08, 03 или по адресу электронной почты инфо собачка кей зет 
+            go!: ../../../ChangeAccountPersonCount/ChangeAccountPersonTBOoMain/CanIHelpYouTBO
+        
+
+    
+    
     state: ChangeAccountPersonCountToChange
         q!: * (прописано|поменялось) [количество]* @duckling.number * [~человек] * 
         a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
@@ -21,7 +136,7 @@ theme: /ChangeAccountPersonCount
             go:/WhatDoYouWant
         
     state: ChangeAccountPersonCount
-        intent!: /ChangeAccountPersonCount
+        
         a: Изменить количество проживающих можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
         state: Offline

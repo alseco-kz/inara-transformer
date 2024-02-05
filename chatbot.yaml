@@ -16,11 +16,14 @@ tests:
         # - test_Bills/*.xml
         # - test_ChangeAccountPerson/*.xml
         # - *.*
-        # - *
+        #  -  test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_client_phrases.xml
         #   -  test_SecondPayment/*.xml
         #   - test_SupplierContacts/test_SupplierContacts_WrongNumber.xml
             # - block_tests.xml
         #   - test_local_intents/test_soglasie_prodictovat.xml 
+        #   - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_offline.xml
+
+        #   - test_ChangeAccountPersonCount/test_TBO_ChangeAccountPersonCount.xml 
     exclude: 
       
         # - *.*
