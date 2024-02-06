@@ -3429,7 +3429,8 @@
       "name" : "Услуга",
       "entity" : "Услуга",
       "required" : true,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {

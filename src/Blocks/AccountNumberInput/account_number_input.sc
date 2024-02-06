@@ -127,16 +127,21 @@ theme: /BlockAccountNumInput
                     a: Алло? Вы здесь?
 
         state: looser
-            q: * $looser *
-            q: * $obsceneWord *
-            q: * $stupid * 
-            random: 
-                a: Спасибо. Мне крайне важно ваше мнение
-                a: Вы очень любезны сегодня
-                a: Это комплимент или оскорбление?
+            q!: * $looser *
+            q!: * $obsceneWord *
+            q!: * $stupid  * 
             script:
                 $analytics.setMessageLabel("Отрицательная")
-            go!: {{$session.contextPath}}
+                # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
+            if: $session.looser_count ==0
+                script: $session.looser_count=+1
+                go!: /WhatDoYouWant
+            else:
+                random:
+                    a: Не ругайтесь пожалуйста. Соединяю вас с оператором.
+                    a: Спасибо.Мне важно ваше мнение. Перевожу вас на оператора.
+                    a: Давайте не будем переживать. Перевожу вас на оператора.
+                go!: /CallTheOperator
                
         state: AccountInputNotNumbersWay
             intent: /ЛС_ИнойТипВвода
