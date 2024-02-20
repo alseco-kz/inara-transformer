@@ -40,5 +40,13 @@
     "name" : "KnowledgeBase",
     "x" : 0,
     "y" : 0
+  }, {
+    "id" : "/ИнициацияЗавершения/CanIHelpYou/CanIHelpYouAgree",
+    "x" : 290,
+    "y" : 700
+  }, {
+    "id" : "/ИнициацияЗавершения/CanIHelpYou/CanIHelpYouDisagree",
+    "x" : 290,
+    "y" : 1051
   } ]
 }
