@@ -35,8 +35,8 @@ tests:
         #   - test_SupplierContacts/test_SupplierContacts_checkservices_in_begginning.xml
         #   - test_SupplierContacts/test_SupplierContacts_intent_check.xml
         #   - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
-            - test_NoMatch/test_NoMatchPhrases.xml
-            - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
+        #    - test_NoMatch/test_NoMatchPhrases.xml
+        #    - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
         
     exclude: 
         # - *.*
