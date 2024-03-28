@@ -52,7 +52,7 @@ theme: /ChangeAccountPersonCount
                     }
         # a: {{toPrettyString($parseTree._Услуга)}}
             if: $temp.HasTBOservice
-                go!: ../ChangeAccountPersonTBOoMain
+                go!: ../../ChangeAccountPersonTBOoMain
             else:
                 go!: ../../ChangeAccountPersonCount
     

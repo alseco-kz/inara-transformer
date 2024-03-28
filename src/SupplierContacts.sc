@@ -54,6 +54,7 @@ theme: /SupplierContacts
         # a: даем контакты по услуге
         if: SupplContactsIsSuppSet()
             go!: SupplierContactsSayContacts
+            
             # a: Записывайте. {{GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())}}.
         #  если есть ЛС, то смотрим по нему. если ЛС нет, то надо спрашивать
         # смотрим, был ли лицевой счет выявлен в ходе диалога
@@ -196,7 +197,10 @@ theme: /SupplierContacts
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: ($temp.ss.text) && ($temp.ss.text.length)
                 a: Записывайте. 
-                a: {{$temp.ss.text}}.
+                # a: {{toPrettyString($session.test)}}
+                a: {{$temp.ss.text}}. 
+                
+                # a: {{toPrettyString($session.test3)}}
                 if: $session.RepeatCnt.ServRepeat < 3
                     a: Повторить? 
                 else:

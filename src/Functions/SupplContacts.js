@@ -92,7 +92,7 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
                 // $session.Account.MainSuppliers =  response.data.data[0].suppl_list;
                 response.data.services.forEach(function(elem){
                     // log(toPrettyString(elem))
-                    if (elem.supplierContacts.length > 0)
+                    if (elem.supplierContacts.length > 0){
                         var suppl_name = elem.supplierName;
                         
                     
@@ -102,7 +102,7 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
                         suppl_name = suppl_name.replace('ОСИ','ОС+И');
                         suppl_name = suppl_name.replace('ПТ ','П Т ');
                         suppl_name = suppl_name.replace('ПКСК','пэ ка эс ка');
-                        suppl_name = suppl_name.replace('КСК','ка эс ка');
+                        suppl_name = suppl_name.replace('КСК','ка эс ка');}
                         // var first_index = suppl_name.indexOf('"');
                         // var last_index = suppl_name.lastIndexOf('"'); 
                         // if ((first_index>0)&& (last_index>first_index))
@@ -111,6 +111,10 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
                     // собираем строку из контактов
                     // проверяем, если это основной поставщик, то даем его наименование 
                     // если нет, то данные из сервиса 
+                    
+                    else{
+                         return false;}
+                    
                     if (need_suppl_name)
                         ret_contacts.text = suppl_name + ' - ' + elem.supplierContacts
                     else 
@@ -118,7 +122,7 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
                         
                     //////// Надо сохранить данные по коду услуги, коду поставщика и его телефону
                     FixTalkSupplContacts(elem)
-                    
+
                 });
             }
         }
