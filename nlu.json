@@ -3451,6 +3451,17 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/1",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "1"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
