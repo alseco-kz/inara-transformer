@@ -11,7 +11,7 @@ tests:
         # - test_NoMatch/test_NoMatchPhrases.xml
         # - test_main/*.xml
         #   -  test_Payment/test_Payment_DateLast_pay_phrases.xml
-        #  - test_SupplierContacts/test_SupplierContacts_checkservices_at_start.xml
+         - test_SupplierContacts/test_StressAnotherAccountCheck.xml
         # - test_AccountInput/*.xml
         # - test_Bills/*.xml
         # - test_ChangeAccountPerson/*.xml
