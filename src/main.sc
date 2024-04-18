@@ -126,14 +126,13 @@ theme: /
 
     state: Hello
         intent!: /привет
-        a: Подождите, я думаю...
-        script:
-            setTimeout(waitFiveSeconds, 5000);
+        timeout: /HelloContinuation || interval = 5
+        # go!:/Start
+        
+    state: HelloContinuation
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
-        
-        # go!:/Start
     
     state: WhatDoYouWant
         script:
