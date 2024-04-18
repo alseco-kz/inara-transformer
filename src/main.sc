@@ -126,7 +126,7 @@ theme: /
 
     state: Hello
         intent!: /привет
-        timeout: /HelloContinuation || interval = 5
+        timeout: /HelloContinuation || interval = "5 seconds"
         # go!:/Start
         
     state: HelloContinuation
