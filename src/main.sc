@@ -130,7 +130,7 @@ theme: /
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
-        go: after: 3s: /NoMatch
+        go:/NoMatch
         # go!:/Start
     
     state: WhatDoYouWant
