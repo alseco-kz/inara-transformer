@@ -56,8 +56,6 @@ require: CommonAnswers.yaml
 require: init.js
 
 require: Functions/CommonFunctions.js
-
-require: CommonFunctions.js
     
 patterns:
     # $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
