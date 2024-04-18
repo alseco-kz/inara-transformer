@@ -56,6 +56,8 @@ require: CommonAnswers.yaml
 require: init.js
 
 require: Functions/CommonFunctions.js
+
+require: CommonFunctions.js
     
 patterns:
     # $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
@@ -127,9 +129,12 @@ theme: /
     state: Hello
         intent!: /привет
         a: Подождите, я думаю...
+        script:
+            setTimeout(waitFiveSeconds, 5000);
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
+        
         # go!:/Start
     
     state: WhatDoYouWant
