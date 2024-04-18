@@ -25,7 +25,3 @@ function NewSessionHistoryClear(){
     FindAccountNumberClear();
     $session.repeats = null;
 }
-
-function waitFiveSeconds() {
-    
-}
