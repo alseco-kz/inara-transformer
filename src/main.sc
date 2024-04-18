@@ -126,10 +126,11 @@ theme: /
 
     state: Hello
         intent!: /привет
-        wait: 3s
+        a: Подождите, я думаю...
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
+        go: after: 3s: /WhatDoYouWant
         # go!:/Start
     
     state: WhatDoYouWant
