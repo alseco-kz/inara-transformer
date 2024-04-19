@@ -126,13 +126,12 @@ theme: /
 
     state: Hello
         intent!: /привет
+        script:
+            $dialer.setNoInputTimeout(3000);
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
-        #timeout: /HelloContinuation || interval = "1 sec"
         # go!:/Start
-        
-    state: HelloContinuation
         
     
     state: WhatDoYouWant
