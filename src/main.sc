@@ -127,7 +127,7 @@ theme: /
     state: Hello
         intent!: /привет
         script:
-            $dialer.setNoInputTimeout(15000);
+            $dialer.setNoInputTimeout(3000);
         random:
             a: Здравствуйте, чем я могу вам помочь?
             a: Алло, я Вас слушаю. Чем я могу вам помочь?
