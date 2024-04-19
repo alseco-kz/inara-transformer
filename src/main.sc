@@ -130,7 +130,7 @@ theme: /
          #   $dialer.setNoInputTimeout(3000);
             
         state: HelloAnswer
-            event: noMatch
+            event: speechNotRecognized
             
             random:
                 a: Здравствуйте, чем я могу вам помочь?
