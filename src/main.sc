@@ -126,11 +126,16 @@ theme: /
 
     state: Hello
         intent!: /привет
-        script:
-            $dialer.setNoInputTimeout(3000);
-        random:
-            a: Здравствуйте, чем я могу вам помочь?
-            a: Алло, я Вас слушаю. Чем я могу вам помочь?
+        #script:
+         #   $dialer.setNoInputTimeout(3000);
+            
+        state: HelloAnswer
+            event: noMatch
+            
+            random:
+                a: Здравствуйте, чем я могу вам помочь?
+                a: Алло, я Вас слушаю. Чем я могу вам помочь?
+        
         # go!:/Start
         
     
