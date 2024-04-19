@@ -126,17 +126,15 @@ theme: /
 
     state: Hello
         intent!: /привет
-        #script:
-         #   $dialer.setNoInputTimeout(3000);
+        script:
+            $dialer.setNoInputTimeout(3000);
             
-        state: HelloAnswer
-            event: speechNotRecognized
-            
-            random:
-                a: Здравствуйте, чем я могу вам помочь?
-                a: Алло, я Вас слушаю. Чем я могу вам помочь?
+        go!: /HelloAnswer
         
-        # go!:/Start
+    state: HelloAnswer
+        random:
+            a: Здравствуйте, чем я могу вам помочь?
+            a: Алло, я Вас слушаю. Чем я могу вам помочь?
         
     
     state: WhatDoYouWant
