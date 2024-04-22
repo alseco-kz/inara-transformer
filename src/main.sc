@@ -274,7 +274,7 @@ theme: /
         intent!: /Повторить
         script:
             //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
-            if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
+            if ($session.lastState && !$session.lastState.startsWith("/repeat")) {
                 $session.repeatRepetition = 0;
             } else{
                 $session.repeatRepetition = $session.repeatRepetition || 0;
