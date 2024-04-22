@@ -128,7 +128,6 @@ theme: /
         intent!: /привет
         script:
             $dialer.setNoInputTimeout(3000);
-            
         go!: /HelloAnswer
         
     state: HelloAnswer
