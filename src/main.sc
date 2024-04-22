@@ -273,16 +273,15 @@ theme: /
         q!:  ( повтор* / что / еще раз* / ещё раз*)
         intent!: /Повторить
         script:
-            $session.speechNotRecognized = $session.speechNotRecognized || {};
             //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
             if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
-                $session.speechNotRecognized.repeatRepetition = 0;
+                $session.repeatRepetition = 0;
             } else{
-                $session.speechNotRecognized.repeatRepetition = $session.speechNotRecognized.repeatRepetition || 0;
+                $session.repeatRepetition = $session.repeatRepetition || 0;
             }
-            $session.speechNotRecognized.repeatRepetition += 1;
+            $session.repeatRepetition += 1;
             
-        if: $session.speechNotRecognized.repeatRepetition >= 3
+        if: $session.repeatRepetition >= 3
             a: Кажется, проблемы со связью.
             script:
                 $dialer.hangUp();
