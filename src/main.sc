@@ -272,6 +272,16 @@ theme: /
     state: repeat || noContext = true
         q!:  ( повтор* / что / еще раз* / ещё раз*)
         intent!: /Повторить
+        script:
+            $session.speechNotRecognized = $session.speechNotRecognized || {};
+            //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+            if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
+                $session.speechNotRecognized.repeatRepetition = 0;
+            } else{
+                $session.speechNotRecognized.repeatRepetition = $session.speechNotRecognized.repeatRepetition || 0;
+            }
+            $session.speechNotRecognized.repeatRepetition += 1;
+        
         if: $session._last_reply
             a: {{$session._last_reply}}
         else:
