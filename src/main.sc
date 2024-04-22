@@ -346,8 +346,10 @@ theme: /
             //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
             if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
                 $session.speechNotRecognized.repetition = 0;
+                console.log('speech not recongized 0');
             } else{
                 $session.speechNotRecognized.repetition = $session.speechNotRecognized.repetition || 0;
+                console.log('speech not recongized more than 0');
             }
             $session.speechNotRecognized.repetition += 1;
             

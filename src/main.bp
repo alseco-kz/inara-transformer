@@ -5,8 +5,8 @@
     "y" : 1279
   }, {
     "id" : "/Start",
-    "x" : 240,
-    "y" : 1229
+    "x" : 508,
+    "y" : 1861
   }, {
     "id" : "/Hello",
     "x" : 240,
@@ -17,8 +17,8 @@
     "y" : 2290
   }, {
     "id" : "/NoMatch",
-    "x" : 620,
-    "y" : 825
+    "x" : 1010,
+    "y" : 708
   }, {
     "id" : "/CallTheOperator",
     "x" : 240,
@@ -48,5 +48,9 @@
     "id" : "/ИнициацияЗавершения/CanIHelpYou/CanIHelpYouDisagree",
     "x" : 290,
     "y" : 1051
+  }, {
+    "id" : "/speechNotRecognizedGlobal",
+    "x" : 554,
+    "y" : 91
   } ]
 }
