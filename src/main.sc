@@ -283,8 +283,11 @@ theme: /
             
         if: $session.repeatRepetition >= 3
             a: Кажется, проблемы со связью.
-            script:
-                $dialer.hangUp();
+            random:
+                a: Не ругайтесь пожалуйста. Соединяю вас с оператором.
+                a: Спасибо.Мне важно ваше мнение. Перевожу вас на оператора.
+                a: Давайте не будем переживать. Перевожу вас на оператора.
+            go!: /CallTheOperator
         else:
             if: $session._last_reply
                 a: {{$session._last_reply}}
