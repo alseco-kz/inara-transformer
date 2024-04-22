@@ -281,11 +281,18 @@ theme: /
                 $session.speechNotRecognized.repeatRepetition = $session.speechNotRecognized.repeatRepetition || 0;
             }
             $session.speechNotRecognized.repeatRepetition += 1;
+            
+        if: $session.speechNotRecognized.repeatRepetition >= 3
+            a: Кажется, проблемы со связью.
+            script:
+                $dialer.hangUp();
+        else :
+            if: $session._last_reply
+                a: {{$session._last_reply}}
+            else:
+                go!: {{$session.contextPath}}
         
-        if: $session._last_reply
-            a: {{$session._last_reply}}
-        else:
-            go!: {{$session.contextPath}}
+        
     # go!: {{ $context.session._lastState }} 
 
     state: bye
