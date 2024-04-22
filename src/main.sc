@@ -286,7 +286,7 @@ theme: /
             a: Кажется, проблемы со связью.
             script:
                 $dialer.hangUp();
-        else :
+        else:
             if: $session._last_reply
                 a: {{$session._last_reply}}
             else:
