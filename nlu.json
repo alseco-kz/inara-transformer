@@ -319,6 +319,10 @@
       "text" : "доброго времени суток"
     }, {
       "text" : "здравствуйте "
+    }, {
+      "text" : "дратути"
+    }, {
+      "text" : "салам алейкум"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -4422,6 +4426,29 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "сумма", "программа", "тариф", "адрес" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "вот_парам",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "вот" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "парам" ],
       "value" : ""
     } ]
   } ],
