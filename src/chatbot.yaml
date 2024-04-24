@@ -37,6 +37,7 @@ tests:
         #   - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
         #    - test_NoMatch/test_NoMatchPhrases.xml
         #    - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
+        - block_tests.xml
         
     exclude: 
         # - *.*
