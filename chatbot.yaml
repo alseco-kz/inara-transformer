@@ -22,7 +22,6 @@ tests:
             # - block_tests.xml
         #   - test_local_intents/test_soglasie_prodictovat.xml 
         #   - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_offline.xml
-            - repeat.xml
         #   - test_ChangeAccountPersonCount/test_TBO_ChangeAccountPersonCount.xml 
     exclude: 
       
