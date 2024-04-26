@@ -5,27 +5,27 @@
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>  
         <mockData>
-            
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
-            <parameters><filterValue>1234567</filterValue></parameters>
-            <response>{"accountId":1234567,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 20"}</response>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/5888492/services/contacts?${serv}</query>
-            <parameters><filterValue>1234567</filterValue>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
             <serv>serviceCodes=458&amp;serviceCodes=198&amp;serviceCodes=181&amp;serviceCodes=166&amp;serviceCodes=160&amp;serviceCodes=90&amp;serviceCodes=32&amp;serviceCodes=31&amp;serviceCodes=8</serv>                  
             </parameters>
-            <response>{"accountId":1234567,"services":[{"serviceCode":8,"serviceName":"Отопление","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"341-05-28. - - - еще номер - - 341-05-29"}]}</response>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
         </mockData>  
-        <q>12 34 567</q>
-        <a>Подскажите, это Ваш лицевой счет? 1- - 23- - 45- - 67</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
         
         
         <q>да</q>
-        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 20. Верно?</a>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a>Записывайте.</a>
-        <a>Алматинские тепловые сети - 123-45-67. - - - еще номер - - 123-45-67.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
         <a>Повторить?</a>
+    </test-case>
     </test-case>
 </test>
