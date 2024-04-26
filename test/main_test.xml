@@ -2,6 +2,7 @@
     <test-case id="Первый тест">
         <q>Сменить реквизиты</q>
         <a>Чивооооо??????</a>
+        <a state="/WhatDoYouWant"></a>
     </test-case>
 </test>
 
