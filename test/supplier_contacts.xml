@@ -11,11 +11,11 @@
             <response>{"accountId":1234567,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 20"}</response>
         </mockData> 
         <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/5888492/services/contacts?${serv}</query>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>1234567</filterValue>
             <serv>serviceCodes=458&amp;serviceCodes=198&amp;serviceCodes=181&amp;serviceCodes=166&amp;serviceCodes=160&amp;serviceCodes=90&amp;serviceCodes=32&amp;serviceCodes=31&amp;serviceCodes=8</serv>                  
             </parameters>
-            <response>{"accountId":1234567,"services":[{"serviceCode":8,"serviceName":"Отопление","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"341-05-28. - - - еще номер - - 341-05-29"}]}</response>
+            <response>{"accountId":1234567,"services":[{"serviceCode":8,"serviceName":"Отопление","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"435-34-43. - - - еще номер - - 435-34-44"}]}</response>
         </mockData>  
         <q>12 34 567</q>
         <a>Подскажите, это Ваш лицевой счет? 1- - 23- - 45- - 67</a>
@@ -25,7 +25,39 @@
         <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 20. Верно?</a>
         <q>да</q>
         <a>Записывайте.</a>
-        <a>Алматинские тепловые сети - 123-45-67. - - - еще номер - - 123-45-67.</a>
+        <a>Алматинские тепловые сети - 435-34-43. - - - еще номер - - 435-34-44.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="услуга вода, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>телефон воды нужен</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>1221222</filterValue></parameters>
+            <response>{"accountId":1221222,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Калкаман\"","streetName":"","houseName":"дом 100","fullAddressName":"микрорайон \"Калкаман\", дом 100"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>1221222</filterValue>
+            <serv>serviceCodes=458&amp;serviceCodes=198&amp;serviceCodes=181&amp;serviceCodes=166&amp;serviceCodes=160&amp;serviceCodes=90&amp;serviceCodes=32&amp;serviceCodes=31&amp;serviceCodes=8</serv>                  
+            </parameters>
+            <response>{"accountId":1221222,"services":[{"serviceCode":8,"serviceName":"Отопление","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"876-54-32. - - - еще номер - - 876-54-33"}]}</response>
+        </mockData>  
+        <q>12 21 222</q>
+        <a>Подскажите, это Ваш лицевой счет? 1- - 22- - 12- - 22</a>
+        
+        <
+        <q>да</q>
+        <a>Назовите услугу</a>
+        <a>Горячая вода</a>
+        <a></a><a>Ваш адрес микрорайон "Калкаман", дом 100. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>Алматинские тепловые сети - 876-54-32. - - - еще номер - - 876-54-33.</a>
         <a>Повторить?</a>
     </test-case>
 
