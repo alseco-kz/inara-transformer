@@ -60,5 +60,35 @@
         <a>Алматинские тепловые сети - - 876-54-32. - - - еще номер - - 876-54-33..</a>
         <a>Повторить?</a>
     </test-case>
+    
+    <test-case id="вывоз ТБО">
+        <q>/start</q><a></a><a></a>
+        <q>мусор надо вывезти</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>3212132</filterValue></parameters>
+            <response>{"accountId":3212132,"regionName":"город Астана","townName":"","districtName":"микрорайон \"Назарбаевский\"","streetName":"","houseName":"дом 23","fullAddressName":"микрорайон \"Назарбаевский\", дом 23"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>3212132</filterValue>
+            <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>                  
+            </parameters>
+            <response>{"accountId":3212132,"services":[{"serviceCode":11,"serviceName":"Мусор","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"- 231-12-12. - - - еще номер - - 231-12-13."}]}</response>
+        </mockData> 
+        <q>32 12 132</q>
+        <a>Подскажите, это Ваш лицевой счет? 3- - 21- - 21- - 32</a>
+        
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Назарбаевский", дом 23. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>Алматинские тепловые сети - - 231-12-12. - - - еще номер - - 231-12-13..</a>
+        <a>Повторить?</a>
+    </test-case>
 
 </test>

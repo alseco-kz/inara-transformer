@@ -3466,6 +3466,27 @@
       "refs" : [ ]
     },
     "priority" : 0
+  }, {
+    "path" : "/Новый интент",
+    "enabled" : true,
+    "shared" : false,
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/Долг_по_ВДГО",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Долг ВДГО"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
