@@ -537,3 +537,46 @@ theme: /NoElectricService
             go!: /OtherTheme
             
          
+theme: /VDGODebt
+    
+    state: VDGOBill
+        intent!: /Долг_по_ВДГО
+        a: Правильно я понимаю, что у вас по услуге ВДГО задолженность?
+        
+        state: YesVDGO
+            intent: /Согласие
+            BlockAccountNumber:
+                okState = VdgoOK
+                errorState = VdgoError
+                noAccountState = VdgoError
+                
+            state: VdgoOK
+                script:
+                    SupplContactsSetServ([450, 38, 22])
+                if: SupplContactsGetServices()
+                    go!: AskSupplier
+                    
+                state: AskSupplier
+                    a: С января 2024 года по указанию поставщика услуг, начисление проводится разом за 12 месяцев, оплачивать возможно помесячно. Нужны ли вам контакты поставщиков?
+
+                    state: SupplierNeeded
+                        intent: /Согласие
+                        script:
+                            $session.RepeatCnt = $session.RepeatCnt || {};
+                            $session.RepeatCnt.ServRepeat = 0;
+                        go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
+                    
+                    state: SupplierNotNeeded
+                        intent: /Несогласие
+                        go!: /ИнициацияЗавершения/CanIHelpYou/CanIHelpYouDisagree
+                    
+            state: VdgoError
+                a: Без лицевого счёта не могу решить проблему с задолженностью по ВДГО
+                go!: /ИнициацияЗавершения/CanIHelpYou
+                
+        state: NoVDGO
+            intent: /Несогласие
+            a: Уточните, пожалуйста, свой запрос
+            go!: /ИнициацияЗавершения/CanIHelpYou
+            
+    

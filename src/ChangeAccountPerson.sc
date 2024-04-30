@@ -1,6 +1,6 @@
 theme: /ChangeAccountPerson
     
-    state: ChangeAccountPerson
+    state: ChangeAccountPerson || modal = true
         intent!: /ChangeAccountPerson
         # a: {{toPrettyString($parseTree)}}
         script:
