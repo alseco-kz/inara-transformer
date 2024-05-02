@@ -552,9 +552,28 @@ theme: /VDGODebt
                 
             state: VdgoOK
                 script:
-                    SupplContactsSetServ([450, 38, 22])
-                if: SupplContactsGetServices()
+                    var mainList = [22];
+                    var additionalList = [450, 38];
+                    
+                    SupplContactsSetServ(mainList);
+                    
+                    $temp.mainPresent = false;
+                    $temp.additionalPresent = false;
+                    
+                    var supplierContacts = SupplContactsGetServices();
+                    
+                    if (mainList.indexOf(+supplierContacts) !== -1) {
+                        $temp.mainPresent = true;
+                    }
+                    
+                    if (additionalList.indexOf(+supplierContacts) !== -1) {
+                        $temp.additionalPresent = true;
+                    }
+                    
+                if: $temp.mainPresent
                     go!: AskSupplier
+                else:
+                    go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
                     
                 state: AskSupplier
                     a: С января 2024 года по указанию поставщика услуг, начисление проводится разом за 12 месяцев, оплачивать возможно помесячно. Нужны ли вам контакты поставщиков?
