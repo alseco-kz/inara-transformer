@@ -544,6 +544,8 @@ theme: /VDGODebt
         a: Правильно я понимаю, что у вас по услуге ВДГО задолженность?
         
         state: YesVDGO
+            q: да *
+            q: правильно *
             intent: /Согласие
             BlockAccountNumber:
                 okState = VdgoOK
@@ -594,6 +596,8 @@ theme: /VDGODebt
                 go!: /ИнициацияЗавершения/CanIHelpYou
                 
         state: NoVDGO
+            q: нет *
+            q: неправильно *
             intent: /Несогласие
             a: Уточните, пожалуйста, свой запрос
             go!: /ИнициацияЗавершения/CanIHelpYou
