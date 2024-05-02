@@ -481,6 +481,10 @@ theme: /BlockAccountNumInput
                 $analytics.setSessionData("Блок ЛС", "Оператор")
             go!: /CallTheOperator
             
+        state: AccountInputRepeat
+            intent: /Повторить
+            go!: /repeat
+            
             
     
     state: DontKnow
