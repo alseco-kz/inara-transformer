@@ -53,8 +53,7 @@
 
 
 require: /Functions/AccountNumberInput.js
-
-
+require: /Blocks/AccountIIN/account_iin.sc
 
 theme: /BlockAccountNumInput
 
@@ -466,7 +465,22 @@ theme: /BlockAccountNumInput
                     $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                     a: Давайте еще раз проверим
+                    go!: /BlockAccountNumInput/AccountInput
+                else:
+                    go!: /BlockAccountNumInput/AccountInput/AskAboutIIN
+                    
+        state: AskAboutIIN
+            a: Можно попробовать поискать по ИИН. Хотите поискать по ИИН?
+            
+            state: AgreeIIN
+                intent: /Согласие
+                go!: /AccountIIN/AccountIIN
+            
+            state: DisagreeIIN
+                intent: /Несогласие
                 go!: /BlockAccountNumInput/AccountInput
+        
+            
 
         state: AccountInputNoNumber
             event: noMatch || noContext = true

@@ -74,6 +74,7 @@ theme: /
 
     state: Start
         q!: $regex</start>
+        
         script:
             $.session.looser_count = 0;
             $context.session.AnswerCnt = 0;

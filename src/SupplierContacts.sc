@@ -592,7 +592,7 @@ theme: /VDGODebt
                         go!: /ИнициацияЗавершения/CanIHelpYou/CanIHelpYouDisagree
                     
             state: VdgoError
-                a: Без лицевого счёта не могу решить проблему с задолженностью по ВДГО
+                a: Без лицевого счёта и ИИН не могу решить проблему с задолженностью по ВДГО
                 go!: /ИнициацияЗавершения/CanIHelpYou
                 
         state: NoVDGO
