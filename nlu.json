@@ -27,6 +27,26 @@
     }
   },
   "intents" : [ {
+    "path" : "/Insert_IIN",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ИИН дайте продиктовать"
+    }, {
+      "text" : "хочу ввести ИИН"
+    }, {
+      "text" : "хочу найти информацию по ИИН"
+    }, {
+      "text" : "девушка, послушайте мой ИИН"
+    }, {
+      "text" : "слушайте какой у меня ИИН"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/CantDoThis",
     "enabled" : true,
     "shared" : false,
@@ -3504,6 +3524,36 @@
     },
     "patterns" : [ ],
     "slots" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Dont_Know_LS",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хочу узнать ЛС"
+    }, {
+      "text" : "не знаю ЛС"
+    }, {
+      "text" : "скажи мне мой ЛС"
+    }, {
+      "text" : "хочу найти ЛС"
+    }, {
+      "text" : "не знаю свой ЛС"
+    }, {
+      "text" : "помоги узнать ЛС"
+    }, {
+      "text" : "лицевой счёт не знаю"
+    }, {
+      "text" : "хочу найти лицевой счёт"
+    }, {
+      "text" : "скажите мне мой лицевой счёт"
+    }, {
+      "text" : "какой у меня ЛС?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ {

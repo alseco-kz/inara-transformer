@@ -188,7 +188,7 @@ theme: /BlockAccountNumInput
                     $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
                 go!: {{$session.AccountNoAccounState}}
         
-        state: AccountInputNumber 
+        state: AccountInputNumber || modal = true
             
             # проверяем наличие цифр в запросе. если есть, значит говорит номер лицевого счета
             q: * $numbers *
@@ -503,5 +503,4 @@ theme: /BlockAccountNumInput
             FindAccountNumberSetResult("DontKnow"); 
             $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
         
-        # a: Возвращаю управление в стейт {{$session.oldState}}
-        go!: {{$session.AccountNoAccounState}}
+        go!: /AccountIIN/AccountIIN
