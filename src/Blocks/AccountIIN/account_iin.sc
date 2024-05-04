@@ -391,4 +391,5 @@ theme: /AccountIIN
             FindAccountIINSetResult("DontKnow"); 
             $analytics.setSessionData("Блок ИИН", "Не знаю ИИН")
         
-        go!: {{$session.AccountNoAccounState}}
+        a: Без ИИН ничего не могу поделать, извините
+        go!: /ИнициацияЗавершения/CanIHelpYou
