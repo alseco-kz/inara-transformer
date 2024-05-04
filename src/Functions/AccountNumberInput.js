@@ -67,12 +67,9 @@ function FindAccountAddress(){
     var $injector = $jsapi.context().injector;
     var $session = $jsapi.context().session;
     var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
-    
-    // log("addr value = "+ addr);
-    // var url = $injector.InaraServiceUrl + $session.Account._number + '/address';
-    var url = addr + $session.Account._number + '/address';
-    var token = $secrets.get("InaraSeviceToken", "Токен не найден")
 
+    var url = addr + $session.Account._number + '/address';
+    var token = $secrets.get("InaraSeviceToken", "Токен не найден");
     
     return $http.query(url, {method: "GET",
         timeout: 20000        // таймаут выполнения запроса в мс

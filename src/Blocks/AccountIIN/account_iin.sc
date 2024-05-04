@@ -4,6 +4,8 @@ require: /Blocks/AccountIIN/account_iin.sc
 theme: /AccountIIN
 
     state: AccountIIN || modal = true
+        q!: * иин *
+        
         script:
             if (($context.session._lastState.substr(1,10)) != "AccountIIN")
             {
