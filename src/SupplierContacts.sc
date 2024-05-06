@@ -554,8 +554,8 @@ theme: /VDGODebt
                 
             state: VdgoOK
                 script:
-                    var mainList = [22];
-                    var additionalList = [450, 38];
+                    var mainList = [38];
+                    var additionalList = [450, 22];
                     
                     SupplContactsSetServ(mainList);
                     
@@ -578,7 +578,7 @@ theme: /VDGODebt
                     go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
                     
                 state: AskSupplier
-                    a: С января 2024 года по указанию поставщика услуг, начисление проводится разом за 12 месяцев, оплачивать возможно помесячно. Нужны ли вам контакты поставщиков?
+                    a: С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?
 
                     state: SupplierNeeded
                         intent: /Согласие
