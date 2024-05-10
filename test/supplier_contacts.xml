@@ -108,7 +108,7 @@
         <mockData>
             <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
             <parameters><filterValue>111222</filterValue>
-            <serv>serviceCodes=38</serv>                  
+            <serv>serviceCodes=22</serv>                  
             </parameters>
             <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 

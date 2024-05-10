@@ -557,7 +557,10 @@ theme: /VDGODebt
                     var mainList = [38];
                     var additionalList = [450, 22];
                     
+#                   Временная мера, нужная, чтобы поставить mainList в качестве поставщика услуг                    
                     SupplContactsSetServ(mainList);
+                    
+                    $temp.contacts = SupplContactsGetServices();
                     
                     $temp.mainPresent = false;
                     $temp.additionalPresent = false;
@@ -567,15 +570,21 @@ theme: /VDGODebt
                     if (mainList.indexOf(+supplierContacts) !== -1) {
                         $temp.mainPresent = true;
                     }
-                    
+
                     if (additionalList.indexOf(+supplierContacts) !== -1) {
                         $temp.additionalPresent = true;
                     }
-                    
+            
                 if: $temp.mainPresent
                     go!: AskSupplier
-                else:
+                elseif: $temp.additionalPresent
+                    script:
+                        $session.RepeatCnt = $session.RepeatCnt || {};
+                        $session.RepeatCnt.ServRepeat = 0;
                     go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
+                else:
+                    a: Извините, услуга ВДГО по этому номеру ЛС не подключена
+                    go!: /ИнициацияЗавершения/CanIHelpYou
                     
                 state: AskSupplier
                     a: С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?
