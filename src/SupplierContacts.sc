@@ -557,28 +557,50 @@ theme: /VDGODebt
                     var mainList = [38];
                     var additionalList = [22, 450];
                     
-                    $temp.contacts = SupplContactsGetServices();
-                    
-                    $temp.mainPresent = false;
-                    $temp.additionalPresent = false;
-                    
-                    var supplierContacts = SupplContactsGetServices();
-                    
-                    if (mainList.indexOf(+supplierContacts) !== -1) {
-                        $temp.mainPresent = true;
-                    }
+                    var $session = $jsapi.context().session;
+                    $session.SupplContracts = $session.SupplContracts || {};
 
-                    if (additionalList.indexOf(+supplierContacts) !== -1) {
-                        $temp.additionalPresent = true;
-                    }
+                    var supplierContacts = SupplContactsGetServices();
+                    supplierContacts = SupplContactsGetServices();
+                    
+                    $temp.ss = {};
+                    
+                    mainList.forEach(function(mainNumber) {
+                        $session.SupplContracts.servId = [mainNumber];
+                        supplierContacts = SupplContactsGetServices();
+                    
+                        if (SupplContactsIsSuppSet())
+                            $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
+                        else 
+                            SupplContactsGetContactsByAccountServ($MainSuppl, $temp.ss, true);
+                    
+                        if (typeof $temp.ss.text !== 'undefined' && $temp.ss.text !== null) {
+                            $temp.mainPresent = true;
+                        }
+                    });
+                    
+                    additionalList.forEach(function(additionalNumber) {
+                        $session.SupplContracts.servId = [additionalNumber];
+                        supplierContacts = SupplContactsGetServices();
+                    
+                        if (SupplContactsIsSuppSet())
+                            $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
+                        else 
+                            SupplContactsGetContactsByAccountServ($MainSuppl, $temp.ss, true);
+                    
+                        if (typeof $temp.ss.text !== 'undefined' && $temp.ss.text !== null) {
+                            $temp.additionalPresent = true;
+                        }
+                    });
+                    
+                    $session.textContacts = $temp.ss.text;
+                    $session.VDGORepeat = 0;
+                    
             
                 if: $temp.mainPresent
                     go!: AskSupplier
                 elseif: $temp.additionalPresent
-                    script:
-                        $session.RepeatCnt = $session.RepeatCnt || {};
-                        $session.RepeatCnt.ServRepeat = 0;
-                    go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
+                    go!: /VDGODebt/SayContacts
                 else:
                     a: Извините, услуга ВДГО по этому номеру ЛС не подключена
                     go!: /ИнициацияЗавершения/CanIHelpYou
@@ -588,10 +610,7 @@ theme: /VDGODebt
 
                     state: SupplierNeeded
                         intent: /Согласие
-                        script:
-                            $session.RepeatCnt = $session.RepeatCnt || {};
-                            $session.RepeatCnt.ServRepeat = 0;
-                        go!: /SupplierContacts/SupplierContacts/SupplierContactsSayContacts
+                        go!: /VDGODebt/SayContacts
                     
                     state: SupplierNotNeeded
                         intent: /Несогласие
@@ -607,5 +626,28 @@ theme: /VDGODebt
             intent: /Несогласие
             a: Уточните, пожалуйста, свой запрос
             go!: /ИнициацияЗавершения/CanIHelpYou
+            
+    state: SayContacts
+        script:
+            $session.VDGORepeat += 1;
+        
+        a: Записывайте.
+        a: {{$session.textContacts}}.
+                
+        if: $session.VDGORepeat < 3
+            a: Повторить? 
+        else:
+            go!:/ИнициацияЗавершения/CanIHelpYou
+            
+        intent: /Согласие || toState = "."
+        intent: /Согласие_продиктовать_список_поставщиков || toState = "."
+        intent: /Согласие_повторить || toState = "."
+        intent: /Повторить || toState = "."
+        intent: /Несогласие || toState = "/SupplierContacts/SupplierContacts/CanIHelpYou   "
+        intent: /Несогласие_повторить || toState = "/SupplierContacts/SupplierContacts/CanIHelpYou   "
+        q: * @duckling.number * || toState = "."
+        q: * @Услуга * || toState = ".."
+        q: * @УслугаСл * || toState = ".."
+        intent: /PhoneBadNumber || toState = "/SupplierContacts/SupplierContacts/MakeRequest"
             
     
