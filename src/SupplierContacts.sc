@@ -555,10 +555,7 @@ theme: /VDGODebt
             state: VdgoOK
                 script:
                     var mainList = [38];
-                    var additionalList = [450, 22];
-                    
-#                   Временная мера, нужная, чтобы поставить mainList в качестве поставщика услуг                    
-                    SupplContactsSetServ(mainList);
+                    var additionalList = [22, 450];
                     
                     $temp.contacts = SupplContactsGetServices();
                     
