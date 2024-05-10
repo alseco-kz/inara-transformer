@@ -91,41 +91,6 @@
         <a>Повторить?</a>
     </test-case>
     
-    <test-case id="ВДГО идеальный">
-        <q>/start</q><a></a><a></a>
-        <q>У меня в квитанции долг по ВДГО</q>
-        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
-        <q>да</q>
-        <a>Назовите номер вашего лицевого счета</a>
-        
-        <mockData>
-            
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
-            <parameters><filterValue>111222</filterValue></parameters>
-            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
-        </mockData> 
-        
-        <mockData>
-            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
-            <parameters><filterValue>111222</filterValue>
-            <serv>serviceCodes=38</serv>                  
-            </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":38,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
-        </mockData> 
-        
-        <q>111222</q>
-        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
-        <q>да</q>
-        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
-        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
-        <q>Верно</q>
-        <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
-        <q>да</q>
-        <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
-        <a>Повторить?</a>
-    </test-case>
-    
     <test-case id="ВДГО отказ в конце">
         <q>/start</q><a></a><a></a>
         <q>У меня в квитанции долг по ВДГО</q>
@@ -145,7 +110,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=38</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":38,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":38,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
@@ -188,7 +153,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=38</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
@@ -211,7 +176,7 @@
         <a>До свидания!</a>
     </test-case>
     
-    <test-case id="ВДГО идеальный">
+    <test-case id="ВДГО идеальный с повторением">
         <q>/start</q><a></a><a></a>
         <q>У меня в квитанции долг по ВДГО</q>
         <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
@@ -230,7 +195,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=38</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
@@ -242,15 +207,15 @@
         <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
         <q>да</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Повторить?</a>
         <q>Повторите</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Повторить?</a>
         <q>Повторите</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Нужна ли моя помощь дальше?</a>
         <q>Нет</q>
         <a>Благодарим за обращение!</a>
@@ -275,7 +240,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=38</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
@@ -287,7 +252,7 @@
         <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
         <q>да</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Повторить?</a>
     </test-case>
     
@@ -310,7 +275,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=450</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":450,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":450,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
@@ -320,15 +285,15 @@
         <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
         <q>Верно</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Повторить?</a>
         <q>Повторите</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Повторить?</a>
         <q>Повторите</q>
         <a>Записывайте.</a>
-        <a>Тартып - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
         <a>Нужна ли моя помощь дальше?</a>
         <q>Нет</q>
         <a>Благодарим за обращение!</a>
@@ -354,7 +319,7 @@
             <parameters><filterValue>111222</filterValue>
             <serv>serviceCodes=202</serv>                  
             </parameters>
-            <response>{"accountId":111222,"services":[{"serviceCode":202,"serviceName":"ВДГО","supplierName":"Тартып","supplierCodeName":"tartyp","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+            <response>{"accountId":111222,"services":[{"serviceCode":202,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
         </mockData> 
         
         <q>111222</q>
