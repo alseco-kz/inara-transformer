@@ -227,6 +227,11 @@ theme: /SupplierContacts
             state: CreateRequest
                 intent: /Согласие
                 q: $yes
+                script:
+                    $.session.SupplContracts.TalkContacts = {};
+                    $.session.SupplContracts.TalkContacts.supplierCodeName = '';
+                    $.session.SupplContracts.TalkContacts.serviceCode = '';
+                    $.session.SupplContracts.TalkContacts.talkContacts = '';
                 go!: /SupplierContacts/SupplierContacts/MakeRequest
                     
             state: DontCreateRequest
