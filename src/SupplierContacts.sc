@@ -207,9 +207,8 @@ theme: /SupplierContacts
                     go!:../CanIHelpYou
                     
             else
-                a: у меня нет нужного телефона. перевожу звонок на оператора. 
-#TODO           a: По данной услуге отсутствуют контакты поставщика. Хотите, создам заявку на определение контактов?
-                go!: /CallTheOperator
+                go!: /SupplierContacts/SupplierContacts/ChooseRequest
+                
             intent: /Согласие || toState = "."
             intent: /Согласие_продиктовать_список_поставщиков || toState = "."
             intent: /Согласие_повторить || toState = "."
@@ -221,6 +220,19 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
             q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
             intent: /PhoneBadNumber || toState = "../MakeRequest"
+        
+        state: ChooseRequest
+            a: По данной услуге отсутствуют контакты поставщика. Хотите, создам заявку на определение контактов?
+            
+            state: CreateRequest
+                intent: /Согласие
+                q: $yes
+                go!: /SupplierContacts/SupplierContacts/MakeRequest
+                    
+            state: DontCreateRequest
+                intent: /Несогласие
+                q: $no
+                go: /ИнициацияЗавершения/CanIHelpYou
             
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
@@ -548,11 +560,15 @@ theme: /VDGODebt
             q: да *
             q: правильно *
             intent: /Согласие
-            BlockAccountNumber:
-                okState = VdgoOK
-                errorState = VdgoError
-                noAccountState = VdgoError
-                
+            
+            if: FindAccountIsAccountSet()
+                go!: VdgoOK 
+            else:
+                BlockAccountNumber:
+                    okState = VdgoOK
+                    errorState = VdgoError
+                    noAccountState = VdgoError
+
             state: VdgoOK
                 script:
                     var mainList = [38];
@@ -627,6 +643,12 @@ theme: /VDGODebt
             intent: /Несогласие
             a: Уточните, пожалуйста, свой запрос
             go!: /ИнициацияЗавершения/CanIHelpYou
+        
+        state: NoMatchVDGO
+            event: noMatch
+            event: speechNotRecognized
+            a: Я вас не расслышала.
+            go!: /VDGODebt/VDGOBill
             
     state: SayContacts
         script:
