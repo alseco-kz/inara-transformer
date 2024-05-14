@@ -644,8 +644,7 @@ theme: /VDGODebt
             a: Уточните, пожалуйста, свой запрос
             go!: /ИнициацияЗавершения/CanIHelpYou
         
-        state: NoMatchVDGO
-            event: noMatch
+        state: SpeechUnrecognizedVDGO
             event: speechNotRecognized
             a: Я вас не расслышала.
             go!: /VDGODebt/VDGOBill
