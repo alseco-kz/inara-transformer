@@ -107,12 +107,16 @@ theme: /SupplierContacts
                         SupplContactsSetServ($temp.Service.SERV_ID)
                     }
                     
-                    $session.serviceName = $temp.Service.serv_code;
+                    $session.serviceName = $parseTree.Услуга[0].words[0];
+                    
                 if: SupplContactsGetServices()
+                    
                     go!:../../SupplierContactsSayContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator
+                    
+                
 
             state: SupplierContactsByAccountPhone
                 q: телефон
