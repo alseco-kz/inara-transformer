@@ -107,7 +107,7 @@ theme: /SupplierContacts
                         SupplContactsSetServ($temp.Service.SERV_ID)
                     }
                     
-                    $session.serviceName = $temp.Service;
+                    $session.serviceName = $temp.Service.serv_code;
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
@@ -205,7 +205,7 @@ theme: /SupplierContacts
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
-                a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{$session.serviceName}}. Хотите, соединю с оператором?
+                a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{toPrettyString($session.serviceName)}}. Хотите, соединю с оператором?
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
                 # a: {{toPrettyString($session.test)}}
