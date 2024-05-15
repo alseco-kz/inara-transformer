@@ -206,9 +206,15 @@ theme: /SupplierContacts
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
                 if: !(typeof $session.serviceName === 'undefined')
-                    a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{toPrettyString($session.serviceName)}}. Хотите, соединю с оператором?
+                    script:
+                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет услуги " + toPrettyString($session.serviceName) + ". Хотите, соединю с оператором?";
+                    a: {{$session.noSuchService}}
                 else:
-                    a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет такой услуги. Хотите, соединю с оператором?
+                    script:
+                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет такой услуги. Хотите, соединю с оператором?";
+                    
+                go!: /SupplierContacts/SupplierContacts/ChooseOperator
+                
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
                 a: {{$temp.ss.text}}. 
@@ -231,6 +237,21 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
             q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
             intent: /PhoneBadNumber || toState = "../MakeRequest"
+            
+        state: ChooseOperator
+            a: {{$session.noSuchService}}
+            
+            state: OKOperator
+                intent: /Согласие
+                q: $yes
+                a: Перевожу на оператора
+                go!: /CallTheOperator
+                
+            state: NoOperator
+                intent: /Несогласие
+                q: $no
+                go!: /ИнициацияЗавершения/CanIHelpYou
+                
         
         state: ChooseRequest
             a: По данной услуге отсутствуют контакты поставщика. Хотите, создам заявку на определение контактов?
