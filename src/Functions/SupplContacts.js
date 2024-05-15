@@ -32,6 +32,13 @@ function SupplContactsGetSupplCode(){
         return $session.SupplContracts.mainSupplCode.code
     else return '';
 }
+function SupplContactsGetCode(){
+    var $session = $jsapi.context().session;
+    if (SupplContactsIsServSet())
+        return $session.SupplContracts.servCode
+    else return '';
+}
+
 function SupplContactsGetServices(){
     var $session = $jsapi.context().session;
     if (SupplContactsIsServSet())

@@ -95,6 +95,7 @@ theme: /SupplierContacts
                     } 
                     else if($parseTree._УслугаСл){
                         $temp.Service = $parseTree._УслугаСл;
+                        $session.serviceName = $parseTree._УслугаСл;
                         if (typeof($temp.Service)=="string"){
                             var  Names = $temp.Service;
                             Names = Names.replaceAll( "\"","\'");
@@ -105,6 +106,8 @@ theme: /SupplierContacts
                             $temp.Service = $temp.Service[0];
                         SupplContactsSetServ($temp.Service.SERV_ID)
                     }
+                    
+                    $session.serviceName = $temp.Service;
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
@@ -115,6 +118,7 @@ theme: /SupplierContacts
                 q: телефон
                 q: * (телефония/телефонная связь) * 
                 script:
+                    $session.serviceName = "телефония";
                     SupplContactsSetServ([18, 202, 211, 289])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -130,6 +134,7 @@ theme: /SupplierContacts
                 state: SupplierContactsByAccountHotWater
                     q: * горяч* *
                     script:
+                        $session.serviceName = "горячая вода";
                         SupplContactsSetServ([206, 178, 14, 7, 209])
                     if: SupplContactsGetServices()
                         go!:../../../SupplierContactsSayContacts
@@ -137,6 +142,7 @@ theme: /SupplierContacts
                 state: SupplierContactsByAccountColdWater
                     q: * холод* *
                     script:
+                        $session.serviceName = "холодная вода";
                         SupplContactsSetServ([454, 452, 376, 375, 357, 335, 327, 185, 12, 5])
                     if: SupplContactsGetServices()
                         go!:../../../SupplierContactsSayContacts
@@ -144,6 +150,7 @@ theme: /SupplierContacts
             state: SupplierContactsByAccountKSK
                 q: * (@КСК/как) *
                 script:
+                    $session.serviceName = "КСК";
                     SupplContactsSetServ([1])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -156,6 +163,7 @@ theme: /SupplierContacts
                 q: * сантехник* *                    
                 a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
                 script:
+                    $session.serviceName = "электрик и сантехник";
                     $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
                     $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
 
@@ -168,6 +176,7 @@ theme: /SupplierContacts
             state: VDGOContacts
                 q: * газовщик* *
                 script:
+                    $session.serviceName = "газовщик";
                     SupplContactsSetServ([450, 38, 22])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -195,7 +204,9 @@ theme: /SupplierContacts
                 }
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
-            if: ($temp.ss.text) && ($temp.ss.text.length)
+            if: !($temp.ss.text)
+                a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{$session.serviceName}}. Хотите, соединю с оператором?
+            elseif: ($temp.ss.text.length)
                 a: Записывайте. 
                 # a: {{toPrettyString($session.test)}}
                 a: {{$temp.ss.text}}. 
@@ -205,7 +216,6 @@ theme: /SupplierContacts
                     a: Повторить? 
                 else:
                     go!:../CanIHelpYou
-                    
             else
                 go!: /SupplierContacts/SupplierContacts/ChooseRequest
                 
