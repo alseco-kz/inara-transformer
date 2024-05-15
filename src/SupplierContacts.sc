@@ -205,13 +205,14 @@ theme: /SupplierContacts
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
-                a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{toPrettyString($session.serviceName)}}. Хотите, соединю с оператором?
+                if: !(typeof $session.serviceName === 'undefined')
+                    a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет услуги {{toPrettyString($session.serviceName)}}. Хотите, соединю с оператором?
+                else:
+                    a: По данному ЛС {{AccountTalkNumber($session.Account.Number)}} нет такой услуги. Хотите, соединю с оператором?
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
-                # a: {{toPrettyString($session.test)}}
                 a: {{$temp.ss.text}}. 
-                
-                # a: {{toPrettyString($session.test3)}}
+
                 if: $session.RepeatCnt.ServRepeat < 3
                     a: Повторить? 
                 else:
