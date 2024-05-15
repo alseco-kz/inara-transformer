@@ -208,7 +208,6 @@ theme: /SupplierContacts
                 if: !(typeof $session.serviceName === 'undefined')
                     script:
                         $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет услуги " + toPrettyString($session.serviceName) + ". Хотите, соединю с оператором?";
-                    a: {{$session.noSuchService}}
                 else:
                     script:
                         $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет такой услуги. Хотите, соединю с оператором?";
