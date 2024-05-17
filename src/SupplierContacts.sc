@@ -320,9 +320,7 @@ theme: /SupplierContacts
                         if ($session.PhoneNumberContinue)
                             $temp.PhoneNum  = GetTempPhoneNumber();
                         TrySetNumberforPhone($temp.PhoneNum + words_to_number($entities));    
-                    # if: ((($temp.PhoneNum.length) <= 6 && ($temp.PhoneNum[0] != '7' || $temp.PhoneNum[0] != '8') )) ||  ((($temp.PhoneNum.length) <= 9 && ($temp.PhoneNum[0] === '7' ) ))  || ((($temp.PhoneNum.length) <= 10 && ($temp.PhoneNum[0] === '8' ||  tel[0] == '+7') ))   
-                    #     a: {{PhoneTalkNumber(GetTempPhoneNumber())}}. **д+альше** || bargeInIf = PhoneNumDecline
-                    # else
+
                     a:  Ваш номер телефона {{PhoneTalkNumber(GetTempPhoneNumber())}}.?
                     state: NotMyPhone
                         q: $no
@@ -485,7 +483,7 @@ theme: /NoElectricService
 
             state: CallerNoElectricSayAES
                 script: $session.RepeatCnt.ServRepeat += 1
-                # a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
+                    
                 if:  $session.RepeatCnt.ServRepeat == 1
                     a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
                 else:
@@ -519,7 +517,7 @@ theme: /NoElectricService
                     }
                     $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
                 }
-            # a: {{$temp.Service}}
+
             if: $temp.HasElectricService
                 go!:../CallerNoElectricYes
             else:
