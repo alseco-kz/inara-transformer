@@ -27,26 +27,6 @@
     }
   },
   "intents" : [ {
-    "path" : "/Insert_IIN",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "ИИН дайте продиктовать"
-    }, {
-      "text" : "хочу ввести ИИН"
-    }, {
-      "text" : "хочу найти информацию по ИИН"
-    }, {
-      "text" : "девушка, послушайте мой ИИН"
-    }, {
-      "text" : "слушайте какой у меня ИИН"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
     "path" : "/CantDoThis",
     "enabled" : true,
     "shared" : false,
@@ -3487,68 +3467,29 @@
     },
     "priority" : 0
   }, {
-    "path" : "/Новый интент",
-    "enabled" : true,
-    "shared" : false,
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "priority" : 0
-  }, {
     "path" : "/Долг_по_ВДГО",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "Долг ВДГО"
-    }, {
-      "text" : "у меня долг по ВДГО"
-    }, {
-      "text" : "у меня в квитанции долг по ВДГО"
-    }, {
-      "text" : "почему у меня такая оплата по ВДГО"
-    }, {
-      "text" : "задолженность у меня по ВДГО"
-    }, {
-      "text" : "хочу спросить про долги по ВДГО"
-    }, {
-      "text" : "как мне разобраться с оплатой по ВДГО"
-    }, {
-      "text" : "хочу закрыть задолженность по ВДГО"
+      "text" : "оплата по ВДГО"
     }, {
       "text" : "оплата ВДГО"
     }, {
-      "text" : "оплата по ВДГО"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "slots" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/Dont_Know_LS",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "хочу узнать ЛС"
+      "text" : "хочу закрыть задолженность по ВДГО"
     }, {
-      "text" : "не знаю ЛС"
+      "text" : "как мне разобраться с оплатой по ВДГО"
     }, {
-      "text" : "скажи мне мой ЛС"
+      "text" : "хочу спросить про долги по ВДГО"
     }, {
-      "text" : "хочу найти ЛС"
+      "text" : "задолженность у меня по ВДГО"
     }, {
-      "text" : "не знаю свой ЛС"
+      "text" : "почему у меня такая оплата по ВДГО"
     }, {
-      "text" : "помоги узнать ЛС"
+      "text" : "у меня в квитанции долг по ВДГО"
     }, {
-      "text" : "лицевой счёт не знаю"
+      "text" : "у меня долг по ВДГО"
     }, {
-      "text" : "хочу найти лицевой счёт"
-    }, {
-      "text" : "скажите мне мой лицевой счёт"
-    }, {
-      "text" : "какой у меня ЛС?"
+      "text" : "Долг ВДГО"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -4540,6 +4481,40 @@
       "rule" : [ "парам" ],
       "value" : ""
     } ]
+  }, {
+    "entity" : {
+      "name" : "Собственность",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "дом", "квартира", "офис" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Новая_сущность_1",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
   "spellerDictionary" : [ ],
