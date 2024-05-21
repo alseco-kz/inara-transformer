@@ -53,8 +53,7 @@
 
 
 require: /Functions/AccountNumberInput.js
-
-
+require: /Blocks/AccountIIN/account_iin.sc
 
 theme: /BlockAccountNumInput
 
@@ -189,7 +188,7 @@ theme: /BlockAccountNumInput
                     $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
                 go!: {{$session.AccountNoAccounState}}
         
-        state: AccountInputNumber 
+        state: AccountInputNumber || modal = true
             
             # проверяем наличие цифр в запросе. если есть, значит говорит номер лицевого счета
             q: * $numbers *
@@ -466,7 +465,22 @@ theme: /BlockAccountNumInput
                     $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                     a: Давайте еще раз проверим
+                    go!: /BlockAccountNumInput/AccountInput
+                else:
+                    go!: /BlockAccountNumInput/AccountInput/AskAboutIIN
+                    
+        state: AskAboutIIN
+            a: Можно попробовать поискать по ИИН. Хотите поискать по ИИН?
+            
+            state: AgreeIIN
+                intent: /Согласие
+                go!: /AccountIIN/AccountIIN
+            
+            state: DisagreeIIN
+                intent: /Несогласие
                 go!: /BlockAccountNumInput/AccountInput
+        
+            
 
         state: AccountInputNoNumber
             event: noMatch || noContext = true
@@ -493,5 +507,4 @@ theme: /BlockAccountNumInput
             FindAccountNumberSetResult("DontKnow"); 
             $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
         
-        # a: Возвращаю управление в стейт {{$session.oldState}}
-        go!: {{$session.AccountNoAccounState}}
+        go!: /AccountIIN/AccountIIN

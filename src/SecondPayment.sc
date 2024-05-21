@@ -1,6 +1,6 @@
 theme: /SecondPayment
     
-    state: SecondPayment
+    state: SecondPayment || modal = true
         intent!: /SecondPayment
         random: 
             a: Правильно ли я понимаю,  вы ошибочно оплатили счет дважды?
@@ -8,7 +8,7 @@ theme: /SecondPayment
             a: Вы ошибочно оплатили счет дважды, правильно?
         go!: /SecondPayment/TransferPoint 
             
-    state: ReturnPayment
+    state: ReturnPayment || modal = true
         
         intent!: /ReturnPayment
         random: 
@@ -17,7 +17,7 @@ theme: /SecondPayment
         go!: /SecondPayment/TransferPoint 
         
     
-    state: TransferPoint           
+    state: TransferPoint || modal = true        
         
         state: AnotherQuestion
             q: $no 
@@ -183,7 +183,7 @@ theme: /SecondPayment
                 a: Срок возврата уточните  у банка, через который производилась оплата. Он зависит только от них
                 go!: /SecondPayment/TransferPoint/Требование_дальнейшей_консультации 
             
-    state: CanIHelpYou 
+    state: CanIHelpYou || modal = true
         script:
             $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
         a: {{CommonAnswers.CanIHelpYou[$temp.index]}}

@@ -23,7 +23,7 @@ theme: /ChangeAccountPersonCount
     
     
     
-    state: ChangeAccountPersonCountQuestion
+    state: ChangeAccountPersonCountQuestion || modal = true
         a: Вы можете сменить количество зарегистрированных проживающих в квитанции по основным услугам или в графе вывоз ТэБэО. Вы хотите сменить количество проживающих по основным услугам?
        
         state: TBO
@@ -56,7 +56,7 @@ theme: /ChangeAccountPersonCount
             else:
                 go!: ../../ChangeAccountPersonCount
     
-    state: ChangeAccountPersonTBOoMain
+    state: ChangeAccountPersonTBOoMain || modal = true
         random: 
             a: Вам необходимо обратиться в Тартып в офис или онлайн
             a: Для решения вашего вопроса Вам необходимо обратиться в Тартып в офис или онлайн
@@ -115,7 +115,7 @@ theme: /ChangeAccountPersonCount
 
     
     
-    state: ChangeAccountPersonCountToChange
+    state: ChangeAccountPersonCountToChange || modal = true
         q!: * (прописано|поменялось) [количество]* @duckling.number * [~человек] * 
         a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
         state: ChangeAccountPersonCountToChangeConfirm
@@ -135,7 +135,7 @@ theme: /ChangeAccountPersonCount
                 a: А чем могу я вам помочь? 
             go:/WhatDoYouWant
         
-    state: ChangeAccountPersonCount
+    state: ChangeAccountPersonCount || modal = true
         
         a: Изменить количество проживающих можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         

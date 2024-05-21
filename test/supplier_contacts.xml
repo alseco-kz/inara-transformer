@@ -1,0 +1,338 @@
+<test integration="false">
+    <test-case id="Услуга какой номер по Отопление с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Отопление</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>1234567</filterValue></parameters>
+            <response>{"accountId":1234567,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 20"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>1234567</filterValue>
+            <serv>serviceCodes=458&amp;serviceCodes=198&amp;serviceCodes=181&amp;serviceCodes=166&amp;serviceCodes=160&amp;serviceCodes=90&amp;serviceCodes=32&amp;serviceCodes=31&amp;serviceCodes=8</serv>                  
+            </parameters>
+            <response>{"accountId":1234567,"services":[{"serviceCode":8,"serviceName":"Отопление","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"435-34-43. - - - еще номер - - 435-34-44"}]}</response>
+        </mockData>  
+        <q>12 34 567</q>
+        <a>Подскажите, это Ваш лицевой счет? 1- - 23- - 45- - 67</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 20. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>Алматинские тепловые сети - 435-34-43. - - - еще номер - - 435-34-44.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="услуга вода, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>телефон воды нужен</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>1221222</filterValue></parameters>
+            <response>{"accountId":1221222,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Калкаман\"","streetName":"","houseName":"дом 100","fullAddressName":"микрорайон \"Калкаман\", дом 100"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>1221222</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>                  
+            </parameters>
+            <response>{"accountId":1221222,"services":[{"serviceCode":14,"serviceName":"Гор.вода СЧЕТЧИК","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"- 876-54-32. - - - еще номер - - 876-54-33."}]}</response>
+        </mockData> 
+        <q>12 21 222</q>
+        <a>Подскажите, это Ваш лицевой счет? 1- - 22- - 12- - 22</a>
+        
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Калкаман", дом 100. Верно?</a>
+        <q>да</q>
+        <a>Назовите услугу</a>
+        <q>Горячая вода</q>
+        <a>Записывайте.</a>
+        <a>Алматинские тепловые сети - - 876-54-32. - - - еще номер - - 876-54-33..</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="вывоз ТБО">
+        <q>/start</q><a></a><a></a>
+        <q>мусор надо вывезти</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>3212132</filterValue></parameters>
+            <response>{"accountId":3212132,"regionName":"город Астана","townName":"","districtName":"микрорайон \"Назарбаевский\"","streetName":"","houseName":"дом 23","fullAddressName":"микрорайон \"Назарбаевский\", дом 23"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>3212132</filterValue>
+            <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>                  
+            </parameters>
+            <response>{"accountId":3212132,"services":[{"serviceCode":11,"serviceName":"Мусор","supplierName":"ЦОП «Орталық»","supplierCodeName":"alts","supplierContacts":"- 231-12-12. - - - еще номер - - 231-12-13."}]}</response>
+        </mockData> 
+        <q>32 12 132</q>
+        <a>Подскажите, это Ваш лицевой счет? 3- - 21- - 21- - 32</a>
+        
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Назарбаевский", дом 23. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>Алматинские тепловые сети - - 231-12-12. - - - еще номер - - 231-12-13..</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="ВДГО отказ в конце">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=38</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":38,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
+        <q>нет</q>
+        <a>Благодарим за обращение!</a>
+        <a>До свидания!</a>
+    </test-case>
+    
+    <test-case id="ВДГО неправильно распознало">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>нет</q>
+        <a>Уточните, пожалуйста, свой запрос</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+    
+    <test-case id="ВДГО не тот адрес">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=38</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
+        <q>нет</q>
+        <a>Благодарим за обращение!</a>
+        <a>До свидания!</a>
+    </test-case>
+    
+    <test-case id="ВДГО идеальный с повторением">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=38</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Повторить?</a>
+        <q>Повторите</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Повторить?</a>
+        <q>Повторите</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>Нет</q>
+        <a>Благодарим за обращение!</a>
+        <a>До свидания!</a>
+    </test-case>
+    
+    <test-case id="ВДГО идеальный из запроса почты">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=38</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":22,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="ВДГО идеальный с кодом из дополнительного списка">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=450</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":450,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Повторить?</a>
+        <q>Повторите</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Повторить?</a>
+        <q>Повторите</q>
+        <a>Записывайте.</a>
+        <a>PROFGAZ - - 1337-1337. - - - еще номер - - 200-300-400..</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>Нет</q>
+        <a>Благодарим за обращение!</a>
+        <a>До свидания!</a>
+    </test-case>
+    
+    <test-case id="ВДГО идеальный с кодом не из списков">
+        <q>/start</q><a></a><a></a>
+        <q>У меня в квитанции долг по ВДГО</q>
+        <a>Правильно я понимаю, что у вас по услуге ВДГО задолженность?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        
+        <mockData>
+            
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>111222</filterValue></parameters>
+            <response>{"accountId":111222,"regionName":"город Нью-Йорк","townName":"","districtName":"микрорайон \"Трамп Риджин\"","streetName":"","houseName":"дом 120","fullAddressName":"микрорайон \"Трамп Риджин\", дом 120"}</response>
+        </mockData> 
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>111222</filterValue>
+            <serv>serviceCodes=202</serv>                  
+            </parameters>
+            <response>{"accountId":111222,"services":[{"serviceCode":202,"serviceName":"ВДГО","supplierName":"PROFGAZ","supplierCodeName":"profgaz","supplierContacts":"- 1337-1337. - - - еще номер - - 200-300-400."}]}</response>
+        </mockData> 
+        
+        <q>111222</q>
+        <a>Подскажите, это Ваш лицевой счет? 11- - 12- - 22</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес микрорайон "Трамп Риджин", дом 120. Верно?</a>
+        <q>Верно</q>
+        <a>Извините, услуга ВДГО по этому номеру ЛС не подключена</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>Нет</q>
+        <a>Благодарим за обращение!</a>
+        <a>До свидания!</a>
+    </test-case>
+
+</test>

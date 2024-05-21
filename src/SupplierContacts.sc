@@ -95,6 +95,7 @@ theme: /SupplierContacts
                     } 
                     else if($parseTree._УслугаСл){
                         $temp.Service = $parseTree._УслугаСл;
+                        $session.serviceName = $parseTree._УслугаСл;
                         if (typeof($temp.Service)=="string"){
                             var  Names = $temp.Service;
                             Names = Names.replaceAll( "\"","\'");
@@ -105,16 +106,23 @@ theme: /SupplierContacts
                             $temp.Service = $temp.Service[0];
                         SupplContactsSetServ($temp.Service.SERV_ID)
                     }
+                    
+                    $session.serviceName = $parseTree.Услуга[0].words[0];
+                    
                 if: SupplContactsGetServices()
+                    
                     go!:../../SupplierContactsSayContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator
+                    
+                
 
             state: SupplierContactsByAccountPhone
                 q: телефон
                 q: * (телефония/телефонная связь) * 
                 script:
+                    $session.serviceName = "телефония";
                     SupplContactsSetServ([18, 202, 211, 289])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -130,6 +138,7 @@ theme: /SupplierContacts
                 state: SupplierContactsByAccountHotWater
                     q: * горяч* *
                     script:
+                        $session.serviceName = "горячая вода";
                         SupplContactsSetServ([206, 178, 14, 7, 209])
                     if: SupplContactsGetServices()
                         go!:../../../SupplierContactsSayContacts
@@ -137,6 +146,7 @@ theme: /SupplierContacts
                 state: SupplierContactsByAccountColdWater
                     q: * холод* *
                     script:
+                        $session.serviceName = "холодная вода";
                         SupplContactsSetServ([454, 452, 376, 375, 357, 335, 327, 185, 12, 5])
                     if: SupplContactsGetServices()
                         go!:../../../SupplierContactsSayContacts
@@ -144,6 +154,7 @@ theme: /SupplierContacts
             state: SupplierContactsByAccountKSK
                 q: * (@КСК/как) *
                 script:
+                    $session.serviceName = "КСК";
                     SupplContactsSetServ([1])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -156,6 +167,7 @@ theme: /SupplierContacts
                 q: * сантехник* *                    
                 a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
                 script:
+                    $session.serviceName = "электрик и сантехник";
                     $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
                     $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
 
@@ -168,6 +180,7 @@ theme: /SupplierContacts
             state: VDGOContacts
                 q: * газовщик* *
                 script:
+                    $session.serviceName = "газовщик";
                     SupplContactsSetServ([450, 38, 22])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
@@ -195,20 +208,27 @@ theme: /SupplierContacts
                 }
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
-            if: ($temp.ss.text) && ($temp.ss.text.length)
-                a: Записывайте. 
-                # a: {{toPrettyString($session.test)}}
-                a: {{$temp.ss.text}}. 
+            if: !($temp.ss.text)
+                if: !(typeof $session.serviceName === 'undefined')
+                    script:
+                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет услуги " + toPrettyString($session.serviceName) + ". Хотите, соединю с оператором?";
+                else:
+                    script:
+                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет такой услуги. Хотите, соединю с оператором?";
+                    
+                go!: /SupplierContacts/SupplierContacts/ChooseOperator
                 
-                # a: {{toPrettyString($session.test3)}}
+            elseif: ($temp.ss.text.length)
+                a: Записывайте. 
+                a: {{$temp.ss.text}}. 
+
                 if: $session.RepeatCnt.ServRepeat < 3
                     a: Повторить? 
                 else:
                     go!:../CanIHelpYou
-                    
             else
-                a: у меня нет нужного телефона. перевожу звонок на оператора. 
-                go!: /CallTheOperator
+                go!: /SupplierContacts/SupplierContacts/ChooseRequest
+                
             intent: /Согласие || toState = "."
             intent: /Согласие_продиктовать_список_поставщиков || toState = "."
             intent: /Согласие_повторить || toState = "."
@@ -220,6 +240,39 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
             q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
             intent: /PhoneBadNumber || toState = "../MakeRequest"
+            
+        state: ChooseOperator
+            a: {{$session.noSuchService}}
+            
+            state: OKOperator
+                intent: /Согласие
+                q: $yes
+                a: Перевожу на оператора
+                go!: /CallTheOperator
+                
+            state: NoOperator
+                intent: /Несогласие
+                q: $no
+                go!: /ИнициацияЗавершения/CanIHelpYou
+                
+        
+        state: ChooseRequest
+            a: По данной услуге отсутствуют контакты поставщика. Хотите, создам заявку на определение контактов?
+            
+            state: CreateRequest
+                intent: /Согласие
+                q: $yes
+                script:
+                    $.session.SupplContracts.TalkContacts = {};
+                    $.session.SupplContracts.TalkContacts.supplierCodeName = '';
+                    $.session.SupplContracts.TalkContacts.serviceCode = '';
+                    $.session.SupplContracts.TalkContacts.talkContacts = '';
+                go!: /SupplierContacts/SupplierContacts/MakeRequest
+                    
+            state: DontCreateRequest
+                intent: /Несогласие
+                q: $no
+                go: /ИнициацияЗавершения/CanIHelpYou
             
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
@@ -267,9 +320,7 @@ theme: /SupplierContacts
                         if ($session.PhoneNumberContinue)
                             $temp.PhoneNum  = GetTempPhoneNumber();
                         TrySetNumberforPhone($temp.PhoneNum + words_to_number($entities));    
-                    # if: ((($temp.PhoneNum.length) <= 6 && ($temp.PhoneNum[0] != '7' || $temp.PhoneNum[0] != '8') )) ||  ((($temp.PhoneNum.length) <= 9 && ($temp.PhoneNum[0] === '7' ) ))  || ((($temp.PhoneNum.length) <= 10 && ($temp.PhoneNum[0] === '8' ||  tel[0] == '+7') ))   
-                    #     a: {{PhoneTalkNumber(GetTempPhoneNumber())}}. **д+альше** || bargeInIf = PhoneNumDecline
-                    # else
+
                     a:  Ваш номер телефона {{PhoneTalkNumber(GetTempPhoneNumber())}}.?
                     state: NotMyPhone
                         q: $no
@@ -432,7 +483,7 @@ theme: /NoElectricService
 
             state: CallerNoElectricSayAES
                 script: $session.RepeatCnt.ServRepeat += 1
-                # a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
+                    
                 if:  $session.RepeatCnt.ServRepeat == 1
                     a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
                 else:
@@ -466,7 +517,7 @@ theme: /NoElectricService
                     }
                     $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
                 }
-            # a: {{$temp.Service}}
+
             if: $temp.HasElectricService
                 go!:../CallerNoElectricYes
             else:
@@ -537,3 +588,126 @@ theme: /NoElectricService
             go!: /OtherTheme
             
          
+theme: /VDGODebt
+    
+    state: VDGOBill
+        intent!: /Долг_по_ВДГО
+        a: Правильно я понимаю, что у вас по услуге ВДГО задолженность?
+        
+        state: YesVDGO
+            q: да *
+            q: правильно *
+            intent: /Согласие
+            
+            if: FindAccountIsAccountSet()
+                go!: VdgoOK 
+            else:
+                BlockAccountNumber:
+                    okState = VdgoOK
+                    errorState = VdgoError
+                    noAccountState = VdgoError
+
+            state: VdgoOK
+                script:
+                    var mainList = [38];
+                    var additionalList = [22, 450];
+                    
+                    var $session = $jsapi.context().session;
+                    $session.SupplContracts = $session.SupplContracts || {};
+
+                    var supplierContacts = SupplContactsGetServices();
+                    supplierContacts = SupplContactsGetServices();
+                    
+                    $temp.ss = {};
+                    
+                    mainList.forEach(function(mainNumber) {
+                        $session.SupplContracts.servId = [mainNumber];
+                        supplierContacts = SupplContactsGetServices();
+                    
+                        if (SupplContactsIsSuppSet())
+                            $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
+                        else 
+                            SupplContactsGetContactsByAccountServ($MainSuppl, $temp.ss, true);
+                    
+                        if (typeof $temp.ss.text !== 'undefined' && $temp.ss.text !== null) {
+                            $temp.mainPresent = true;
+                        }
+                    });
+                    
+                    additionalList.forEach(function(additionalNumber) {
+                        $session.SupplContracts.servId = [additionalNumber];
+                        supplierContacts = SupplContactsGetServices();
+                    
+                        if (SupplContactsIsSuppSet())
+                            $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
+                        else 
+                            SupplContactsGetContactsByAccountServ($MainSuppl, $temp.ss, true);
+                    
+                        if (typeof $temp.ss.text !== 'undefined' && $temp.ss.text !== null) {
+                            $temp.additionalPresent = true;
+                        }
+                    });
+                    
+                    $session.textContacts = $temp.ss.text;
+                    $session.VDGORepeat = 0;
+                    
+            
+                if: $temp.mainPresent
+                    go!: AskSupplier
+                elseif: $temp.additionalPresent
+                    go!: /VDGODebt/SayContacts
+                else:
+                    a: Извините, услуга ВДГО по этому номеру ЛС не подключена
+                    go!: /ИнициацияЗавершения/CanIHelpYou
+                    
+                state: AskSupplier
+                    a: С января 2024 года по указанию поставщика услуг, начисление выставляется один раз в год за 12 месяцев. Вы можете оплатить всю сумму сразу или равными частями помесячно. В течение года на данную услугу пеня не начисляется. Нужны ли вам контакты поставщиков?
+
+                    state: SupplierNeeded
+                        intent: /Согласие
+                        go!: /VDGODebt/SayContacts
+                    
+                    state: SupplierNotNeeded
+                        intent: /Несогласие
+                        go!: /ИнициацияЗавершения/CanIHelpYou/CanIHelpYouDisagree
+                    
+            state: VdgoError
+                a: Без лицевого счёта и ИИН не могу решить проблему с задолженностью по ВДГО
+                go!: /ИнициацияЗавершения/CanIHelpYou
+                
+        state: NoVDGO
+            q: нет *
+            q: неправильно *
+            intent: /Несогласие
+            a: Уточните, пожалуйста, свой запрос
+            go!: /ИнициацияЗавершения/CanIHelpYou
+        
+        state: SpeechUnrecognizedVDGO
+            event: speechNotRecognized
+            a: Я вас не расслышала.
+            go!: /VDGODebt/VDGOBill
+            
+    state: SayContacts
+        script:
+            $session.VDGORepeat += 1;
+        
+        a: Записывайте.
+        a: {{$session.textContacts}}.
+                
+        if: $session.VDGORepeat < 3
+            a: Повторить? 
+        else:
+            go!:/ИнициацияЗавершения/CanIHelpYou
+            
+        intent: /Согласие || toState = "."
+        intent: /Согласие_продиктовать_список_поставщиков || toState = "."
+        intent: /Согласие_повторить || toState = "."
+        intent: /Повторить || toState = "."
+        intent: /Несогласие || toState = "/SupplierContacts/SupplierContacts/CanIHelpYou   "
+        intent: /Несогласие_повторить || toState = "/SupplierContacts/SupplierContacts/CanIHelpYou   "
+        q: * @duckling.number * || toState = "."
+        q: * @Услуга * || toState = ".."
+        q: * @УслугаСл * || toState = ".."
+        intent: /PhoneBadNumber || toState = "/SupplierContacts/SupplierContacts/MakeRequest"
+            
+    
