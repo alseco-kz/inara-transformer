@@ -210,9 +210,8 @@ theme: /SupplierContacts
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
                 script:
-                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Проверьте что услуга находится в счёте от Алсеко.";
-                a: {{$session.noSuchService}}
-                go!: /ИнициацияЗавершения/CanIHelpYou
+                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Проверьте, что данная услуга действительно находится в счёте от Алсеко."
+                go!: /SupplierContacts/SupplierContacts/ServiceNotFound
                 
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
@@ -236,6 +235,10 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
             q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
             intent: /PhoneBadNumber || toState = "../MakeRequest"
+           
+        state: ServiceNotFound
+            a: {{$session.noSuchService}}
+            go!: /ИнициацияЗавершения/CanIHelpYou
             
         state: ChooseOperator
             a: Могу вам чем-нибудь помочь?
