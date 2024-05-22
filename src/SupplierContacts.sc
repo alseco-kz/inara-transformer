@@ -438,7 +438,10 @@ theme: /SupplierContacts
                 intent: /Согласие_повторить
                 intent: /Повторить
                 q: * @duckling.number *
+<<<<<<< HEAD
                 a: Кажется, возникли проблемы со связью.
+=======
+>>>>>>> 90ceed770e787cca805f183feac3c60b1ffbfbf1
                 go!: /bye
 
             state: CanIHelpYouAgree
@@ -545,7 +548,10 @@ theme: /NoElectricService
                 intent: /Согласие_повторить
                 intent: /Повторить
                 q: $numbersByWords 
+<<<<<<< HEAD
                 a: Кажется, возникли проблемы со связью.
+=======
+>>>>>>> 90ceed770e787cca805f183feac3c60b1ffbfbf1
                 go!: /bye
                 
             state: CanIHelpYouAgree
