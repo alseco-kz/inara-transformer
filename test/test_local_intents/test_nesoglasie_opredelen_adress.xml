@@ -1,0 +1,183 @@
+<test>
+
+    <test-case id="Phrase_не мой_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>          
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>не мой</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_чушь_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>чушь</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_не верно распознал_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>           
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>не верно распознал</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_хрень сказал_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>           
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>хрень сказал</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_это не мой дом_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>          
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>это не мой дом</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_не тот адрес_/Несогласие_адрес_определен_верно">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 21"}</response>
+        </mockData>            
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>не тот адрес</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+    
+</test>

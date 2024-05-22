@@ -1,0 +1,76 @@
+<test>  
+
+    <test-case id="Phrase_не назову числа_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>не назову числа</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_диктовать не буду_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>диктовать не буду</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_не хочу сообщать_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>не хочу сообщать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_не желаю диктовать_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>не желаю диктовать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_не хочу сейчас_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>не хочу сейчас</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+    <test-case id="Phrase_сейчас нет_/Несогласие_назвать_номер">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>сейчас нет</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>  
+        
+
+</test>  

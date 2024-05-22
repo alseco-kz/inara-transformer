@@ -1,0 +1,110 @@
+<test>
+        <test-case id=" test_AccountInput_NumbersCheck_1">
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+    </test-case>
+    <test-case id=" test_AccountInput_NumbersCheck_2">
+        <q>последний платеж</q>
+        <a></a>
+        <q>два ноля</q>
+        <a>00. **д+альше**</a>
+    </test-case>   
+    <test-case id=" test_AccountInput_NumbersCheck_3">
+        <q>последний платеж</q>
+        <a></a>
+        <q>минутку два ноля сорок</q>
+        <a>00- - 40. **д+альше**</a>
+    </test-case>
+
+    <test-case id="test_AccountInput_NumbersCheck_4">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>один ноль ноль три</q>
+    	<a>10- - 03. **д+альше**</a>
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_5">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>один ноль ноль три четыре семь два четыре восемь</q>
+    	<a>Подскажите, это Ваш лицевой счет? 1- - 00- - 34- - 72- - 48</a>
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_6">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>сорок один</q>
+    	<a>41. **д+альше**</a>
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_7">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>сорок один ноль один</q>
+    	<a>41- - 01. **д+альше**</a>
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_8">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>сорок один ноль один ноль восемьдесят один</q>
+    	<a>Подскажите, это Ваш лицевой счет? 4- - 10- - 10- - 81</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_9">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>так сто один двадцать четыре двадцать девять шестьдесят два</q>
+    	<a>Подскажите, это Ваш лицевой счет? 1- - 01- - 24- - 29- - 62</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_10">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>лицевой счет лицевой счет два ноля восемьдесят три сто шестьдесят шесть ой сто шестьдесят пять ноль три без очков не вижу</q>
+    	<a>Подскажите, это Ваш лицевой счет? 00- - 83- - 16- - 61- - 65- - 03</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_12">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>девяносто один сорок семьсот пятьдесят один</q>
+    	<a>Подскажите, это Ваш лицевой счет? 9- - 14- - 07- - 51</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_15">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>два ноля сорок подождите пятьдесят пять ноль двадцать</q>
+    	<a>Подскажите, это Ваш лицевой счет? 0- - 04- - 05- - 50- - 20</a>
+    	
+    	
+    </test-case>   
+    <test-case id="test_AccountInput_NumbersCheck_298">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>пятьдесят пять пятьдесят четыре сорок три</q>
+    	<a>Подскажите, это Ваш лицевой счет? 55- - 54- - 43</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_299">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>7174543</q>
+    	<a>Подскажите, это Ваш лицевой счет? 7- - 17- - 45- - 43</a>
+    	
+    	
+    </test-case>
+    <test-case id="test_AccountInput_NumbersCheck_300">
+    	<q>последний платеж</q>
+    	<a></a>
+    	<q>триста одиннадцать триста семьдесят один ноль тридцать семь</q>
+    	<a>Подскажите, это Ваш лицевой счет? 3- - 11- - 37- - 10- - 37</a>
+    	
+    	
+    </test-case>
+    
+</test>

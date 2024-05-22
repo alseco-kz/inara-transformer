@@ -1,0 +1,38 @@
+<test>
+    
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>начинается. переведи на оператора. нет сил все это объяснять</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+    
+        
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>хочу поговорить с человеком</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+    
+        
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>с человеком соедини</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+    
+        
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>ничего ты не понимаешь. с человеком соедините</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+    
+        
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>у меня сложная проблема. хочу с человеком сразу говорить</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+    
+        
+    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
+        <q>не знаю как объяснить. переведите меня к кому-то живому</q>
+        <a state="/SwitchToOperator"/>
+    </test-case>
+
+</test>
