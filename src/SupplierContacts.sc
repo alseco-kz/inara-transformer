@@ -210,9 +210,9 @@ theme: /SupplierContacts
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
                 script:
-                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Перевожу вас на оператора.";
+                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Проверьте что услуга находится в счёте от Алсеко.";
                 a: {{$session.noSuchService}}
-                go!: /CallTheOperator
+                go!: /ИнициацияЗавершения/CanIHelpYou
                 
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
@@ -238,7 +238,7 @@ theme: /SupplierContacts
             intent: /PhoneBadNumber || toState = "../MakeRequest"
             
         state: ChooseOperator
-            a: {{$session.noSuchService}}
+            a: Могу вам чем-нибудь помочь?
             
             state: OKOperator
                 intent: /Согласие
@@ -249,7 +249,7 @@ theme: /SupplierContacts
             state: NoOperator
                 intent: /Несогласие
                 q: $no
-                go!: /ИнициацияЗавершения/CanIHelpYou
+                go!: /bye
                 
         
         state: ChooseRequest
