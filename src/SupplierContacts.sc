@@ -438,6 +438,7 @@ theme: /SupplierContacts
                 intent: /Согласие_повторить
                 intent: /Повторить
                 q: * @duckling.number *
+                a: Кажется, возникли проблемы со связью.
                 go!: /bye
 
             state: CanIHelpYouAgree
@@ -544,7 +545,8 @@ theme: /NoElectricService
                 intent: /Согласие_повторить
                 intent: /Повторить
                 q: $numbersByWords 
-                go!: ../../CallerNoElectricYes
+                a: Кажется, возникли проблемы со связью.
+                go!: /bye
                 
             state: CanIHelpYouAgree
                 q: $yes
