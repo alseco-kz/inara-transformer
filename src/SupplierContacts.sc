@@ -209,14 +209,9 @@ theme: /SupplierContacts
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
-                if: !(typeof $session.serviceName === 'undefined')
-                    script:
-                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет услуги " + toPrettyString($session.serviceName) + ". Хотите, соединю с оператором?";
-                else:
-                    script:
-                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет такой услуги. Хотите, соединю с оператором?";
-                    
-                go!: /SupplierContacts/SupplierContacts/ChooseOperator
+                script:
+                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Проверьте, что данная услуга действительно находится в счёте от Алсеко."
+                go!: /SupplierContacts/SupplierContacts/ServiceNotFound
                 
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
@@ -240,9 +235,13 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
             q: * @duckling.number * ($no/$disagree) (отвеча*/дозвон*/доступ*) * || toState = "../MakeRequest"
             intent: /PhoneBadNumber || toState = "../MakeRequest"
+           
+        state: ServiceNotFound
+            a: {{$session.noSuchService}}
+            go!: /ИнициацияЗавершения/CanIHelpYou
             
         state: ChooseOperator
-            a: {{$session.noSuchService}}
+            a: Могу вам чем-нибудь помочь?
             
             state: OKOperator
                 intent: /Согласие
@@ -253,7 +252,7 @@ theme: /SupplierContacts
             state: NoOperator
                 intent: /Несогласие
                 q: $no
-                go!: /ИнициацияЗавершения/CanIHelpYou
+                go!: /bye
                 
         
         state: ChooseRequest
