@@ -209,14 +209,10 @@ theme: /SupplierContacts
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: !($temp.ss.text)
-                if: !(typeof $session.serviceName === 'undefined')
-                    script:
-                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет услуги " + toPrettyString($session.serviceName) + ". Хотите, соединю с оператором?";
-                else:
-                    script:
-                        $session.noSuchService = "По данному эл эс " + AccountTalkNumber($session.Account.Number) + " нет такой услуги. Хотите, соединю с оператором?";
-                    
-                go!: /SupplierContacts/SupplierContacts/ChooseOperator
+                script:
+                    $session.noSuchService = "По данному лицевому счёту не найдена услуга. Перевожу вас на оператора.";
+                a: {{$session.noSuchService}}
+                go!: /CallTheOperator
                 
             elseif: ($temp.ss.text.length)
                 a: Записывайте. 
