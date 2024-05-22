@@ -411,4 +411,8 @@ theme: /ИнициацияЗавершения
             intent: /Несогласие
             intent: /Несогласие_помочь
             go!: /bye
+        
+        state: RepeatAttempt
+            intent: /Повторить
+            go!: /
 

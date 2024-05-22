@@ -438,7 +438,7 @@ theme: /SupplierContacts
                 intent: /Согласие_повторить
                 intent: /Повторить
                 q: * @duckling.number *
-                go!: ../../SupplierContactsSayContacts
+                go!: /bye
 
             state: CanIHelpYouAgree
                 q: $yes
