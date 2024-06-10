@@ -1,0 +1,28 @@
+<test>
+    <test-case id='errors_hello_check_3'>
+          <q>/start</q><a></a><a></a>
+        <q>здравствуйте вы уже живой человек я хотела</q>
+        <a state = '/AboutInara/AreYouRobot'></a>
+        <a state = "/WhatDoYouWant"></a>
+    </test-case>
+    <test-case id='errors_hello_check_3'>
+          <q>/start</q><a></a><a></a>
+        <q> вы живой человек</q>
+        <a state = '/AboutInara/AreYouRobot'></a>
+        <a state = "/WhatDoYouWant"></a>
+    </test-case>
+    <test-case id='errors_hello_check_3'>
+          <q>/start</q><a></a><a></a>
+        <q>привет вы робот </q>
+        <a state = '/AboutInara/AreYouRobot'></a>
+        <a state = "/WhatDoYouWant"></a>
+    </test-case>
+    
+    <test-case id='errors_hello_check_4'>
+          <q>/start</q><a></a><a></a>
+        <q>я с ботом говорю или человеком</q>
+        <a state = '/AboutInara/AreYouRobot'></a>
+        <a state = "/WhatDoYouWant"></a>
+    </test-case>
+
+</test>

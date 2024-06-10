@@ -1,0 +1,23 @@
+<test>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>А добрый день можно узнать июньская оплата поступила или нет по лицевому счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a class = "/PaymentTotal/GetDateLastPay" state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>недавно оплатила по лицевому счету но не знаю прошел ли мой платеж</q>
+        <a class = "/PaymentTotal/PaymentQuestion"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>я хотела бы узнать дату последней оплаты</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a class = "/PaymentTotal/GetDateLastPay" state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+</test>

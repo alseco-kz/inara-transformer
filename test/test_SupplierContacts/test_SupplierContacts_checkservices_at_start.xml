@@ -1,0 +1,490 @@
+<test integration="false">
+    <test-case id="Услуга какой номер по электричество с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>телефон электричество</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=23&amp;serviceCodes=13</serv>
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>                   
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="Услуга какой номер по Электроэнергия с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Электроэнергия</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=23&amp;serviceCodes=13</serv>   
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>     
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+
+    <test-case id="Услуга какой номер по Электро с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер электро</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=23&amp;serviceCodes=13</serv>   
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>     
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>      
+
+
+    <test-case id="Услуга какой номер по Вывоз ТБО с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Вывоз ТБО</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=400&amp;serviceCodes=135&amp;serviceCodes=94&amp;serviceCodes=11</serv>     
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+      
+
+
+    <test-case id="Услуга какой номер по Отопление с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Отопление</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>  
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=458&amp;serviceCodes=198&amp;serviceCodes=181&amp;serviceCodes=166&amp;serviceCodes=160&amp;serviceCodes=90&amp;serviceCodes=32&amp;serviceCodes=31&amp;serviceCodes=8</serv>                  
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+      
+      
+
+    <test-case id="Услуга какой номер по Домофон с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Домофон</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=128</serv>  
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+      
+    <test-case id="Услуга какой номер по Газовщику с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>вызвать газовщика</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <!--<serv>serviceCodes=36&amp;serviceCodes=37</serv>     -->
+            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv>   
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 22,"serviceName":"ВДГО","supplierName":"ТОО \"PROFGAZ\"","supplierCodeName":"10558","supplierContacts":"317-28-27. - - - еще номер - - 8-771-780-79-20"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>ТОО "PROFGAZ" - 317-28-27. - - - еще номер - - 8-771-780-79-20.</a>
+        <a>Повторить?</a>
+    </test-case>
+
+    <test-case id="Услуга какой номер по Газ с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Газ</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=36&amp;serviceCodes=37</serv>     
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+      
+
+
+    <test-case id="Услуга какой номер по Расходы на содержание жилища с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер Расходы на содержание жилища</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=1</serv>   
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+      
+
+
+    <test-case id="Услуга какой номер по ВДГО с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>дай номер ВДГО</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=450&amp;serviceCodes=38&amp;serviceCodes=22</serv> 
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>АлматыЭнергоСбыт - 356-04-63.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    
+    <test-case id="КСК ">
+        <q>/start</q><a></a><a></a>
+        <q>связаться с киска</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=1</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>пэ ка эс ка "АК КАЙЫН" - 246-05-95.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="КСК -1  ">
+        <q>/start</q><a></a><a></a>
+        <q>как связаться с кск</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=1</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
+        </mockData>  
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>пэ ка эс ка "АК КАЙЫН" - 246-05-95.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    
+    <test-case id="Домофон -1  ">
+        <q>/start</q><a></a><a></a>
+        <q>связать с установкой домофона</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=128</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":128,"serviceName":"Домофон","supplierName":"ТОО \"Сервисный Центр \"Ваш Домофон\"","supplierCodeName":"10438","supplierContacts":"335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55"}]}</response>
+        </mockData>  
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>ТОО "Сервисный Центр "Ваш Домофон" - 335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    
+    <test-case id="Услуга какой номер по ВДГО с лицевым, контакты поставщика получены">
+        <q>/start</q><a></a><a></a>
+        <q>нужен контакты по оплате за свет</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+    </test-case>
+    
+    
+    
+    
+    <test-case id="газ отключили">
+        <q>/start</q><a></a><a></a>
+        <q>скажите пожалуйста почему газ отключили</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=36&amp;serviceCodes=37</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":36,"serviceName":"Газ","supplierName":"Центральный округ","supplierCodeName":"almaty_gaz","supplierContacts":"258-39-70. - - - еще номер - - 274-80-49. - - - еще номер - - 244-55-33"}]}</response>
+        </mockData>  
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>А Р Ц Алматыгаз - 258-39-70. - - - еще номер - - 274-80-49. - - - еще номер - - 244-55-33.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    
+    <test-case id="проблемы с домофоном">
+        <q>/start</q><a></a><a></a>
+        <q>айнара у меня проблемы с домофоном</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>   
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>5888492</filterValue></parameters>
+            <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=128</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":128,"serviceName":"Домофон","supplierName":"ТОО \"Сервисный Центр \"Ваш Домофон\"","supplierCodeName":"10438","supplierContacts":"335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55"}]}</response>
+        </mockData>    
+        <q>58 88 492</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>
+        
+        
+        <q>да</q>
+        <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a>
+        <a>ТОО "Сервисный Центр "Ваш Домофон" - 335-65-55. - - - еще номер - - 385-83-91. - - - еще номер - - 335-60-89. - - - еще номер - - 7-700-335-65-55.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <!--<test-case id="телефон по налогу за транспорт">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>телефон по налогу за транспорт</q>-->
+    <!--    <mockData>-->
+    <!--        <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
+    <!--        <parameters><filterValue>5888492</filterValue>-->
+    <!--        <serv>serviceCodes=171&amp;serviceCodes=172&amp;serviceCodes=173&amp;serviceCodes=174&amp;serviceCodes=225</serv>-->
+    <!--        </parameters>-->
+    <!--        <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "РОЭС-5","supplierCodeName": "aes","supplierContacts": "356-04-63"}]}</response>-->
+    <!--    </mockData>  -->
+    <!--    <mockData>-->
+    <!--        <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>-->
+    <!--        <parameters><filterValue>5888492</filterValue></parameters>-->
+    <!--        <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>-->
+    <!--    </mockData> -->
+    <!--    <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
+    <!--    <a>Назовите номер вашего лицевого счета</a>   -->
+    <!--    <q>58 88 492</q>-->
+    <!--    <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 84- - 92</a>-->
+    <!--    -->
+    <!--    -->
+    <!--    <q>да</q>-->
+    <!--    <a></a><a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>-->
+    <!--    <q>да</q>        -->
+    <!--    <a>Записывайте.</a>-->
+    <!--    <a>АлматыЭнергоСбыт - 356-04-63.</a>-->
+    <!--    <a>Повторить?</a>-->
+    <!--</test-case>-->
+        
+</test>

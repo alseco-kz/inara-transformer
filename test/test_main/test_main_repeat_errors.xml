@@ -1,0 +1,23 @@
+<test>
+    <test-case id='errors_repeat_check_1'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>о как надоело</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <!--<test-case id='errors_repeat_check_2'>-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <q>как поменять счетчик</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--    <q>с кем я говорю</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>    -->
+    <test-case id='errors_repeat_check_3'>
+        <q>/start</q><a></a><a></a>
+        <q>как поменять счетчик</q>
+        <a state='/NoMatch'></a>
+        <q>хоппер другое надоел провал</q>
+        <a state='/NoMatch'></a>
+    </test-case>     
+</test>

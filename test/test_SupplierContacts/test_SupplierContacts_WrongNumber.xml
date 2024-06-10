@@ -1,0 +1,317 @@
+<test>
+    <!--серия тестов на проверку фразы - попадаем ли в нужный интент-->
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_1">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>не надо этот номер вообще с утра не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_2">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет не надо этот номер не отвечает есть другой номер</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_3">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>номер который вы мне только что продиктовали не отвечает есть у вас другие контактные номера председателя или бухгалтерии</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    
+    
+    <test-case id = "SupplCon_WrongNum_4">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>ну этот телефон не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    
+    <test-case id = "SupplCon_WrongNum_5">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нужна это телефон не отвечает есть другие телефоны</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_6">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>они нам на этот телефон звонишь не отвечают уже уже целый год не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_7">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>тысяча четыре семнадцать это не отвечает телефон есть другие телефоны</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <!--<test-case id = "SupplCon_WrongNum_8">-->
+    <!--    <q>/start</q><a></a><a></a>-->
+    <!--    <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>-->
+    <!--    <mockData>-->
+    <!--        <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>-->
+    <!--        <parameters><filterValue>5888492</filterValue>-->
+    <!--        <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      -->
+    <!--        </parameters>-->
+    <!--        <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>-->
+    <!--    </mockData>  -->
+    <!--    <q>телефон по горячей воде</q>-->
+    <!--    <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>-->
+        <!--<q>у нас давно не убирает уборка ип пашко и не отвечают на телефоны мы хотели вот узнать как дозвониться если у вас есть контакты тогда мы с ними расторгнем вообще договор вообще не убирают уже давно оплачиваем</q>-->
+    <!--    <q>у нас давно не убирает уборка ип пашко и не отвечают на телефоны мы хотели вот узнать как дозвониться если у вас есть контакты</q>-->
+    <!--    <a>Давайте я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 1111, это ваш номер?</a>-->
+    <!--</test-case>-->
+    <test-case id = "SupplCon_WrongNum_9">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>этот номер не отвечает второй день</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+    <test-case id = "SupplCon_WrongNum_10">
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>не могу до них дозвониться</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>   
+    <!--проверка попадания в нужные интенты-->
+        <!--серия тестов на проверку фразы - попадаем ли в нужный интент-->
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+    </test-case>
+
+
+    <test-case id = 'Disagree with request. Then yes - 1 '>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+        <q>мне не нужна заявка</q>
+        <a>Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?</a>
+        <q>да</q>
+        <a>8-705-184-80-13, это ваш номер?</a>
+        <q>нет</q>
+        <a>Можете назвать номер телефона целиком?</a>
+    </test-case>
+    
+    <test-case  id = 'Disagree with request. Then yes - 2 '>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+        <q>я не хочу заявку</q>
+        <a>Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?</a>
+        <q>да</q>
+        <a>8-705-184-80-13, это ваш номер?</a>
+        <q>нет</q>
+        <a>Можете назвать номер телефона целиком?</a>
+    </test-case>
+    
+    <test-case   id = 'Disagree with request. Then no - 1 '>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+        <q>мне не нужна заявка</q>
+        <a>Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?</a>
+        <q>нет переведите на оператора</q>
+        <a></a>
+    </test-case>
+    
+    
+    
+    
+    <test-case   id = 'Another Phone  - no two counts - 2 '>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+        <q>нет</q>
+        <a>Можете назвать номер телефона целиком?</a>
+        <q>восемь семьсот семьдесят один двадцать три ноль ноль четыреста шестьдесят</q>
+        <a>Ваш номер телефона 8-771-230-04-60.?</a>
+        <q>нет</q>
+        <a>Давайте попробуем снова.Назовите номер телефона целиком.</a>
+        <q>восемь семьсот семьдесят один двадцать три ноль ноль четыреста шестьдесят</q>
+        <a>Ваш номер телефона 8-771-230-04-60.?</a>
+        <!--<q>нет</q>-->
+        <!--<a>Давайте попробуем снова.Назовите номер телефона целиком.</a>-->
+    </test-case>       
+    
+    <test-case   id = 'Another Phone  -yes two counts - 1  '>
+        <q>/start</q><a></a><a></a>
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=206&amp;serviceCodes=178&amp;serviceCodes=14&amp;serviceCodes=7&amp;serviceCodes=209</serv>      
+            </parameters>
+            <response>{"accountId": 5888492,"services": [{"serviceCode": 13,"serviceName": "Электроэнергия","supplierName": "Тестовый","supplierCodeName": "10","supplierContacts": "тест номера"}]}</response>
+        </mockData>  
+        <q>телефон по горячей воде</q>
+        <a>Записывайте.</a><a>Тестовый - тест номера.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>этот номер не отвечает</q>
+        <a>Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. 8-705-184-80-13, это ваш номер? </a>
+        <q>нет</q>
+        <a>Можете назвать номер телефона целиком?</a>
+        <q>восемь семьсот семьдесят один двадцать три ноль ноль четыреста шестьдесят</q>
+        <a>Ваш номер телефона 8-771-230-04-60.?</a>
+        <q>да</q><a></a>
+        
+    </test-case>  
+</test>

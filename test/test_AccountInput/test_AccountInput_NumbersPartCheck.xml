@@ -1,0 +1,566 @@
+<test>
+    
+    <test-case id="test_AccountInput_NumbersPartCheck_1">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>все</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        
+        
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>
+    <test-case id="test_AccountInput_NumbersPartCheck_001">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять</q>
+        <a>5. **д+альше**</a>
+        <q>четыре</q>
+        <a>4</a>
+        <a>**д+альше**</a>
+        <q>четыре</q>
+        <a>4</a>
+        <a>**д+альше**</a>
+        <q>семь</q>
+        <a>7</a>
+        <a>**д+альше**</a>
+        <q>один</q>
+        <a>1</a>
+        <a>**д+альше**</a>
+        <q>закончила</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        
+        
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>
+
+    <test-case id="test_AccountInput_NumbersPartCheck_1_01">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>10510</filterValue>
+          </parameters>
+          <response>
+          {"accountId":10510,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>сто пять десять мой лицевой счет</q>
+        <a>1- - 05- - 10. **д+альше**</a>
+        <q>это все</q>
+        <a>Подскажите, это Ваш лицевой счет? 1- - 05- - 10</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        
+        
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    
+    <test-case id="test_AccountInput_NumbersPartCheck_2">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <q>все</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a>
+        <q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        
+        
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>   
+
+    <test-case id="test_AccountInput_NumbersPartCheck_2_01">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <q>все</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>      
+    <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_01">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей</a>
+    </test-case>     
+    <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_02">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей</a>
+        <!--<q>все</q>-->
+        <!--<a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>-->
+        <!---->
+        <!--<event>speechNotRecognized</event>-->
+        <!--<a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>-->
+    </test-case>
+<!--**********************************************************************-->
+<!--проверяем фразы, которыми говорим цифры-->
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_1">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>больше нет</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_2">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>больше нет цифр</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_3">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>Ввод закончен</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_4">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>все</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_5">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>Готово</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_6">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>завершено</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_7">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>Закончил</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_8">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>Закончил ввод</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_9">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>И этим завершается</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_10">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>И это все, что у меня есть</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_11">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>конец</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_12">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>на этом заканчивается</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_13">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>Окончено</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_14">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>цифры закончились</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_15">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>это все </q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_16">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>это конец</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_17">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>я закончил</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_18">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>я закрыл</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+    <test-case id="test_AccountInput_NumbersPartCheck_phrases_19">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>54471</filterValue></parameters>
+          <response>{"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>я окончил</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 44- - 71</a><q>да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
+<!--КОНЕЦ - проверяем фразы, которыми говорим цифры-->
+<!--**********************************************************************-->
+   
+    
+</test>
