@@ -1,0 +1,43 @@
+<test>
+    <test-case id='second_pay_global_int'>
+        <dateTime>2023-06-23 2:30:00</dateTime>
+        <q>/start</q><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
+        <q>да</q>
+        <a></a><a></a>
+        <q>нет</q>
+        <a>**Сегодня, до шестнадцати ноль ноль** нужно принести чек и копию удостоверения личности по адресу Карасай Батыра, 155 в офис Алсеко !</a>
+        <a></a>
+    </test-case>
+    <test-case id='second_pay_global_int'>
+        <dateTime>2023-06-23 9:30:00</dateTime>
+        <q>/start</q><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
+        <q>да</q>
+        <a></a><a></a>
+        <q>нет</q>
+        <a>Ваши деньги **уже поступили поставщикам** и будут учтены как переплата в следующей квитанции. АЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг. Возврат могут сделать только поставщики, контакты которых указаны в квитанции.</a>
+        <a></a>
+    </test-case>
+    
+    <test-case id='second_pay_global_int'>
+        <dateTime>2023-11-23 11:30:00</dateTime>
+        <q>/start</q><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/TransferPoint/Agreement"/>
+        <q>да</q>
+        <a></a><a></a>
+        <q>нет</q>
+        <a>Ваши деньги **уже поступили поставщикам** и будут учтены как переплата в следующей квитанции. АЛСЕКО не принимает деньги за услуги. Эти деньги поступают от банка напрямую поставщикам услуг. Возврат могут сделать только поставщики, контакты которых указаны в квитанции.</a>
+        <a></a>
+    </test-case>
+    
+</test>

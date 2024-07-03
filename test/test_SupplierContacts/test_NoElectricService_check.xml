@@ -1,0 +1,400 @@
+<test>
+    <!--******************************************************************************-->
+    <!--проверяем реакцию - да, нет света-->
+    <test-case id='no_electric_service_check_yes_1.1'>
+        <q>/start</q><a></a><a></a>
+        <q>что то у нас цвета до сих пор нет не подключили я целый день нет</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>да</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+
+
+    <test-case id='no_electric_service_check_yes_1.2'>
+        <q>/start</q><a></a><a></a>
+        <q>электричества нет в болгарии живу я талгар</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>да</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_1'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>да</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_2'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>света нет что то дома</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>нет да да верно света нет</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_4'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>да</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <!--<test-case id='no_electric_service_check_yes_5'>-->
+    <!--      <q>/start</q><a></a><a></a>-->
+    <!--    <q>света нет что то дома</q>-->
+    <!--    <a>У Вас нет электричества, правильно? </a>-->
+    <!--    <q>отключено оно</q>-->
+    <!--    <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>-->
+    <!--</test-case>-->
+    <test-case id='no_electric_service_check_yes_6'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>свет будет</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_7'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>верно</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_yes_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>    
+    <test-case id='no_electric_service_check_yes_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>правильно</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case> 
+    <test-case id='no_electric_service_check_yes_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>да и периодически это повторяется часто</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+    </test-case>     
+    <!--******************************************************************************-->
+    <!--проверяем реакцию - нет другой вопрос-->
+    <test-case id='no_electric_service_check_no_1'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>нет</q>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_no_2'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>я же другой вопрос задал</q>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+    <test-case id='no_electric_service_check_no_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>у меня другой вопрос</q>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+
+    <!--*********************************-->
+    <!--проверяем - да, повторить-->
+    <test-case id='no_electric_service_check_repeat_1'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>да</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>повтори</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+        <q>повтори номер</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+    </test-case>  
+    <test-case id='no_electric_service_check_repeat_2'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>да</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>повтори</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+        <q>еще раз пожалуйста</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+    </test-case>    
+    <test-case id='no_electric_service_check_repeat_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>да</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>повтори</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+        <q>нет</q>
+        <a state = "/bye"></a>
+        <a state = "/bye"></a>
+    </test-case>   
+    <!--проверяем - да, повторить-->
+    <test-case id='no_electric_service_check_repeat_1'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>да</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>повтори</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+        <q>повтори номер</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+    </test-case>  
+    <test-case id='no_electric_service_check_repeat_2'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>да</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>повтори</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+        <q>еще раз пожалуйста</q>
+        <a>356, 99, 99. Код города - 727.</a> <a>Нужна ли моя помощь дальше?</a>
+    </test-case>    
+    <test-case id='no_electric_service_check_repeat_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>    
+    
+    
+    <test-case id='no_electric_service_check_repeat_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>угу</q>
+        <a>Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.</a> <a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>   
+    
+    <test-case id='no_electric_service_check_repeat_4'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>света нет</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case> 
+    
+    <test-case id='no_electric_service_check_repeat_5'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>вообще в квартале нет электричества</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_5'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>      
+    
+    
+    <test-case id='no_electric_service_check_repeat_6'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да все верно верно все</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>      
+      
+    
+    <test-case id='no_electric_service_check_repeat_7'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да да да</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>        
+
+
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да или триста нет уже со вчерашнего дня уже вот на верху норбекова есть а внизу где то пять шесть домов нет сета</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да нет</q>
+        <a state='/WhatDoYouWant'></a>
+    </test-case>    
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да нет ничего насчет нас постоянно отключают ни вчера лакуны и сколько раз отключать его беспричинные</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да нет электричества да</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case> 
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да правильно</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>да у нас отключили свет с утра нет света а у нас тут рабочие нам свет нужен</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>  
+    
+
+    
+
+    
+    
+
+    
+    <test-case id='no_electric_service_check_repeat_9'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>конечно с утра там чуть не с восьми утра на улице тридцать пять градусов жары и говорят и это у них профилактика или там что вот это как какой профилактику можно делать когда тридцать пять жара и еще воды нет еще света нет одновременно вот как нам дальше </q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>    
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет</q>
+        <a state='/WhatDoYouWant'></a>
+    </test-case>  
+    
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет есть электричество дело в том что меня не было пятнадцать дней дома</q>
+        <a state = '/NoElectricService/CallerNoElectric/CallerNoElectricHaveEl'></a><a></a>
+    </test-case> 
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет мне мне не пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case> 
+    
+    
+
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет у меня завышенное завышенная сумма по электроэнергии</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет у нас не отключили свет но почему то за свет очень много приходит и последнюю проплату можно посмотреть когда была</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет у нас не отключили свет но почему то за свет очень много приходит и последнюю проплату можно посмотреть когда была</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>правильно</q>
+        <a state='/NoElectricService/CallerNoElectric/CallerNoElectricYes/CallerNoElectricSayAES'></a><a>Повторить?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>у нас не отключили свет у нас нужен договор</q>
+        <a state='/NoMatch'></a>
+    </test-case> 
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>я в город попала для услуг пять</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>я живу тут ден петрова тридцать шесть</q>
+        <a state='/NoMatch'></a>
+    </test-case>      
+        <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>газ газ отключили газ</q>
+        <a state='/WhatDoYouWant'></a>
+    </test-case>   
+</test>

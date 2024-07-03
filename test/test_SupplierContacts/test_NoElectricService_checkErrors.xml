@@ -1,0 +1,44 @@
+<test>
+    <test-case id='no_electric_service_check_have_electric_1'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>как электричества нет есть</q>
+        <a>Похоже, я неправильно Вас поняла</a>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_have_electric_2'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>есть почему</q>
+        <a>Похоже, я неправильно Вас поняла</a>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+    
+    <test-case id='no_electric_service_check_have_electric_3'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>нет не правильно выставляют показания</q>
+        <a state ="/NoMatch"></a>
+    </test-case>
+        <test-case id='no_electric_service_have_electric_4'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно? </a>
+        <q>нет у меня есть свет</q>
+        <a>Похоже, я неправильно Вас поняла</a>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>
+    <test-case id='no_electric_service_have_electric_5'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>есть</q>
+        <a>Похоже, я неправильно Вас поняла</a>
+        <a>Чем я могу помочь Вам?</a>
+    </test-case>    
+    
+</test>

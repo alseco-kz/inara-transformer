@@ -1,0 +1,52 @@
+<test>
+    <test-case id="SupplCont_need_Elictric_onServName_1">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=1</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
+        </mockData>
+        <q>контакты поставщика услуг нам надо</q>
+        <a>Назовите услугу</a>
+        <q>счетчик взрывается у нас нам надо электрика срочно</q>
+        <a>Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a>Записывайте.</a>
+        <a>пэ ка эс ка "АК КАЙЫН" - 246-05-95.</a>
+        <a>Повторить?</a>
+    </test-case>
+    
+    <test-case id="SupplCont_need_Elictric_onServName_2">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <q>контакты поставщика услуг нам надо</q>
+        <a>Назовите услугу</a>
+        <q>счетчик взрывается у нас нам надо электрика срочно</q>
+        <a>Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a></a>
+    </test-case>    
+    
+    <test-case id="SupplCont_need_Santeh_onServName_1">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>5888492</filterValue>
+            <serv>serviceCodes=1</serv> 
+            </parameters>
+            <response>{"accountId":5888492,"services":[{"serviceCode":1,"serviceName":"Расходы на содержание жилища","supplierName":"ПКСК \"АК КАЙЫН\"","supplierCodeName":"712","supplierContacts":"246-05-95"}]}</response>
+        </mockData>
+        <q>контакты поставщика услуг нам надо</q>
+        <a>Назовите услугу</a>
+        <q>мне нужен сантехник</q>
+        <a>Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a>Записывайте.</a>
+        <a>пэ ка эс ка "АК КАЙЫН" - 246-05-95.</a>
+        <a>Повторить?</a>
+    </test-case>    
+</test>

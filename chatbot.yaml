@@ -1,15 +1,69 @@
-name: zb-cailapub
+﻿name: InaraSTS 
 
 entryPoint: main.sc
 
 botEngine: v2
-language: kz
+language: ru
 
 tests:
-  include:
-    - test.xml
+    include:
+        #  - test_NoMatch/test_NoMatchPhrases.xml
+        # - test_NoMatch/test_NoMatchPhrases.xml
+        # - test_main/*.xml
+        #   -  test_Payment/test_Payment_DateLast_pay_phrases.xml
+        #  - test_SupplierContacts/test_StressAnotherAccountCheck.xml
+        # - test_AccountInput/*.xml
+        # - test_Bills/*.xml
+        # - test_ChangeAccountPerson/*.xml
+        # - *.*
+        #  -  test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_client_phrases.xml
+        #   -  test_SecondPayment/*.xml
+          - supplier_contacts.xml
+            # - block_tests.xml
+        #   - test_local_intents/test_soglasie_prodictovat.xml 
+        #   - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_offline.xml
+        #   - test_ChangeAccountPersonCount/test_TBO_ChangeAccountPersonCount.xml 
+    exclude: 
+      
+        # - *.*
+        # - *
+        # - test_i/test_irina.xml
+        # - test_AlsecoCommon/*.xml
 
+messages:
+  onError:
+    locales:
+      ru: Произошла ошибка. Пожалуйста, повторите запрос позже.
+      en: Failed on request processing.
+    defaultMessage: Что-то пошло не так.
+    # defaultMessages:
+    #   - Извините, что-то сломалось.
+    #   - Произошла ошибка при обработке запроса.
+
+  
+sts:
+    noMatchThreshold: 0.2
+
+caila:
+    noMatchThreshold: 0.2
+
+injector:
+#   AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
+#   AccountSheetName: 'ЛС'
+#   AccountSheetSupplName: 'ЛСПост'
+#   AccountSheetPayName: 'Оплаты'
+#   MacrosUrl: 'https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?'
+    #   sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}'
+    # Ниже полная ссылка на файл в режиме макроса
+    #   https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}'
+  AccountInputSettings:
+    MaxRetryCount: 2 
+    
 nlp:
-  intentNoMatchThresholds:
-    phrases: 0.2
-    patterns: 0.2
+  nbest: 3
+  modifyRequestInPreMatch: true
+  
+
+customTags:
+  - src/Blocks/AccountPayDate/account_pay_date.json
+  - src/Blocks/AccountNumberInput/account_number_input.json

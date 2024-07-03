@@ -1,0 +1,104 @@
+ <test>
+    <test-case id="AlsecoPhones_1">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/repeat"/>
+        <q>Нэ не надо больше спасибо рахмет</q>
+        <a state="/bye"/><a></a>
+    </test-case>
+    <test-case id="AlsecoPhones_2">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>да повтори пожалуйста</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/repeat"/>
+        <q>Нэ не надо больше спасибо рахмет</q>
+        <a state="/bye"/><a></a>
+    </test-case>
+    
+    <test-case id="AlsecoPhones_2">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>нет не нужно все в порядке</q>
+        <a state="/AlsecoCommon/CanIHelpYou"/>
+
+    </test-case>
+    
+    <test-case id="AlsecoPhones_3">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
+        <q>повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>я не понял вас повторите пожалуйста моя твоя не понимать</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>да конечно</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>пожалйста повтори я не понял</q>
+        <a state="/repeat"/>
+        <q> не надо больше спасибо рахмет</q>
+        <a state="/bye"/><a></a>
+    </test-case>
+    
+    <test-case id="AlsecoPhones_4">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>/>
+        <q> не надо больше спасибо рахмет</q>
+        <a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>Нет спасибо</q>
+        <a state="/bye"/><a>До свидания!</a>
+    </test-case>
+    
+      <test-case id="AlsecoPhones_5">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>/>
+        <q>да повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>/>
+        <q>да только помедленее немного</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        
+    </test-case>
+    
+   <test-case id="AlsecoPhones_6">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>/>
+        <q>да</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>конечно</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        
+    </test-case>
+    
+   <test-case id="AlsecoPhones_7">
+        <q>/start</q><a></a><a></a>
+        <q>Я хотел бы обратиться к вам по вопросам сотрудничества и взаимодействия</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>/>
+        <q>да повторите</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        <q>да только помедленее немного</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts/SaleContactsRepeat:"/><a>Повторить?</a>
+        
+    </test-case>
+</test>   

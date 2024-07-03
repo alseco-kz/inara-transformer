@@ -1,0 +1,326 @@
+<test>
+    <test-case id="test_Payment_DateLast_Pay_intent_1">
+        <q>/start</q><a></a><a></a>
+        <q>дата последней оплаты</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case id="test_Payment_DateLast_Pay_intent_2">
+        <q>/start</q><a></a><a></a>
+        <q>прошла ли оплата по лицевому счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case id="test_Payment_DateLast_Pay_intent_3">
+        <q>/start</q><a></a><a></a>
+        <q>когда в последний раз платили по моему счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_intent_3_1">
+        <q>/start</q><a></a><a></a>
+        <q>когда в последний раз платили по моему счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+        <q>я не знаю лицевой счет</q>
+        <a>К сожалению, без лицевого счёта я не могу дать дату последней оплаты</a>
+        <a>Для реш+ения в+ашего вопр+оса перевож+у Вас на опер+атора.</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_intent_3_2">
+        <q>/start</q><a></a><a></a>
+        <q>когда в последний раз платили по моему счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+        <q>101010</q>
+        <a>Подскажите, это Ваш лицевой счет? 10- - 10- - 10</a>
+        <q>да</q>
+        <a></a>
+        <a>Что-то сервер барахлит.</a>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>101010</q>
+        <a>Подскажите, это Ваш лицевой счет? 10- - 10- - 10</a>
+        <q>да</q>
+        <a></a>
+        <a>Что-то сервер барахлит.</a>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a>Для реш+ения в+ашего вопр+оса перевож+у Вас на опер+атора.</a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <q>а будьте добры а вы можете подсказать по квитанции прошла ли сумма или нет или я не туда набрала</q>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+
+    <!--ошибка получения данных с сервиса-->
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_1">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <q>когда в последний раз платили по моему счету</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a>Для реш+ения в+ашего вопр+оса перевож+у Вас на опер+атора.</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_2">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <!--<mockData>-->
+        <!--  <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>-->
+        <!--  <parameters><sheetName>Оплаты</sheetName><filterValue>5888492</filterValue></parameters>-->
+        <!--  <response>-->
+        <!--     {"count":1,"data":[{"account_number":5888301,"date_last_pay":"","sum_last_pay":"150.12","registration_date":"2021-12-31T18:15:00.000Z","Row":2}],"filterHead":"account_number","filterValue":"5888301","needFilter":true,"msg":"Success"}-->
+        <!--  </response>-->
+        <!--</mockData>-->
+
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": null,"registrationDate": "1982-07-01"}</response>
+        </mockData> 
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Оплата не поступала более двух месяцев. Просим Вас погасить задолженность</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_10">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+        <!--<mockData>-->
+        <!--  <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>-->
+        <!--  <parameters><sheetName>Оплаты</sheetName><filterValue>5888492</filterValue></parameters>-->
+        <!--  <response>{"count":1,"data":[{"account_number":5888301,"date_last_pay":"2022-10-31T18:15:00.000Z","sum_last_pay":"150.12","registration_date":"2021-12-31T18:15:00.000Z","Row":2}],"filterHead":"account_number","filterValue":"5888301","needFilter":true,"msg":"Success"}</response>-->
+        <!--</mockData>-->
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-10-31","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 31 октября</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_01">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-01-01","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 01 января</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_02">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-02-02","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 02 февраля</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_03">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-03-03","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 03 марта</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_04">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-04-04","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 04 апреля</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_05">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-05-05","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 05 мая</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_06">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-06-06","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 06 июня</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_07">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-07-07","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 07 июля</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_08">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-08-08","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 08 августа</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_09">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-09-09","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 09 сентября</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_10">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-10-10","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 10 октября</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_11">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-11-11","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 11 ноября</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>сколько оплачено</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>
+    
+<!--*******************************************************************-->
+<!--БЛОК ТЕСТОВ - уточняем сумму оплаты-->
+    
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_1">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>сумма</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case> 
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_2">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сумма</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>    
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сколько оплачено и сколько осталось</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>    
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сумма какая</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>       
+        
+
+
+
+</test>

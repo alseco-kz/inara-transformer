@@ -1,0 +1,60 @@
+<test integration="True">
+    <test-case   id = 'Another Stress Test   '>
+        <q>/start</q><a></a><a></a>
+        <q>вывоз мусора</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>370690</filterValue></parameters>
+            <response> {"accountId":370690,"regionName":"город Алматы","townName":"","districtName":"","streetName":"улица Иманбаевой","houseName":"дом 32","flatName":"","fullAddressName":"улица Иманбаевой, дом 32"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>370690</filterValue>
+            <serv>serviceCodes=11</serv> 
+            </parameters>
+            <response>{"accountId":370690,"services":[{"serviceCode":11,"serviceName":"Вывоз ТБО","supplierName":"ТОО \"Уэист Менеджемент сервис\"","supplierCodeName":"4042","supplierContacts":"8-747-500-04-24"},{"serviceCode":94,"serviceName":"Долг за вывоз ТБО","supplierName":"ПКСД \"ДОС\"","supplierCodeName":"4505","supplierContacts":""}]}</response>
+        </mockData>  
+        <q>370690</q>
+        <a>Подскажите, это Ваш лицевой счет? 37- - 06- - 90</a>
+        <q>Да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес улица Иманбаевой, дом 32. Верно?</a>
+        <q>да</q>
+        <a>Записывайте.</a><a>ТОО "Уэист Менеджемент сервис" - 8-747-500-04-24.</a><a>Повторить?</a>
+        <q>нет</q>
+        <a>Нужна ли моя помощь дальше?</a>
+
+        
+    </test-case>  
+    
+    
+    <test-case   id = 'Another Stress Test   '>
+        <q>/start</q><a></a><a></a>
+        <q>вывоз лифта</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+            <parameters><filterValue>370690</filterValue></parameters>
+            <response> {"accountId":7473141,"regionName":"город Алматы","townName":"","districtName":"","streetName":"проспект Абая","houseName":"дом 206","flatName":"квартира 34","fullAddressName":"проспект Абая, дом 206, квартира 34"}</response>
+        </mockData> 
+        <mockData>
+            <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/services/contacts?${serv}</query>
+            <parameters><filterValue>7473141</filterValue>
+            <serv>serviceCodes=11</serv> 
+            </parameters>
+            <response>{"accountId":7473141,"services":[]}</response>
+        </mockData>  
+        <q>370690</q>
+        <a>Подскажите, это Ваш лицевой счет? 37- - 06- - 90</a>
+        <q>Да</q>
+        <a>Поиск займет пару секунд, Подождите пожалуйста.</a>
+        <a>Ваш адрес проспект Абая, дом 206, квартира 34. Верно?</a>
+        <q>да</q>
+        <a>у меня нет нужного телефона. перевожу звонок на оператора.</a>
+
+        
+    </test-case>      
+</test>

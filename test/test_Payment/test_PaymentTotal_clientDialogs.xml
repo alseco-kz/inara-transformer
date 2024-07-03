@@ -1,0 +1,39 @@
+<test>
+    <test-case>
+        <q>/start</q><a></a><a></a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888379</filterValue></parameters>
+          <response>{"accountId":5888379,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 8"}</response>
+        </mockData> 
+        <q>оплата</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три шестьдесят</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 83- - 60</a>
+        <q>нет нет нет нет нет</q>
+        <a>Давайте попробуем снова</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три семьдесят девять</q>
+        <a>Подскажите, это Ваш лицевой счет? 5- - 88- - 83- - 79</a><q>да</q>
+        <a></a>
+        <a>Ваш адрес Микрорайон "Алмагуль"  Дом 15 Квартира 8. Верно?</a>
+        <q>нет не правильно</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a state="/PaymentTotal/PaymentQuestion/SendToOperator"/>
+    </test-case>
+    
+    
+    
+    <test-case id = "2">
+        <q>/start</q><a></a><a></a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888379</filterValue></parameters>
+          <response>{"accountId":5888379,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"Микрорайон \"Алмагуль\"  Дом 15 Квартира 8"}</response>
+        </mockData> 
+        <q>скажите пожалуйста прошла ли оплата электроэнергии</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+    </test-case>
+</test>

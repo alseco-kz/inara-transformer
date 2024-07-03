@@ -1,0 +1,17 @@
+ <test>
+    <test-case id="AlsecoEmail_1">
+        <q>/start</q><a></a><a></a>
+        <q>по каким дням вы работате</q>
+        <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>повторите</q>
+        <a state="/repeat"/>
+    </test-case>
+    
+    <test-case id="AlsecoEmail_2">
+        <q>/start</q><a></a><a></a>
+        <q>до скольки работает офис</q>
+        <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"/>
+        <q>повторите</q>
+        <a state="/repeat"/>
+    </test-case>
+</test>   
