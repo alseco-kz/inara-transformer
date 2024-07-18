@@ -76,6 +76,9 @@ theme: /
         q!: $regex</start>
         
         script:
+            bind("postProcess", function($context) {
+                $dialer.setNoInputTimeout(15000);
+            });
             $.session.looser_count = 0;
             $context.session.AnswerCnt = 0;
             $.session.repeatsInRow = 0;
