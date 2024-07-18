@@ -5,8 +5,9 @@ require: /Functions/AccountNumberInput.js
 
 theme: /FindLSFromIIN
     
-    state: FindLSFromIIN || modal = true
+    state: FindLSFromIIN
         intent!: /FindAccountNumber
+        intent!: /Juice
         a: Мы можем найти ваш лицевой счет по ИИН владельца недвижимости || ignoreBargeIn = true
         a: если не проводилась оплата по данному лицевому сч+ёту. Пожалуйста, назовите ваш ИИН.
         script:
