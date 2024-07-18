@@ -28,6 +28,8 @@ require: PaymentTotal.sc
 require: SupplierContacts.sc
 # общие вопросы по алсеко
 require: AlsecoCommon.sc
+
+require: FindLSFromIIN.sc
 # общие вопросы по Инаре
 require: AboutInara.sc
 # вопросы по налогам
