@@ -7,6 +7,11 @@ function compare_pos(a,b){
   }
   return 0;
 }
+
+function keepOnlyDigits(str) {
+    return str.replace(/\D/g, '');
+}
+
 function words_to_number(array){
     var return_string = "";
     

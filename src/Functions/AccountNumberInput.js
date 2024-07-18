@@ -1,25 +1,24 @@
 // проверяем, был ли выявлен ЛС в ходе диалога
-function FindAccountIsAccountSet() 
-{
+function FindAccountIsAccountSet(){
     var $session = $jsapi.context().session;
     if (($session.Account) && ($session.Account.Number > 0))
         return true
-        
-    return false
+    else 
+        return false
 }
 //---------------------------------------------------------------------------
 // очистка номера ЛС
-function FindAccountNumberClear() 
-{
+function FindAccountNumberClear(){
     var $session = $jsapi.context().session;
     $session.Account = {};
     $session.Account.Number = 0;
     $session.Account._number = 0;
+    
+    
 }
 //---------------------------------------------------------------------------
 //
-function FindAccountNumberStart()
-{
+function FindAccountNumberStart(){
     var $session = $jsapi.context().session;
     $session.Account = {};
     $session.Account.Number = 0;
@@ -64,8 +63,7 @@ function TrySetNumber(acc_num)
 }
 //---------------------------------------------------------------------------
 //
-function FindAccountAddress() 
-{
+function FindAccountAddress(){
     var $injector = $jsapi.context().injector;
     var $session = $jsapi.context().session;
     var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
@@ -74,29 +72,26 @@ function FindAccountAddress()
     var token = $secrets.get("InaraSeviceToken", "Токен не найден");
     
     return $http.query(url, {method: "GET",
-        timeout: 20000,        // таймаут выполнения запроса в мс
-        headers: {"Content-Type": "application/json", "Authorization": "Basic " + token
+        timeout: 20000        // таймаут выполнения запроса в мс
+        ,headers: {"Content-Type": "application/json", "Authorization": "Basic " + token
             
         }
     });
 }
 //---------------------------------------------------------------------------
 //
-function GetTempAccountNumber()
-{
+function GetTempAccountNumber(){
     var $session = $jsapi.context().session;
     return $session.Account._number;
 }
 // возвращает сохраненный номер ЛС
-function GetAccountNumber()
-{
+function GetAccountNumber(){
     var $session = $jsapi.context().session;
     return $session.Account.Number;
 }
 //---------------------------------------------------------------------------
 // Как говорить номер ЛС (разбиение по разрядам)
-function AccountTalkNumber(acc_num)
-{
+function AccountTalkNumber(acc_num){
     return acc_num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, "- - ")    
 }
 
