@@ -104,7 +104,7 @@ theme: /AccountIIN
                 script: 
                     FindAccountIINSetResult("DontKnow"); 
                     $analytics.setSessionData("Блок ИИН", "Не знаю ИИН")
-                go!: {{$session.AccountNoAccounState}}
+                go!: /ИнициацияЗавершения/CanIHelpYou
             
             
         state: AccountIINWhereIsIIN
