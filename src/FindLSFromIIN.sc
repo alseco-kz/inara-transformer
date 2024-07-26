@@ -83,9 +83,14 @@ theme: /FindLSFromIIN
                     
                    
                             $session.Account.Address = FindAccountAddress();
+                            
+                            $session.StreetName = toPrettyString($session.Account.Address.data.streetName);
+                            $session.HouseName = toPrettyString($session.Account.Address.data.houseName);
+                            $session.FlatName = toPrettyString($session.Account.Address.data.flatName);
                     
-                            $session.Account.HouseEquals = ($session.Account.House == keepOnlyDigits(toPrettyString($session.Account.Address.data.houseName)));
-                            $session.Account.RoomEquals = ($session.Account.RoomNumber == keepOnlyDigits(toPrettyString($session.Account.Address.data.flatName)));
+                            $session.Account.StreetEquals = ($session.Account.House == keepOnlyDigits($session.StreetName));
+                            $session.Account.HouseEquals = ($session.Account.House == keepOnlyDigits($session.HouseName));
+                            $session.Account.RoomEquals = ($session.Account.RoomNumber == keepOnlyDigits($session.FlatName));
                 
                             if ($session.Account.HouseEquals && $session.Account.RoomEquals) {
                                 break;
@@ -95,7 +100,7 @@ theme: /FindLSFromIIN
                         $session.repeatRoomSeek += 1;
             
                     if: $session.Account.RoomEquals
-                        a: Подскажите, это ваш адрес? {{toPrettyString($session.Account.Address.data.fullAddressName)}}
+                        a: Подскажите, это ваш адрес? {{$session.StreetName}} {{$session.HouseName}} {{$session.FlatName}}
                     elseif: $session.repeatRoomSeek <= 1
                         a: Номер квартиры не найден, давайте попробуем снова
                         go!: /FindLSFromIIN/AccountFound/HouseSeek/StartRoomSeek
