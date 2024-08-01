@@ -76,7 +76,7 @@ theme: /
     state: LangInit
         q!: $regex</start>
         script:
-            setLastRU();
+            setLastKZ();
         go!: /Start
 
     state: Start
