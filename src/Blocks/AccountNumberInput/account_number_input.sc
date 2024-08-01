@@ -53,6 +53,8 @@
 
 
 require: /Functions/AccountNumberInput.js
+require: /Blocks/AccountIIN/account_iin.sc
+require: /Functions/Language.js
 
 theme: /BlockAccountNumInput
 
@@ -74,9 +76,9 @@ theme: /BlockAccountNumInput
             $session.Account.MaxRetryCount = $injector.AccountInputSettings.MaxRetryCount || 3;
             $session.Account.RetryAccount = $session.Account.RetryAccount || 0;
             $session.Account.RetryAccount++;
-            $temp.SayAccount = "Назовите номер вашего лицевого счета"
+            $temp.SayAccount = extractPhrase("account_number_input.sc", "SayAccount", $context)
             if ($session.Account.RetryAccount>1)
-                $temp.SayAccount += " по цифрам"
+                $temp.SayAccount += " " + extractPhrase("account_number_input.sc", "ThroughNumbers", $context)
             $session.AccountNumberContinue = false;
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
             a: {{$temp.SayAccount}}
@@ -90,7 +92,7 @@ theme: /BlockAccountNumInput
         
         state: AccountInputWait    
             intent: /подождите
-            a: да, жду Вас
+            a: {{extractPhrase("account_number_input.sc", "AccountInputWait", $context)}}
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
                
@@ -113,16 +115,31 @@ theme: /BlockAccountNumInput
                 }
                 $session.speechNotRecognized.repetition += 1;
                 
+                if ($session.lastLang == "RU") {
+                    $session.accountOne = "Кажется, проблемы со связью.";
+                    $session.accountTwo = "Извините, я не расслышала. Повторите, пожалуйста.";
+                    $session.accountThree = "Не совсем поняла. Можете повторить, пожалуйста?";
+                    $session.accountFour = "Повторите, пожалуйста. Вас не слышно.";
+                    $session.accountFive = "Алло? Вы здесь?"; 
+                } else {
+                    $session.accountOne = "Байланыс мәселесі бар сияқты.";
+                    $session.accountTwo = "Кешіріңіз, мен естімедім. Кешіріңіз қайталаңызшы.";
+                    $session.accountThree = "Толық түсінбедім. Өтінемін, қайталай аласыз ба?";
+                    $session.accountFour = "Кешіріңіз қайталаңызшы. Сізді есту мүмкін емес.";
+                    $session.accountFive = "Сәлеметсіз бе? Сіз осындасыз ба?"; 
+                }
+                
+                
             if: $session.speechNotRecognized.repetition >= 3
-                a: Кажется, проблемы со связью.
+                a: {{$session.accountOne}}
                 script:
                     $dialer.hangUp();
             else:
                 random: 
-                    a: Извините, я не расслышала. Повторите, пожалуйста.
-                    a: Не совсем поняла. Можете повторить, пожалуйста?
-                    a: Повторите, пожалуйста. Вас не слышно.
-                    a: Алло? Вы здесь?
+                    a: {{$session.accountTwo}}
+                    a: {{$session.accountThree}}
+                    a: {{$session.accountFour}}
+                    a: {{$session.accountFive}}
 
         state: looser
             q!: * $looser *
@@ -136,14 +153,14 @@ theme: /BlockAccountNumInput
                 go!: /WhatDoYouWant
             else:
                 random:
-                    a: Не ругайтесь пожалуйста. Соединяю вас с оператором.
-                    a: Спасибо.Мне важно ваше мнение. Перевожу вас на оператора.
-                    a: Давайте не будем переживать. Перевожу вас на оператора.
+                    a: {{extractPhrase("account_number_input.sc", "looser1", $context)}}
+                    a: {{extractPhrase("account_number_input.sc", "looser2", $context)}}
+                    a: {{extractPhrase("account_number_input.sc", "looser3", $context)}}
                 go!: /CallTheOperator
                 
         state: AccountInputNotNumbersWay
             intent: /ЛС_ИнойТипВвода
-            a: Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?
+            a: {{extractPhrase("account_number_input.sc", "AccountInputNotNumbersWay", $context)}}
             state: AccountInputNotNumbersWayYes
                 q: $yes
                 q: $agree
@@ -164,7 +181,7 @@ theme: /BlockAccountNumInput
             
         state: AccountInputWhereIsAccount
             intent: /ГдеНомерЛС
-            a: Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?
+            a: {{extractPhrase("account_number_input.sc", "AccountInputWhereIsAccount", $context)}}
             state: AccountInputWhereIsAccountYes
                 q: $yes
                 q: $agree
@@ -191,7 +208,8 @@ theme: /BlockAccountNumInput
             
             # проверяем наличие цифр в запросе. если есть, значит говорит номер лицевого счета
             q: * $numbers *
-            q: * @duckling.number *
+            q: * @zb.number [@zb.number] [@zb.number] *
+            q: * @zb.number [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] *
             script: 
                 $temp.AccNum = "";
                 # log("блок ЛС цифры")
@@ -199,11 +217,17 @@ theme: /BlockAccountNumInput
                 if ($session.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
                 # log("ЛС временный = "+ toPrettyString($temp.AccNum))
-                TrySetNumber($temp.AccNum + words_to_number($entities));
+                #TrySetNumber($temp.AccNum + words_to_number($entities));
+                var length = $parseTree["zb.number"].length;
+                var result = "";
+                for (var i = 0; i < length; i++) {
+                    result += Math.floor($parseTree["zb.number"][i].value);
+                }
+                TrySetNumber($temp.AccNum + result);
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             if: (GetTempAccountNumber().length) <= 5
-                a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline
+                a: {{AccountTalkNumber(GetTempAccountNumber())}}. {{extractPhrase("account_number_input.sc", "AccountInputNumberContinue3", $context)}} || bargeInIf = AccountNumDecline
                 # go!: AccountInputNumberContinue
             else
                 go!: ./AccountInputNumberNumComplete
@@ -240,29 +264,34 @@ theme: /BlockAccountNumInput
                     
             state: AccountInputNumberContinue
                 q: * $numbers *
-                q: * @duckling.number *
+                q: @zb.number [@zb.number] [@zb.number] *
+                q: * @zb.number [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] *
                 script:                
                     $temp.AccNum = "";
                     # log("блок ЛС цифры")
                     # log($session.AccountNumberContinue);
                     # if ($session.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
-                    $temp.CurrentNum = words_to_number($entities);
+                    var length = $parseTree["zb.number"].length;
+                    var result = "";
+                    for (var i = 0; i < length; i++) {
+                        result += Math.floor($parseTree["zb.number"][i].value);
+                    }
+                    $temp.CurrentNum = result;
                     # log("ЛС временный = "+ toPrettyString($temp.AccNum))
                     TrySetNumber($temp.AccNum + $temp.CurrentNum);
                     $temp.AccNumLen = GetTempAccountNumber().length;
                 if: ($temp.AccNumLen) < 9
                     a:{{AccountTalkNumber($temp.CurrentNum)}}
                     random:
-                        a: **д+альше**
-                        # a: Так
-                        a: **продолж+айте**
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberContinue3", $context)}}
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberContinue4", $context)}}
                 elseif: (($temp.AccNumLen ==  9)||($temp.AccNumLen ==  10))
                     go!: ./AccountInputNumberComplete
                 else:
                     random:
-                        a: Это слишком длинный номер. В базе такого нет. 
-                        a: Вы назвали слишком длинный номер, у нас такого нет.
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberContinue1", $context)}}
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberContinue2", $context)}}
                     go!: /BlockAccountNumInput/AccountInput
                         
                 script:
@@ -280,10 +309,10 @@ theme: /BlockAccountNumInput
                 state: AccountInputNumberContinueNo
                     q: $no
                     q: $disagree
-                    q: * ($no/$disagree) * @duckling.number *
+                    q: * ($no/$disagree) * @zb.number *
                     intent: /Несогласие
                     if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
-                        a: Дав+айте начнём снач+ала
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberContinueNo", $context)}}
                     go!: /BlockAccountNumInput/AccountInput
 
                 state: AccountInputNumberContinueNoSpeech
@@ -298,21 +327,32 @@ theme: /BlockAccountNumInput
                             $session.speechNotRecognized.repetitionNumCont = $session.speechNotRecognized.repetitionNumCont || 0;
                         }
                         $session.speechNotRecognized.repetitionNumCont += 1;
+                        
+                        if ($session.lastLang == "RU") {
+                            $session.accountOne = "Кажется, проблемы со связью.";
+                            $session.accountTwo = "Извините, я не расслышала. Повторите, пожалуйста.";
+                            $session.accountThree = "Не совсем поняла. Можете повторить, пожалуйста?";
+                        } else {
+                            $session.accountOne = "Байланыс мәселесі бар сияқты.";
+                            $session.accountTwo = "Кешіріңіз, мен естімедім. Кешіріңіз қайталаңызшы.";
+                            $session.accountThree = "Толық түсінбедім. Өтінемін, қайталай аласыз ба?";
+                        }
+                        
                     if: $session.speechNotRecognized.repetitionNumCont > 3
-                        a: К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей
+                        a: {{$session.accountOne}}
                         script:
                             $dialer.hangUp();
                     else:
                         random:
-                            a: алл+о? говор+ите д+альше
-                            a: алл+о? продолж+айте
+                            a: {{$session.accountTwo}}
+                            a: {{$session.accountThree}}
                             
                 state: AccountInputNumberComplete
                     q: все 
                     intent: /ЛС_цифры_закончились
                     random:
-                        a: Подскажите, это Ваш лицевой счет? {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
-                        a: Верно ли я записала Ваш лицевой счет?  {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberComplete1", $context)}} {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberComplete2", $context)}}  {{AccountTalkNumber(GetTempAccountNumber())}} || bargeInIf = AccountNumDecline 
                     
                     state: AccountInputNumberComplete
                         q: $yes
@@ -320,7 +360,7 @@ theme: /BlockAccountNumInput
                         intent: /Согласие
                         intent: /Согласие_подожду
                         event: noMatch
-                        a: Поиск займет пару секунд, Подождите пожалуйста.
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberComplete3", $context)}}
                         # script:
                         #     $reactions.timeout({interval: '1s', targetState: '../../../FindAccount'});
                         #     $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
@@ -343,7 +383,7 @@ theme: /BlockAccountNumInput
                         q: $disagree
                         intent: /Несогласие
                         intent: /Несогласие_подожду
-                        a: Давайте попробуем снова
+                        a: {{extractPhrase("account_number_input.sc", "AccountInputNumberComplete4", $context)}}
                         if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                             go!:  ../../../../../../BlockAccountNumInput/AccountInput
                         else
@@ -379,7 +419,7 @@ theme: /BlockAccountNumInput
                     FindAccountNumberSetResult("AddressCancel"); 
                     $analytics.setSessionData("Блок ЛС", "Неверный номер")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
-                    a: Давайте еще раз проверим
+                    a: {{extractPhrase("account_number_input.sc", "AccountInputNumberNo", $context)}}
                 go!: /BlockAccountNumInput/AccountInput
 
             state: FindAccount
@@ -392,6 +432,19 @@ theme: /BlockAccountNumInput
                             if (res && res.accountId) {
                                 //log(res.data[0].address_full_name);
                                 $session.Account.Address = res.fullAddressName;
+                                $session.Account.NumberInputStreet = res.streetName;
+                                $session.Account.NumberInputHouse = keepOnlyDigits(res.houseName);
+                                $session.Account.NumberInputFlat = keepOnlyDigits(res.flatName);
+                                
+                                if ($session.Account.NumberInputHouse.length > 0) {
+                                    $session.Account.NumberInputHouse = extractPhrase("account_number_input.sc", "AccountAddressConfirm5", $context)
+                                    + " " + $session.Account.NumberInputHouse;
+                                }
+                                
+                                if ($session.Account.NumberInputFlat.length > 0) {
+                                    $session.Account.NumberInputFlat = extractPhrase("account_number_input.sc", "AccountAddressConfirm6", $context)
+                                    + " " + $session.Account.NumberInputFlat;
+                                }
                                 // $session.Account.Address = res.data[0].address_full_name;
                                 $reactions.transition('../AccountAddressConfirm')
                                 $session.Account.AddressRepeatCount = 0;
@@ -423,7 +476,7 @@ theme: /BlockAccountNumInput
                 script:
                     $session.Account.AddressRepeatCount += 1;
                     # log('$request = ' + toPrettyString($request));
-                a: Ваш адрес {{$session.Account.Address}}. Верно? 
+                a: {{extractPhrase("account_number_input.sc", "AccountAddressConfirm1", $context)}} {{$session.Account.NumberInputStreet}} {{$session.Account.NumberInputHouse}} {{$session.Account.NumberInputFlat}}. {{extractPhrase("account_number_input.sc", "AccountAddressConfirm2", $context)}}
 
                 state: AccountAddressConfirmYes
                     q: $yes
@@ -446,30 +499,33 @@ theme: /BlockAccountNumInput
                         FindAccountNumberSetResult("AddressCancel"); 
                         $analytics.setSessionData("Блок ЛС", "Другой адрес")
                     if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
-                        a: Давайте еще раз проверим
+                        a: {{extractPhrase("account_number_input.sc", "AccountAddressConfirm3", $context)}}
                     go!: /BlockAccountNumInput/AccountInput
                 
                 state: AccountAddressNoMatch
                     event: noMatch || noContext = true
                     event: speechNotRecognized || noContext = true
                     if: $session.Account.AddressRepeatCount < 2
-                        a: Я Вас не расслышала. Повторите еще раз.
+                        if: $session.lastLang == "RU"
+                            a: Я Вас не расслышала. Повторите еще раз.
+                        else: 
+                            a: Мен сені естімедім. Тағы бір рет қайталаңыз.
                         go!: ..
                     else:
                         go!:../AccountAddressDecline
 
             state: AccountNotFound
-                a: Извините, я не нашла Ваш лицевой счёт. 
+                a: {{extractPhrase("account_number_input.sc", "AccountNotFound1", $context)}}
                 script: 
                     $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
-                    a: Давайте еще раз проверим
+                    a: {{extractPhrase("account_number_input.sc", "AccountNotFound2", $context)}}
                     go!: /BlockAccountNumInput/AccountInput
                 else:
                     go!: /BlockAccountNumInput/AccountInput/AskAboutIIN
                     
         state: AskAboutIIN
-            a: Можно попробовать поискать по ИИН. Хотите поискать по ИИН?
+            a: {{extractPhrase("account_number_input.sc", "AskAboutIIN", $context)}}
             
             state: AgreeIIN
                 intent: /Согласие
@@ -483,13 +539,13 @@ theme: /BlockAccountNumInput
 
         state: AccountInputNoNumber
             event: noMatch || noContext = true
-            a: Это не похоже на номер лицевого счета.
+            a: {{extractPhrase("account_number_input.sc", "AccountInputNoNumber", $context)}}
             go!: ..
 
         state: AccountInputToOperator
             q: $switchToOperator
             intent: /CallTheOperator
-            a: Переключаю на оператора
+            a: {{extractPhrase("account_number_input.sc", "AccountInputToOperator", $context)}}
             script:
                 $analytics.setSessionData("Блок ЛС", "Оператор")
             go!: /CallTheOperator

@@ -63,20 +63,20 @@ theme: /SupplierContacts
             go!: SupplierContactsByAccountServ
         else: 
             # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
-            a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
+            a: {{extractPhrase("SupplierContacts.sc", "SupplierContacts")}}
             BlockAccountNumber:
                 okState = SupplierContactsByAccountServ
                 errorState = SupplierContactsError
                 noAccountState = SupplierContactsError
             
         state: SupplierContactsError
-            a: без лицевого счета не могу дать вам телефон поставщика
+            a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsError")}}
         
         state: SupplierContactsByAccountServ
             # если есть услуга, то ее не запрашиваем - сразу идем на определение кода 
             if: SupplContactsGetServices()
                 go!: ../SupplierContactsSayContacts
-            a: Назовите услугу
+            a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountServ1")}}
             
             state: SupplierContactsByAccountServGetServ
                 q: * @Услуга * 
@@ -113,13 +113,13 @@ theme: /SupplierContacts
                     
                     go!:../../SupplierContactsSayContacts
                 else:
-                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountServ2")}}
                     go!: /CallTheOperator
                     
                 
 
             state: SupplierContactsByAccountPhone
-                q: телефон
+                q: * телефон *
                 q: * (телефония/телефонная связь) * 
                 script:
                     $session.serviceName = "телефония";
@@ -127,16 +127,20 @@ theme: /SupplierContacts
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
-                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountPhone")}}
                     go!: /CallTheOperator    
             
             state: SupplierContactsByAccountWater
                 q: вода
-                a: уточните, какая вода интересует - горячая или холодная? 
+                q: су
+                q: суды
+                q: суға
+                a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountWater")}}
                 go: SupplierContactsByAccountServ
                 
                 state: SupplierContactsByAccountHotWater
                     q: * горяч* *
+                    q: * ыстық* *
                     script:
                         $session.serviceName = "горячая вода";
                         SupplContactsSetServ([206, 178, 14, 7, 209])
@@ -145,6 +149,7 @@ theme: /SupplierContacts
 
                 state: SupplierContactsByAccountColdWater
                     q: * холод* *
+                    q: * суық* *
                     script:
                         $session.serviceName = "холодная вода";
                         SupplContactsSetServ([454, 452, 376, 375, 357, 335, 327, 185, 12, 5])
@@ -159,13 +164,13 @@ theme: /SupplierContacts
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
-                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountServ2")}}
                     go!: /CallTheOperator 
             
             state: SupplContactsNeedElectricSant
                 q: * ~электрик *
                 q: * сантехник* *                    
-                a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
+                a: {{extractPhrase("SupplierContacts.sc", "SupplContactsNeedElectricSant")}}
                 script:
                     $session.serviceName = "электрик и сантехник";
                     $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
@@ -185,12 +190,12 @@ theme: /SupplierContacts
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
-                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountServ2")}}
                     go!: /CallTheOperator 
 
             state: SupplierContactsByAccountServGetServNoMatch
                 event: noMatch
-                a: Я не нашла услугу. Перевожу Вас на оператора
+                a: {{extractPhrase("SupplierContacts.sc", "SupplierContactsByAccountServ2")}}
                 go!: /CallTheOperator
         
         
@@ -214,13 +219,19 @@ theme: /SupplierContacts
                 go!: /SupplierContacts/SupplierContacts/ServiceNotFound
                 
             elseif: ($temp.ss.text.length)
-                a: Записывайте. 
-                a: {{$temp.ss.text}}. 
-
+                script:
+                    $session.firstPhraseSupplier = extractPhrase("SupplierContacts.sc", "SupplierContactsSayContacts1");
+                    $session.secondPhraseSupplier = extractPhrase("SupplierContacts.sc", "SupplierContactsSayContacts2");
+                a: {{$session.firstPhraseSupplier}} 
+                
+                script:
+                    setLastRU();
+                a: {{$temp.ss.text}}.
                 if: $session.RepeatCnt.ServRepeat < 3
-                    a: Повторить? 
+                    a: {{$session.secondPhraseSupplier}} 
                 else:
                     go!:../CanIHelpYou
+                
             else
                 go!: /SupplierContacts/SupplierContacts/ChooseRequest
                 
@@ -241,12 +252,12 @@ theme: /SupplierContacts
             go!: /ИнициацияЗавершения/CanIHelpYou
             
         state: ChooseOperator
-            a: Могу вам чем-нибудь помочь?
+            a: {{extractPhrase("SupplierContacts.sc", "ChooseOperator1")}} 
             
             state: OKOperator
                 intent: /Согласие
                 q: $yes
-                a: Перевожу на оператора
+                a: {{extractPhrase("SupplierContacts.sc", "ChooseOperator2")}} 
                 go!: /CallTheOperator
                 
             state: NoOperator
@@ -256,7 +267,7 @@ theme: /SupplierContacts
                 
         
         state: ChooseRequest
-            a: По данной услуге отсутствуют контакты поставщика. Хотите, создам заявку на определение контактов?
+            a: {{extractPhrase("SupplierContacts.sc", "ChooseRequest")}} 
             
             state: CreateRequest
                 intent: /Согласие
@@ -276,7 +287,7 @@ theme: /SupplierContacts
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
             if: !FindAccountIsAccountSet() 
-                a: Для решения Вашего вопроса перевожу Вас на оператора
+                a: {{extractPhrase("SupplierContacts.sc", "MakeRequest1")}} 
                 go!: /CallTheOperator 
             script:
                 $session.MakeRequest = {};
@@ -284,13 +295,13 @@ theme: /SupplierContacts
                 $session.MakeRequest.userPhoneNumber = getUserPhone();
                 $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
 
-            a: Я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. Давайте проверим ваш контактный номер телефона. {{$temp.phone}}, это ваш номер? 
+            a: {{extractPhrase("SupplierContacts.sc", "MakeRequest2")}} {{$temp.phone}} {{extractPhrase("SupplierContacts.sc", "MakeRequest3")}}
         #   a:  
             
             
             state: MakeRequestAnotherSuplierPhone
                 q: * сейчас можно *
-                a: да
+                a: {{extractPhrase("SupplierContacts.sc", "MakeRequest4")}}
                 go!: /MakeRequestAnotherPhone
             state: MakeRequestAnotherPhone
                 intent: /AnotherPhone
@@ -302,7 +313,7 @@ theme: /SupplierContacts
                 script:
                     $session.Phone = {};
                     $session.Phone.NotMyPhoneCounter = 0
-                a: Можете назвать номер телефона целиком?
+                a: {{extractPhrase("SupplierContacts.sc", "MakeRequest5")}}
                 state: NoPhone
                     q: $no
                     q: $disagree
@@ -332,10 +343,10 @@ theme: /SupplierContacts
                             if ($session.Phone.NotMyPhoneCounter < 2 )
                                $session.Phone.NotMyPhoneCounter = $session.Phone.NotMyPhoneCounter +1
                         if: $session.Phone.NotMyPhoneCounter == 2
-                            a: Для решения Вашего вопроса перевожу Вас на оператора
+                            a: {{extractPhrase("SupplierContacts.sc", "MakeRequest6")}}
                             go!: /CallTheOperator
                         else:
-                            a: Давайте попробуем снова.Назовите номер телефона целиком.
+                            a: {{extractPhrase("SupplierContacts.sc", "MakeRequest7")}}
                             
                     state: YesItismyPhone
                         intent: /YesItsMyPhone
@@ -360,10 +371,10 @@ theme: /SupplierContacts
                     $temp.IsRequestAdded = AddRequestComplaint()
                 
                 if: $temp.IsRequestAdded
-                    a: Я зафиксировала Вашу заявку. Мы с Вами свяжемся в течение трех рабочих дней.
+                    a: {{extractPhrase("SupplierContacts.sc", "MakeRequest8")}}
                     go!: ../../CanIHelpYou
                 else:
-                    a: Мне не удалось сохранить заявку. Для решения Вашего вопроса перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "MakeRequest9")}}
                     go!: /CallTheOperator 
             
             state: MakeRequestDecline
@@ -371,9 +382,9 @@ theme: /SupplierContacts
                 intent: /Несогласие_помочь
                 q: ($no/$disagree) заявк*
                 if: countRepeats() == 1 
-                    a: Без оформления заявки мы не сможем предоставить корректный номер телефона. Готовы начать?  
+                    a: {{extractPhrase("SupplierContacts.sc", "MakeRequest10")}}
                 else:
-                    a: Для решения Вашего вопроса перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "MakeRequest11")}}
                     go!: /CallTheOperator 
                     
                 state: MakeRequestAccept
@@ -383,7 +394,7 @@ theme: /SupplierContacts
                     intent: /Согласие_помочь
                     script:
                         $temp.phone =  formatPhoneNumber($session.MakeRequest.userPhoneNumber)
-                    a: {{$temp.phone}}, это ваш номер? 
+                    a: {{$temp.phone}} {{extractPhrase("SupplierContacts.sc", "MakeRequest12")}}
                     go: ../../.
                 
                 state:  MakeRequestDecline
@@ -393,7 +404,7 @@ theme: /SupplierContacts
                     intent: /Несогласие_помочь
                     intent: /Несогласие_перечислить
                     event: noMatch
-                    a: В таком случае для решения Вашего вопроса перевожу Вас на оператора
+                    a: {{extractPhrase("SupplierContacts.sc", "MakeRequest13")}}
                     go!: /CallTheOperator 
                     
                 
@@ -404,7 +415,7 @@ theme: /SupplierContacts
                 # intent: /Несогласие_помочь
                 # intent: /Несогласие_перечислить
                 # a: Можете назвать свой номер телефона? Говорите весь номер сразу
-                a: В таком случае для решения Вашего вопроса перевожу Вас на оператора
+                a: {{extractPhrase("SupplierContacts.sc", "MakeRequest13")}}
                 go!: /CallTheOperator 
                 
 
@@ -413,9 +424,7 @@ theme: /SupplierContacts
         
         state: CanIHelpYou ||noContext = false
             # CommonAnswers
-            script:
-                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
-            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+            a: Могу Вам еще чем-нибудь помочь?
             # a: Нужна ли моя помощь дальше?
             
             state: PhoneBadNumber
@@ -693,6 +702,8 @@ theme: /VDGODebt
             $session.VDGORepeat += 1;
         
         a: Записывайте.
+        script:
+            $dialer.setTtsConfig({ "lang": "ru-RU", "voice": "alena", "speed": 1.0, 'useV3': true});
         a: {{$session.textContacts}}.
                 
         if: $session.VDGORepeat < 3

@@ -10,6 +10,7 @@ require: dateTime/dateTime.sc
 
 require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
+require: Functions/Language.js
 
 
 #########################################
@@ -28,8 +29,6 @@ require: PaymentTotal.sc
 require: SupplierContacts.sc
 # общие вопросы по алсеко
 require: AlsecoCommon.sc
-
-require: FindLSFromIIN.sc
 # общие вопросы по Инаре
 require: AboutInara.sc
 # вопросы по налогам
@@ -65,7 +64,7 @@ patterns:
     # $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
     # $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
-    $numbersByWords = * @duckling.number * 
+    $numbersByWords = * @zb.number * 
     $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
     $changeOwner = [приобрел* @Недвижимость] *мени* (собственника|хозяина|имя|фамилию)
     
@@ -73,13 +72,17 @@ patterns:
     
 
 theme: /
+    
+    state: LangInit
+        q!: $regex</start>
+        script:
+            setLastRU();
+        go!: /Start
 
     state: Start
-        q!: $regex</start>
-        
         script:
             bind("postProcess", function($context) {
-                $dialer.setNoInputTimeout(15000);
+                $dialer.setNoInputTimeout(10000);
             });
             $.session.looser_count = 0;
             $context.session.AnswerCnt = 0;
@@ -87,20 +90,28 @@ theme: /
             $.session.repeats = {};
             # переключаем Инару на радостный голос "Алены" 
             $dialer.setTtsConfig({emotion: "good"});
-                    
-        a: Я Инара, ваш виртуальный помощник.
+            
+        if: $session.lastLang == "RU"
+            a: Я Инара, ваш виртуальный помощник.
+        else:
+            a: Мен Инарамын, сіздің виртуалды көмекшіңіз.
+        
         # Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
         # a: подсказать дату последней оплаты или контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
-        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+        if: $session.lastLang == "RU"
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+        else:
+            a: {{CommonAnswers.WhatDoYouWantKZ[$temp.index]}}
+        
         script:
             if ($dialer.getCaller())
                 $analytics.setSessionData("Телефон", $dialer.getCaller());
             $dialer.bargeInResponse({
                 bargeIn: "phrase",
                 bargeInTrigger: "final",
-                noInterruptTime: 0});
+                noInterruptTime: 3000});
             FindAccountNumberClear();
         
         state: DialogMakeQuestion
@@ -129,6 +140,14 @@ theme: /
     state: KnowledgeBase
         intentGroup!: /KnowledgeBase
         script: $faq.pushReplies();
+            
+    state: NaOperatora
+        q!: на оператора
+        a: {{currentLang($context)}}
+    
+    state: Juice
+        intent!: /Juice
+        a: {{extractPhrase("main.sc", "Juice")}}
 
     state: Hello
         intent!: /привет
@@ -136,10 +155,13 @@ theme: /
             $dialer.setNoInputTimeout(3000);
         go!: /HelloAnswer
         
+        
     state: HelloAnswer
         random:
-            a: Здравствуйте, чем я могу вам помочь?
-            a: Алло, я Вас слушаю. Чем я могу вам помочь?
+            a: {{extractPhrase("main.sc", "HelloAnswer1")}}
+            a: {{extractPhrase("main.sc", "HelloAnswer2")}}
+#            a: Здравствуйте, чем я могу вам помочь?
+#            a: Алло, я Вас слушаю. Чем я могу вам помочь?
         
     
     state: WhatDoYouWant
@@ -147,7 +169,7 @@ theme: /
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
             $temp.counter = countRepeats();
         if: $temp.counter > 4
-            a: Пох+оже, я не мог+у Вас пон+ять. Перевожу звон+ок на опер+атора
+            a: {{extractPhrase("main.sc", "WhatDoYouWant")}}
             go!: /CallTheOperator
         else:
             a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
@@ -168,7 +190,7 @@ theme: /
         intent!:/Долги
         intent!:/Договорной
         intent!:/Счетчики_общее
-        intent!:/Начисления_общее690218401933
+        intent!:/Начисления_общее
         intent!:/Платеж_возврат
         go!: /NoMatch
     
@@ -190,14 +212,14 @@ theme: /
         if: $context.session.AnswerCnt == 1
             script:
                 $temp.index = $reactions.random(CommonAnswers.NoMatch.answers.length);
-            a: {{CommonAnswers.NoMatch.answers[$temp.index]}}
+            a: {{extractPhrase("main.sc", "NoMatch2")}}
             # random:
             #     a: Извините, я Вас не поняла. Повторите пожалуйста 
             #     a: Я Вас не поняла. Сформулируйте по-другому 
             #     a: Скажите еще раз 
             #     a: Мне плохо слышно, повторите
         else:
-            a: Для решения Вашего вопроса перевожу Вас на оператора. Пожалуйста, подождите
+            a: {{extractPhrase("main.sc", "NoMatch")}}
             go!: /CallTheOperator
     
     state: SwitchToOperator
@@ -205,9 +227,9 @@ theme: /
         q!: $switchToOperator
         intent!: /CallTheOperator
         if: $context.session.AnswerCnt == 1
-            a: Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос
+            a: {{extractPhrase("main.sc", "SwitchToOperator1")}}
         else:
-            a: Переключаю Вас на оператора. Пожалуйста, подождите
+            a: {{extractPhrase("main.sc", "SwitchToOperator2")}}
             go!: /CallTheOperator
             
     
@@ -259,9 +281,9 @@ theme: /
             var status = $dialer.getTransferStatus();
             log('transfer_status = ' + toPrettyString(status));
         if: $dialer.getTransferStatus().status === 'FAIL'
-            a: К сожалению, на данный момент все операторы заняты. Могу ли я Вам еще чем-то помочь? 
+            a: {{extractPhrase("main.sc", "CallTheOperatorTransferEvent1")}}
         elseif: !$dialer.getTransferStatus().hangup 
-            a: Вы вернулись в бота после оператора. 
+            a: {{extractPhrase("main.sc", "CallTheOperatorTransferEvent2")}}
         #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.    
         state: CanIHelpYouAgree
             q: $yes
@@ -288,11 +310,11 @@ theme: /
             $session.repeatRepetition += 1;
             
         if: $session.repeatRepetition >= 3
-            a: Кажется, проблемы со связью.
+            a: {{extractPhrase("main.sc", "repeat1", $context)}}
             random:
-                a: Соединяю вас с оператором.
-                a: Перевожу вас на оператора.
-                a: Сейчас я переведу вас на оператора.
+                a: {{extractPhrase("main.sc", "repeat2")}}
+                a: {{extractPhrase("main.sc", "repeat3")}}
+                a: {{extractPhrase("main.sc", "repeat4")}}
             go!: /CallTheOperator
         else:
             if: $session._last_reply
@@ -311,19 +333,31 @@ theme: /
                 $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
             a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
         else:        
-            a: Благодарим за обращение!
+            a: {{extractPhrase("main.sc", "Bye1")}}
             random: 
-                a: До свидания!
-                a: Надеюсь, я смогла вам помочь. Удачи!
+                a: {{extractPhrase("main.sc", "Bye2")}}
+                a: {{extractPhrase("main.sc", "Bye3")}}
             script:
                 $dialer.hangUp();
             
     state: greeting
         intent!: /greeting
         random: 
-            a: Пожалуйста || htmlEnabled = false, html = "Пожалуйста"
-            a: Это моя работа || htmlEnabled = false, html = "Это моя работа"
-            a: Я старалась || htmlEnabled = false, html = "Я старалась"
+            a: {{extractPhrase("main.sc", "Greeting1")}} || htmlEnabled = false, html = "Пожалуйста"
+            a: {{extractPhrase("main.sc", "Greeting2")}} || htmlEnabled = false, html = "Это моя работа"
+            a: {{extractPhrase("main.sc", "Greeting3")}} || htmlEnabled = false, html = "Я старалась"
+            
+    state: SwitchLanguage
+        intent!: /ПереключитьЯзык
+        if: $session.lastLang == "RU"
+            script:
+                setLastKZ();
+                $context.parseTree.text = "ыстық";
+        else:
+            script:
+                setLastRU();
+                $context.parseTree.text = "вода";
+        go!: {{$session.lastState}}
             
     state: looser
         q!: * $looser *
@@ -337,9 +371,9 @@ theme: /
             go!: /WhatDoYouWant
         else:
             random:
-                a: Не ругайтесь пожалуйста. Соединяю вас с оператором.
-                a: Спасибо.Мне важно ваше мнение. Перевожу вас на оператора.
-                a: Давайте не будем переживать. Перевожу вас на оператора.
+                a: {{extractPhrase("main.sc", "Looser1")}}
+                a: {{extractPhrase("main.sc", "Looser2")}}
+                a: {{extractPhrase("main.sc", "Looser3")}}
             go!: /CallTheOperator
 
     state: HangUp
@@ -371,37 +405,45 @@ theme: /
             }
             $session.speechNotRecognized.repetition += 1;
             
+            if ($session.lastLang == "RU") {
+                $session.answerOne = "Кажется, проблемы со связью.";
+                $session.answerTwo = "Извините, я не расслышала. Повторите, пожалуйста.";
+                $session.answerThree = "Не совсем поняла. Можете повторить, пожалуйста?";
+                $session.answerFour = "Повторите, пожалуйста. Вас не слышно.";
+            } else {
+                $session.answerOne = "Өтінемін, ант бермеңіз. Мен сізді операторға қосып жатырмын.";
+                $session.answerTwo = "Кешіріңіз, мен естімедім. Кешіріңіз қайталаңызшы.";
+                $session.answerThree = "Толық түсінбедім. Өтінемін, қайталай аласыз ба?";
+                $session.answerFour = "Кешіріңіз қайталаңызшы. Сізді есту мүмкін емес.";
+            }
+            
         if: $session.speechNotRecognized.repetition >= 3
-            a: Кажется, проблемы со связью.
+            a: {{$session.answerOne}}
             script:
                 $dialer.hangUp();
         else:
             random: 
-                a: Извините, я не расслышала. Повторите, пожалуйста.
-                a: Не совсем поняла. Можете повторить, пожалуйста?
-                a: Повторите, пожалуйста. Вас не слышно.
+                a: {{$session.answerTwo}}
+                a: {{$session.answerThree}}
+                a: {{$session.answerFour}}
 
     state: sessionDataSoftLimitExceeded
         # // обрабатываем событие о достижении soft лимита
         event!: sessionDataSoftLimitExceeded
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
-
-            
             
     state: BotTooSlow
         event!: timeLimit
         script:
             SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
-        a: Не смогла найти ответ. Переключаю вас на оператора 
+        a: {{extractPhrase("main.sc", "BotTooSlow")}}
         go!: /CallTheOperator
 
 theme: /ИнициацияЗавершения
     
     state: CanIHelpYou 
-        script:
-            $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
-        a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+        a: {{extractPhrase("main.sc", "CanIHelpYou")}}
         
         state: CanIHelpYouAgree
             q: $yes
