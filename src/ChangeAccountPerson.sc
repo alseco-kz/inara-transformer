@@ -200,9 +200,7 @@ theme: /ChangeAccountPerson
 
         state: CanIHelpYou 
             # CommonAnswers
-            script:
-                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
-            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+            a: Могу вам ещё чем-нибудь помочь?
             # a: Нужна ли моя помощь дальше?
             
             state: CanIHelpYouRepeat

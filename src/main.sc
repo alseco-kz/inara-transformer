@@ -111,7 +111,7 @@ theme: /
             $dialer.bargeInResponse({
                 bargeIn: "phrase",
                 bargeInTrigger: "final",
-                noInterruptTime: 3000});
+                noInterruptTime: 0});
             FindAccountNumberClear();
         
         state: DialogMakeQuestion
