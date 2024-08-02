@@ -207,12 +207,12 @@ theme: /BlockAccountNumInput
         state: AccountInputNumber || modal = true
             
             # проверяем наличие цифр в запросе. если есть, значит говорит номер лицевого счета
-            q: * $numbers *
+            q: * @zb.number *
             q: * @zb.number [@zb.number] [@zb.number] *
             q: * @zb.number [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] *
             script: 
                 $temp.AccNum = "";
-                # log("блок ЛС цифры")
+                # log(*"блок ЛС цифры")
                 # log($session.AccountNumberContinue);
                 if ($session.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
@@ -263,8 +263,8 @@ theme: /BlockAccountNumInput
                     
                     
             state: AccountInputNumberContinue
-                q: * $numbers *
-                q: @zb.number [@zb.number] [@zb.number] *
+                q: * @zb.number *
+                q: * @zb.number [@zb.number] [@zb.number] *
                 q: * @zb.number [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] [@zb.number] *
                 script:                
                     $temp.AccNum = "";
